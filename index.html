@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#050B18" />
+
+  <title>PGC | Sistema Operacional do Mentor Empresário</title>
+  <meta name="description" content="Centralize marketing, atendimento, vendas, inteligência artificial, automações e gestão em um único sistema. Transforme sua mentoria em uma empresa estruturada." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="PGC | Sistema Operacional do Mentor Empresário" />
+  <meta property="og:description" content="Do primeiro comentário ao contrato assinado, acompanhe toda a jornada do cliente sem perder oportunidades entre Instagram, WhatsApp, planilhas e vendedores." />
+  <meta property="og:image" content="assets/img/og-cover.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!--
+    RASTREAMENTO — inserir os snippets reais antes de publicar:
+    · Google Tag Manager (GTM-XXXXXXX)
+    · Meta Pixel  fbq('init','PIXEL_ID')
+    · Google Analytics 4  gtag('config','G-XXXXXXX')
+    · Google Ads (conversões)
+    Os eventos (cta_clique, form_aberto, form_etapa, form_enviado,
+    calculadora_usada, ver_funcionalidades) já são disparados em assets/js/main.js
+    via window.dataLayer / fbq / gtag.
+  -->
+</head>
+<body>
+  <div class="bg-stage" aria-hidden="true"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <!-- ===================== HEADER / NAV ===================== -->
+  <header class="site-header" id="header">
+    <div class="container nav">
+      <a href="#topo" class="brand" aria-label="PGC — página inicial">
+        <img src="assets/img/logo.svg" alt="" class="brand__logo" width="42" height="42" />
+        <span class="brand__name">PGC</span>
+        <span class="brand__tag">Sistema Operacional<br>do Mentor Empresário</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Principal">
+        <a href="#solucao">A solução</a>
+        <a href="#jornada">Jornada</a>
+        <a href="#recursos">Recursos</a>
+        <a href="#planos">Planos</a>
+        <a href="#faq">Dúvidas</a>
+      </nav>
+
+      <a href="#aplicar" class="btn btn--primary nav__cta" data-cta="nav">Quero estruturar minha operação</a>
+
+      <button class="nav__burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Menu mobile">
+    <a href="#solucao">A solução</a>
+    <a href="#jornada">Jornada do cliente</a>
+    <a href="#recursos">Recursos</a>
+    <a href="#planos">Planos</a>
+    <a href="#faq">Perguntas frequentes</a>
+    <a href="#aplicar" class="btn btn--primary btn--block" data-cta="menu">Quero estruturar minha operação</a>
+  </nav>
+
+  <main id="topo">
+
+    <!-- ===================== DOBRA 1 — HERO ===================== -->
+    <section class="section hero" id="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <span class="eyebrow eyebrow--chip reveal">Para mentores, especialistas e consultores</span>
+          <h1 class="h1 reveal" data-delay="1">
+            Sua mentoria cresceu.<br>
+            <span class="grad-text">Mas sua operação continua improvisada.</span>
+          </h1>
+          <p class="lead measure reveal" data-delay="2">
+            Centralize marketing, atendimento, inteligência artificial, CRM, vendas, automações e gestão
+            <strong>em um único sistema</strong> — e pare de perder oportunidades entre Instagram, WhatsApp, planilhas e vendedores.
+          </p>
+          <div class="btns reveal" data-delay="3">
+            <a href="#aplicar" class="btn btn--primary btn--lg" data-cta="hero-primary">Quero transformar minha mentoria em uma empresa</a>
+            <a href="#solucao" class="btn btn--ghost btn--lg" data-cta="hero-secondary">
+              <span class="play"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M8 5v14l11-7z"/></svg></span>
+              Ver como funciona
+            </a>
+          </div>
+          <ul class="trust reveal" data-delay="4">
+            <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6z"/></svg></span> Implantação personalizada</li>
+            <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11a9 9 0 0 1 18 0v5a3 3 0 0 1-3 3h-1v-6h4M3 11v5a3 3 0 0 0 3 3h1v-6H3"/></svg></span> Suporte especializado</li>
+            <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M7 14l3-3 3 3 5-6"/></svg></span> Configurada para o seu negócio</li>
+          </ul>
+        </div>
+
+        <!-- Composição visual -->
+        <div class="hero-visual reveal" data-delay="2">
+          <div class="hero-visual__glow" aria-hidden="true"></div>
+          <div class="dash float-anim" role="img" aria-label="Painel da PGC com visão geral, KPIs e funil de vendas">
+            <div class="dash__bar">
+              <div class="dash__dots"><i></i><i></i><i></i></div>
+              <span class="dash__title">PGC · Visão Geral</span>
+            </div>
+            <div class="dash__body">
+              <div class="kpis">
+                <div class="kpi"><small>Novos Leads</small><b>1.250</b><span class="up">+23% mês</span></div>
+                <div class="kpi"><small>Reuniões</small><b>320</b><span class="up">+16% mês</span></div>
+                <div class="kpi"><small>Faturamento</small><b>R$ 285k</b><span class="up">+31% mês</span></div>
+              </div>
+              <svg class="spark" viewBox="0 0 320 40" preserveAspectRatio="none" aria-hidden="true">
+                <defs><linearGradient id="sg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#10CBEF" stop-opacity=".35"/><stop offset="1" stop-color="#10CBEF" stop-opacity="0"/></linearGradient></defs>
+                <path d="M0,32 L40,28 L80,30 L120,20 L160,22 L200,12 L240,15 L280,6 L320,9 L320,40 L0,40 Z" fill="url(#sg)"/>
+                <path d="M0,32 L40,28 L80,30 L120,20 L160,22 L200,12 L240,15 L280,6 L320,9" fill="none" stroke="#10CBEF" stroke-width="2"/>
+              </svg>
+              <div class="funnel">
+                <div class="funnel-row"><span>Novo lead</span><span class="bar" style="width:100%"></span><b>1250</b></div>
+                <div class="funnel-row"><span>Qualificação</span><span class="bar" style="width:68%"></span><b>850</b></div>
+                <div class="funnel-row"><span>Proposta</span><span class="bar" style="width:40%"></span><b>320</b></div>
+                <div class="funnel-row"><span>Fechado</span><span class="bar" style="width:22%"></span><b>178</b></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual__notes" aria-hidden="true">
+            <div class="float-note float-note--ig float-anim float-anim--2">
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span>
+              <div><b>Instagram</b><br><span>Novas mensagens</span></div>
+              <span class="badge">23</span>
+            </div>
+            <div class="float-note float-note--wa float-anim">
+              <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.6-4.1-.1-.2-1.1-1.4-1.1-2.7 0-1.3.7-1.9.9-2.2.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2 0 .4-.1.5l-.4.5c-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2 1.3 2.3 1.4.2.1.4.1.6-.1l.7-.9c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.1.1.7-.1 1.3z"/></svg></span>
+              <div><b>WhatsApp</b><br><span>Novas mensagens</span></div>
+              <span class="badge">17</span>
+            </div>
+            <div class="float-note float-note--lp float-anim float-anim--2">
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 13h6"/></svg></span>
+              <div><b>Landing Page</b><br><span>Novo lead capturado</span></div>
+              <span class="badge">12</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DOBRA 2 — ESPELHO DA OPERAÇÃO ===================== -->
+    <section class="section section--light" id="espelho">
+      <div class="container grid-2 grid-2--wide-left">
+        <div class="reveal">
+          <span class="eyebrow">A realidade da maioria das operações</span>
+          <h2 class="h2" style="margin:16px 0 20px">
+            Sua mentoria parece uma empresa no Instagram.<br>
+            <span style="color:var(--blue-electric)">Mas, por trás, ainda funciona no improviso.</span>
+          </h2>
+          <p class="lead measure">
+            Leads chegando de todos os lados. Mensagens espalhadas. Informações perdidas.
+            Follow-ups esquecidos. E você no meio de tudo, tentando manter a operação de pé.
+          </p>
+        </div>
+
+        <div class="chaos reveal" data-delay="2" aria-label="Diagrama de operação fragmentada: Instagram, WhatsApp, formulários, planilhas, CRM, agenda e anotações desconectados">
+          <svg class="wires" viewBox="0 0 400 320" aria-hidden="true">
+            <path d="M70,40 C140,90 160,120 200,160"/>
+            <path d="M330,40 C260,90 240,120 200,160"/>
+            <path d="M40,170 C120,160 150,160 200,160"/>
+            <path d="M360,170 C280,160 250,160 200,160"/>
+            <path d="M80,280 C140,240 170,200 200,160"/>
+            <path d="M320,280 C260,240 230,200 200,160"/>
+            <path d="M200,300 C200,250 200,200 200,160"/>
+          </svg>
+          <div class="chaos__center"><small>ONDE ESTÁ</small><b>O CLIENTE?</b></div>
+          <div class="chaos__node" style="top:6%;left:8%">📸 Instagram</div>
+          <div class="chaos__node" style="top:6%;right:8%">💬 WhatsApp</div>
+          <div class="chaos__node" style="top:46%;left:0">📝 Formulários</div>
+          <div class="chaos__node" style="top:46%;right:0">📊 Planilhas</div>
+          <div class="chaos__node" style="bottom:14%;left:6%">🗂️ CRM</div>
+          <div class="chaos__node" style="bottom:14%;right:6%">📅 Agenda</div>
+          <div class="chaos__node" style="bottom:-2%;left:50%;transform:translateX(-50%)">🗒️ Anotações</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DOBRA 3 — FALSO DIAGNÓSTICO ===================== -->
+    <section class="section" id="diagnostico">
+      <div class="container grid-2">
+        <div class="reveal">
+          <span class="eyebrow">A verdade que quase ninguém te conta</span>
+          <h2 class="h2" style="margin:16px 0 20px">
+            Talvez você não precise de mais leads.<br>
+            <span class="grad-text">Precisa parar de perder os que já chegam.</span>
+          </h2>
+          <p class="lead measure">
+            Você investe para atrair, mas sua operação não acompanha. Leads esfriam, desaparecem
+            e acabam comprando de quem respondeu e acompanhou primeiro.
+          </p>
+          <p class="quote-block">
+            Comprar mais tráfego para uma operação desorganizada é pagar para aumentar a quantidade
+            de oportunidades que você vai perder.
+          </p>
+          <a href="#aplicar" class="btn btn--primary btn--lg" style="margin-top:28px" data-cta="diagnostico">Quero parar de perder oportunidades</a>
+        </div>
+
+        <div class="notif-stack reveal" data-delay="2" aria-label="Notificações de oportunidades sem acompanhamento">
+          <div class="notif"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></span><div><b>Direct no Instagram</b><span>Comentou no post há 2 dias</span></div><span class="status">Não respondido</span></div>
+          <div class="notif"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><div><b>WhatsApp</b><span>Pediu valores ontem</span></div><span class="status">Sem retorno</span></div>
+          <div class="notif"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M9 9h6M9 13h6"/></svg></span><div><b>Formulário preenchido</b><span>Lead qualificado aguardando</span></div><span class="status">Sem follow-up</span></div>
+          <div class="notif"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span><div><b>Reunião agendada</b><span>Acontece em 3 horas</span></div><span class="status">Não confirmada</span></div>
+          <div class="notif"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6m0 0 3-3m-3 3L9 5M5 12a7 7 0 1 0 14 0"/></svg></span><div><b>Proposta enviada</b><span>Há 8 dias, sem retomada</span></div><span class="status">Lead esfriou</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DOBRA 4 — CUSTO DA DESORGANIZAÇÃO ===================== -->
+    <section class="section section--panel" id="custo">
+      <div class="container">
+        <div class="center reveal" style="max-width:760px;margin-inline:auto">
+          <span class="eyebrow" style="justify-content:center">O custo da desorganização</span>
+          <h2 class="h2" style="margin:16px 0 18px">Sua operação pode estar perdendo mais dinheiro do que você imagina.</h2>
+          <p class="lead">Cada lead não respondido, cada follow-up esquecido e cada oportunidade abandonada tem um preço.</p>
+        </div>
+
+        <div class="card reveal" data-delay="2" style="margin-top:48px">
+          <div class="calc">
+            <div>
+              <h3 class="h4" style="margin-bottom:24px">Estime sua receita não aproveitada</h3>
+              <div class="calc__field">
+                <label for="cLeads">Leads por mês <b><span id="vLeads">300</span></b></label>
+                <input type="range" id="cLeads" min="20" max="2000" step="10" value="300" />
+              </div>
+              <div class="calc__field">
+                <label for="cTicket">Ticket médio <b>R$ <span id="vTicket">10.000</span></b></label>
+                <input type="range" id="cTicket" min="3000" max="100000" step="500" value="10000" />
+              </div>
+              <div class="calc__field">
+                <label for="cLoss">Leads perdidos por falta de acompanhamento <b><span id="vLoss">15</span>%</b></label>
+                <input type="range" id="cLoss" min="2" max="60" step="1" value="15" />
+              </div>
+              <div class="calc__field" style="margin-bottom:0">
+                <label for="cConv">Conversão dos recuperáveis <b><span id="vConv">3</span>%</b></label>
+                <input type="range" id="cConv" min="1" max="20" step="1" value="3" />
+              </div>
+            </div>
+            <div class="calc__result">
+              <small>Receita potencial deixada pelo caminho</small>
+              <div class="big" id="calcOut">R$ 13.500<span style="font-size:1.2rem;font-weight:600">/mês</span></div>
+              <p>Estimativa com base nas oportunidades que poderiam ser recuperadas com acompanhamento estruturado.</p>
+              <a href="#aplicar" class="btn btn--light btn--block" style="margin-top:20px" data-cta="calc">Quero recuperar essas oportunidades</a>
+            </div>
+          </div>
+        </div>
+        <p class="fine center reveal" style="margin-top:20px">
+          Exemplo ilustrativo. Os resultados variam conforme oferta, ticket, volume de leads e execução comercial.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== DOBRA 5 — DESEJO E TRANSFORMAÇÃO ===================== -->
+    <section class="section" id="transformacao">
+      <div class="container">
+        <div class="center reveal" style="max-width:720px;margin-inline:auto">
+          <span class="eyebrow" style="justify-content:center">O que muda para você</span>
+          <h2 class="h2" style="margin:16px 0 18px">Mais tempo para estratégia.<br><span class="grad-text">Mais previsibilidade para crescer.</span></h2>
+          <p class="lead">Quando sua operação funciona, você deixa de apagar incêndios e começa a liderar o crescimento do negócio.</p>
+        </div>
+
+        <div class="cols-3" style="margin-top:52px">
+          <div class="card result-card reveal"><div class="num">01</div><h3 class="h4" style="margin:12px 0 8px">Menos tempo no operacional</h3><p class="muted">Processos e automações assumem o trabalho repetitivo. Você sai do meio da execução.</p></div>
+          <div class="card result-card reveal" data-delay="1"><div class="num">02</div><h3 class="h4" style="margin:12px 0 8px">Mais vendas, com menos perdas</h3><p class="muted">Nenhum lead esquecido. Cada oportunidade é acompanhada do primeiro contato ao fechamento.</p></div>
+          <div class="card result-card reveal" data-delay="2"><div class="num">03</div><h3 class="h4" style="margin:12px 0 8px">Gestão com clareza e controle</h3><p class="muted">Indicadores reais mostram onde você ganha, onde perde e o que decidir em seguida.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DOBRA 6 — APRESENTAÇÃO DA PGC ===================== -->
+    <section class="section section--panel" id="solucao">
+      <div class="container">
+        <div class="center reveal" style="max-width:760px;margin-inline:auto">
+          <span class="eyebrow" style="justify-content:center">A solução</span>
+          <h2 class="h2" style="margin:16px 0 18px">PGC é o sistema operacional da sua mentoria.</h2>
+          <p class="lead">Tudo o que você precisa para atrair, atender, vender e acompanhar clientes em um único ambiente.</p>
+        </div>
+
+        <div class="cols-5" style="margin-top:52px">
+          <div class="card pillar reveal"><div class="tile-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><b class="h4">Atendimento unificado</b></div>
+          <div class="card pillar reveal" data-delay="1"><div class="tile-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="7" width="14" height="12" rx="3"/><path d="M12 3v4M9 13h.01M15 13h.01M2 12h3M19 12h3"/></svg></div><b class="h4">IA que qualifica</b></div>
+          <div class="card pillar reveal" data-delay="2"><div class="tile-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h18M3 12h18M3 19h18"/><circle cx="8" cy="5" r="2" fill="currentColor"/><circle cx="15" cy="12" r="2" fill="currentColor"/><circle cx="10" cy="19" r="2" fill="currentColor"/></svg></div><b class="h4">CRM e funil de vendas</b></div>
+          <div class="card pillar reveal" data-delay="3"><div class="tile-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div><b class="h4">Automação inteligente</b></div>
+          <div class="card pillar reveal" data-delay="4"><div class="tile-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M7 14l3-3 3 3 5-6"/></svg></div><b class="h4">Gestão e indicadores</b></div>
+        </div>
+
+        <div class="center reveal" style="margin-top:44px">
+          <a href="#aplicar" class="btn btn--primary btn--lg" data-cta="solucao">Quero ver a PGC em ação</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DOBRA 7 — JORNADA COMPLETA ===================== -->
+    <section class="section" id="jornada">
+      <div class="container">
+        <div class="center reveal" style="max-width:780px;margin-inline:auto">
+          <span class="eyebrow" style="justify-content:center">A operação unificada do mentor empresário</span>
+          <h2 class="h2" style="margin:16px 0 18px">Do primeiro comentário ao contrato assinado.<br><span class="grad-text">Sem perder o cliente entre uma etapa e outra.</span></h2>
+        </div>
+
+        <div class="journey" style="margin-top:56px" role="list">
+          <div class="j-step reveal" role="listitem"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v12H7l-3 3z"/></svg></div><b>Conteúdo</b></div>
+          <div class="j-step reveal" data-delay="1" role="listitem"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 10h8M8 14h5M21 12a9 9 0 1 1-3.5-7.1"/></svg></div><b>Comentário</b></div>
+          <div class="j-step reveal" data-delay="2" role="listitem"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><b>Conversa</b></div>
+          <div class="j-step reveal" data-delay="3" role="listitem"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.1V12a10 10 0 1 1-5.9-9.1"/><path d="m9 11 3 3L22 4"/></svg></div><b>Qualificação</b></div>
+          <div class="j-step reveal" data-delay="4" role="listitem"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h18M3 12h18M3 19h18"/></svg></div><b>CRM</b></div>
+        </div>
+        <div class="journey" style="margin-top:14px" role="list">
+          <div class="j-step reveal" role="listitem"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div><b>Reunião</b></div>
+          <div class="j-step reveal" data-delay="1" role="listitem"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><b>Venda</b></div>
+          <div class="j-step reveal" data-delay="2" role="listitem"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3v5h5M14 3l5 5v11a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="m9 14 2 2 4-4"/></svg></div><b>Contrato</b></div>
+          <div class="j-step reveal" data-delay="3" role="listitem"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM22 21v-2a4 4 0 0 0-3-3.9"/></svg></div><b>Onboarding</b></div>
+          <div class="j-step reveal" data-delay="4" role="listitem"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9 9 0 0 0-7 3.3M3 4v4h4"/></svg></div><b>Reativação</b></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DOBRA 8 — O QUE A TECNOLOGIA ASSUME ===================== -->
+    <section class="section section--panel" id="tecnologia">
+      <div class="container">
+        <div class="reveal" style="max-width:780px">
+          <span class="eyebrow">Automatize o que não precisa depender de pessoas</span>
+          <h2 class="h2" style="margin:16px 0 0">Pare de usar pessoas para fazer o trabalho que a tecnologia deveria executar.</h2>
+        </div>
+
+        <div class="split" style="margin-top:48px">
+          <div class="card col-list col--good reveal">
+            <h4><span class="tile-ic" style="width:38px;height:38px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/></svg></span> Sua equipe cuida de:</h4>
+            <ul>
+              <li><span class="mk" style="background:rgba(23,178,106,.14);color:var(--green)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5L20 7"/></svg></span> Estratégia e posicionamento</li>
+              <li><span class="mk" style="background:rgba(23,178,106,.14);color:var(--green)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5L20 7"/></svg></span> Relacionamento com o cliente</li>
+              <li><span class="mk" style="background:rgba(23,178,106,.14);color:var(--green)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5L20 7"/></svg></span> Negociação e fechamento</li>
+              <li><span class="mk" style="background:rgba(23,178,106,.14);color:var(--green)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5L20 7"/></svg></span> Decisões de negócio</li>
+            </ul>
+          </div>
+          <div class="card col-list reveal" data-delay="1">
+            <h4><span class="tile-ic" style="width:38px;height:38px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20"><rect x="5" y="7" width="14" height="12" rx="3"/><path d="M12 3v4M9 13h.01M15 13h.01"/></svg></span> A PGC cuida de:</h4>
+            <ul style="grid-template-columns:1fr 1fr;display:grid">
+              <li><span class="mk" style="background:rgba(21,94,239,.14);color:var(--cyan)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span> Atendimento inicial</li>
+              <li><span class="mk" style="background:rgba(21,94,239,.14);color:var(--cyan)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span> Qualificação</li>
+              <li><span class="mk" style="background:rgba(21,94,239,.14);color:var(--cyan)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span> Distribuição de leads</li>
+              <li><span class="mk" style="background:rgba(21,94,239,.14);color:var(--cyan)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span> Follow-up automático</li>
+              <li><span class="mk" style="background:rgba(21,94,239,.14);color:var(--cyan)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span> Agendamentos</li>
+              <li><span class="mk" style="background:rgba(21,94,239,.14);color:var(--cyan)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span> Lembretes</li>
+              <li><span class="mk" style="background:rgba(21,94,239,.14);color:var(--cyan)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span> Tarefas e rotinas</li>
+              <li><span class="mk" style="background:rgba(21,94,239,.14);color:var(--cyan)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span> Atualização do funil</li>
+            </ul>
+          </div>
+        </div>
+        <p class="lead measure reveal" style="margin-top:32px">
+          <strong>A PGC não substitui a inteligência da sua equipe.</strong> Ela elimina o trabalho repetitivo que impede sua equipe de ser estratégica.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== DOBRA 9 — RECURSOS POR RESULTADO ===================== -->
+    <section class="section" id="recursos">
+      <div class="container">
+        <div class="center reveal" style="max-width:780px;margin-inline:auto">
+          <span class="eyebrow" style="justify-content:center">Recursos que geram resultados</span>
+          <h2 class="h2" style="margin:16px 0 18px">Tudo o que sua mentoria precisa para atrair, vender e operar.<br><span class="grad-text">Em um só lugar.</span></h2>
+        </div>
+
+        <div class="cols-4" style="margin-top:52px">
+          <div class="card rcard reveal"><div class="tile-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l19-8-8 19-2-8z"/></svg></div><h3>Atrair</h3><ul><li>Conteúdo</li><li>Anúncios</li><li>Páginas</li><li>Prospecção</li></ul></div>
+          <div class="card rcard reveal" data-delay="1"><div class="tile-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>Atender</h3><ul><li>Instagram</li><li>WhatsApp</li><li>E-mail</li><li>Inteligência artificial</li></ul></div>
+          <div class="card rcard reveal" data-delay="2"><div class="tile-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h3>Vender</h3><ul><li>CRM</li><li>Qualificação</li><li>Agenda</li><li>Follow-up</li></ul></div>
+          <div class="card rcard reveal" data-delay="3"><div class="tile-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M7 14l3-3 3 3 5-6"/></svg></div><h3>Gerenciar</h3><ul><li>Tarefas</li><li>Equipe</li><li>Relatórios</li><li>Indicadores</li></ul></div>
+        </div>
+
+        <div class="center reveal" style="margin-top:40px">
+          <button class="btn btn--ghost" id="openFeatures" data-cta="ver-funcionalidades">Ver todas as funcionalidades</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DOBRA 10 — FRAGMENTADO VS CENTRALIZADO ===================== -->
+    <section class="section section--panel" id="comparacao">
+      <div class="container">
+        <div class="reveal" style="max-width:820px">
+          <span class="eyebrow">Fragmentado versus centralizado</span>
+          <h2 class="h2" style="margin:16px 0 0">O problema não é ter ferramentas.<br><span class="grad-text">É nenhuma delas saber o que aconteceu com o cliente na outra.</span></h2>
+        </div>
+
+        <div class="split" style="margin-top:48px">
+          <div class="card col-list col--bad reveal">
+            <span class="col-tag">Como está hoje</span>
+            <ul style="margin-top:18px">
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6 6 18M6 6l12 12"/></svg></span> Ferramentas desconectadas</li>
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6 6 18M6 6l12 12"/></svg></span> Informações duplicadas</li>
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6 6 18M6 6l12 12"/></svg></span> Histórico perdido</li>
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6 6 18M6 6l12 12"/></svg></span> Falta de visão</li>
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6 6 18M6 6l12 12"/></svg></span> Dependência de tarefas manuais</li>
+            </ul>
+          </div>
+          <div class="card col-list col--good reveal" data-delay="1">
+            <span class="col-tag" style="color:var(--blue-electric)">Com a PGC</span>
+            <ul style="margin-top:18px">
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5L20 7"/></svg></span> Um histórico, uma jornada</li>
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5L20 7"/></svg></span> Um CRM para todo o funil</li>
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5L20 7"/></svg></span> Uma central de atendimento</li>
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5L20 7"/></svg></span> Dados conectados</li>
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5L20 7"/></svg></span> Visão completa da operação</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DOBRA 11 — DEPENDÊNCIA DO MENTOR ===================== -->
+    <section class="section" id="dependencia">
+      <div class="container">
+        <div class="reveal" style="max-width:820px">
+          <h2 class="h2">Se a operação só funciona quando você cobra, confere e intervém, <span class="grad-text">ela não funciona.</span></h2>
+          <p class="lead measure" style="margin-top:20px">Seu papel deveria ser liderar, criar, decidir e expandir. Não passar o dia descobrindo onde cada lead está e lembrando a equipe do que precisa ser feito.</p>
+        </div>
+
+        <div class="shift mx-auto" style="margin-top:40px">
+          <div class="shift__row reveal">
+            <span class="shift__from">Você cobra, confere e corre atrás</span>
+            <span class="shift__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="shift__to">Processos orientam e automações executam</span>
+          </div>
+          <div class="shift__row reveal" data-delay="1">
+            <span class="shift__from">Você lembra a equipe do que fazer</span>
+            <span class="shift__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="shift__to">O time acompanha guiado pelo sistema</span>
+          </div>
+          <div class="shift__row reveal" data-delay="2">
+            <span class="shift__from">Você decide no escuro, por percepção</span>
+            <span class="shift__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="shift__to">Os indicadores mostram o caminho</span>
+          </div>
+          <div class="shift__row reveal" data-delay="3">
+            <span class="shift__from">Você é o operador da máquina</span>
+            <span class="shift__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="shift__to">Você volta a ser o empresário que lidera</span>
+          </div>
+        </div>
+        <div class="center reveal" style="margin-top:40px">
+          <a href="#aplicar" class="btn btn--primary btn--lg" data-cta="dependencia">Quero sair do operacional</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DOBRA 12 — IMPLANTAÇÃO ===================== -->
+    <section class="section section--panel" id="implantacao">
+      <div class="container">
+        <div class="reveal" style="max-width:780px">
+          <span class="eyebrow">Implantação sem complicação</span>
+          <h2 class="h2" style="margin:16px 0 18px">A gente não entrega apenas uma ferramenta.<br><span class="grad-text">Entregamos a sua operação funcionando.</span></h2>
+          <p class="lead measure">Você não recebe um login e precisa descobrir sozinho o que fazer. Nossa equipe entende sua operação, configura a estrutura e treina seu time.</p>
+        </div>
+
+        <div class="steps steps--6" style="margin-top:48px">
+          <div class="step card reveal"><div class="n">1</div><b>Diagnóstico</b><p>Entendemos sua operação, oferta e gargalos.</p></div>
+          <div class="step card reveal" data-delay="1"><div class="n">2</div><b>Arquitetura</b><p>Desenhamos os fluxos e a estrutura ideal.</p></div>
+          <div class="step card reveal" data-delay="2"><div class="n">3</div><b>Configuração</b><p>Montamos CRM, IA, automações e integrações.</p></div>
+          <div class="step card reveal" data-delay="3"><div class="n">4</div><b>Treinamento</b><p>Capacitamos seu time para usar tudo.</p></div>
+          <div class="step card reveal" data-delay="4"><div class="n">5</div><b>Ativação</b><p>Colocamos a operação no ar com você.</p></div>
+          <div class="step card reveal" data-delay="4"><div class="n">6</div><b>Otimização</b><p>Ajustamos com base nos primeiros resultados.</p></div>
+        </div>
+        <div class="reveal" style="margin-top:40px">
+          <a href="#aplicar" class="btn btn--primary btn--lg" data-cta="implantacao">Quero implementar com a PGC</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DOBRA 13 — PROVAS ===================== -->
+    <section class="section" id="provas">
+      <div class="container">
+        <div class="center reveal" style="max-width:780px;margin-inline:auto">
+          <span class="eyebrow" style="justify-content:center">Quem usa, aprova</span>
+          <h2 class="h2" style="margin:16px 0 18px">Veja como a PGC transforma operações desorganizadas em empresas mais previsíveis.</h2>
+        </div>
+
+        <div class="proof-grid" style="margin-top:48px">
+          <!-- Substituir cada placeholder por prova real (vídeo, print, estudo de caso) -->
+          <div class="proof placeholder reveal"><span class="ph-ic"><svg viewBox="0 0 24 24" fill="currentColor" width="22"><path d="M8 5v14l11-7z"/></svg></span><b>INSERIR DEPOIMENTO REAL</b><small>Vídeo do cliente</small></div>
+          <div class="proof placeholder reveal" data-delay="1"><span class="ph-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22"><path d="M3 3v18h18M7 14l3-3 3 3 5-6"/></svg></span><b>INSERIR ESTUDO DE CASO REAL</b><small>Antes e depois · métricas</small></div>
+          <div class="proof placeholder reveal" data-delay="2"><span class="ph-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M4 14l4-4 4 4 4-5 4 4"/></svg></span><b>INSERIR PRINT REAL</b><small>Resultado na plataforma</small></div>
+        </div>
+        <p class="fine center reveal" style="margin-top:20px">Espaço reservado para provas reais. Nenhum depoimento, número ou resultado é apresentado antes de ser verdadeiro e autorizado.</p>
+      </div>
+    </section>
+
+    <!-- ===================== DOBRA 14 — PARA QUEM É ===================== -->
+    <section class="section section--panel" id="para-quem">
+      <div class="container">
+        <div class="reveal" style="max-width:780px">
+          <span class="eyebrow">Nem todo sistema é para todo mentor</span>
+          <h2 class="h2" style="margin:16px 0 0">PGC é para quem leva o negócio a sério e quer crescer com estrutura.</h2>
+        </div>
+
+        <div class="split" style="margin-top:48px">
+          <div class="card col-list col--good reveal">
+            <span class="col-tag" style="color:var(--blue-electric)">É para você quando</span>
+            <ul style="margin-top:18px">
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5L20 7"/></svg></span> Sua oferta já foi validada</li>
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5L20 7"/></svg></span> Você já recebe leads</li>
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5L20 7"/></svg></span> Você vende por reunião</li>
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5L20 7"/></svg></span> Sua equipe precisa de organização</li>
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5L20 7"/></svg></span> Você quer crescer sem multiplicar o caos</li>
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5L20 7"/></svg></span> Você quer reduzir sua dependência operacional</li>
+            </ul>
+          </div>
+          <div class="card col-list col--bad reveal" data-delay="1">
+            <span class="col-tag">Não é para você quando</span>
+            <ul style="margin-top:18px">
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6 6 18M6 6l12 12"/></svg></span> Ainda não sabe o que vende</li>
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6 6 18M6 6l12 12"/></svg></span> Não possui uma oferta validada</li>
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6 6 18M6 6l12 12"/></svg></span> Procura uma solução mágica</li>
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6 6 18M6 6l12 12"/></svg></span> Não quer organizar processos</li>
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6 6 18M6 6l12 12"/></svg></span> Não pretende envolver a equipe</li>
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6 6 18M6 6l12 12"/></svg></span> Procura apenas uma ferramenta barata</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DOBRA 15 — PLANOS ===================== -->
+    <section class="section" id="planos">
+      <div class="container">
+        <div class="center reveal" style="max-width:720px;margin-inline:auto">
+          <span class="eyebrow" style="justify-content:center">Planos para cada momento</span>
+          <h2 class="h2" style="margin:16px 0 18px">Escolha a estrutura ideal para o momento da sua operação.</h2>
+          <p class="fine">Valores e limites abaixo são editáveis e devem ser substituídos pelas condições reais.</p>
+        </div>
+
+        <!-- PLANOS: edite os valores marcados com .editable / data-edit -->
+        <div class="plans" style="margin-top:52px">
+          <article class="card plan reveal">
+            <h3 class="plan__name">Estrutura</h3>
+            <p class="plan__for">Para operações menores que estão começando a profissionalização.</p>
+            <div class="plan__price"><span class="cur">R$</span><span class="val editable" data-edit="preco-estrutura">—</span><span class="per">/mês</span></div>
+            <p class="plan__setup">Setup: <span class="editable" data-edit="setup-estrutura">a definir</span></p>
+            <ul class="plan__feat">
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="16"><path d="m5 12 5 5L20 7"/></svg></span> <span class="editable" data-edit="usuarios-estrutura">Até X usuários</span></li>
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="16"><path d="m5 12 5 5L20 7"/></svg></span> <span class="editable" data-edit="contatos-estrutura">Até X contatos</span></li>
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="16"><path d="m5 12 5 5L20 7"/></svg></span> CRM e funil de vendas</li>
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="16"><path d="m5 12 5 5L20 7"/></svg></span> Atendimento unificado</li>
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="16"><path d="m5 12 5 5L20 7"/></svg></span> <span class="editable" data-edit="ia-estrutura">1 agente de IA</span></li>
+            </ul>
+            <a href="#aplicar" class="btn btn--ghost btn--block" data-cta="plano-estrutura">Começar minha implantação</a>
+          </article>
+
+          <article class="card plan plan--featured reveal" data-delay="1">
+            <span class="plan__badge">Mais escolhido</span>
+            <h3 class="plan__name">Crescimento</h3>
+            <p class="plan__for">Para equipes que já geram leads, vendem por reunião e precisam de mais automação.</p>
+            <div class="plan__price"><span class="cur">R$</span><span class="val editable" data-edit="preco-crescimento">—</span><span class="per">/mês</span></div>
+            <p class="plan__setup">Setup: <span class="editable" data-edit="setup-crescimento">a definir</span></p>
+            <ul class="plan__feat">
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="16"><path d="m5 12 5 5L20 7"/></svg></span> <span class="editable" data-edit="usuarios-crescimento">Até X usuários</span></li>
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="16"><path d="m5 12 5 5L20 7"/></svg></span> <span class="editable" data-edit="contatos-crescimento">Até X contatos</span></li>
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="16"><path d="m5 12 5 5L20 7"/></svg></span> Automações avançadas e follow-up</li>
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="16"><path d="m5 12 5 5L20 7"/></svg></span> <span class="editable" data-edit="ia-crescimento">Até X agentes de IA</span></li>
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="16"><path d="m5 12 5 5L20 7"/></svg></span> Relatórios e indicadores</li>
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="16"><path d="m5 12 5 5L20 7"/></svg></span> Implantação assistida completa</li>
+            </ul>
+            <a href="#aplicar" class="btn btn--primary btn--block" data-cta="plano-crescimento">Começar minha implantação</a>
+          </article>
+
+          <article class="card plan reveal" data-delay="2">
+            <h3 class="plan__name">Escala</h3>
+            <p class="plan__for">Para operações com mais usuários, volume, marcas, funis e necessidades avançadas.</p>
+            <div class="plan__price"><span class="cur"></span><span class="val editable" data-edit="preco-escala" style="font-size:1.8rem">Sob consulta</span></div>
+            <p class="plan__setup">Setup: <span class="editable" data-edit="setup-escala">a definir</span></p>
+            <ul class="plan__feat">
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="16"><path d="m5 12 5 5L20 7"/></svg></span> <span class="editable" data-edit="usuarios-escala">Usuários sob demanda</span></li>
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="16"><path d="m5 12 5 5L20 7"/></svg></span> <span class="editable" data-edit="contatos-escala">Contatos sob demanda</span></li>
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="16"><path d="m5 12 5 5L20 7"/></svg></span> Múltiplas marcas e funis</li>
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="16"><path d="m5 12 5 5L20 7"/></svg></span> <span class="editable" data-edit="ia-escala">IA sob demanda</span></li>
+              <li><span class="mk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="16"><path d="m5 12 5 5L20 7"/></svg></span> Recursos e integrações avançadas</li>
+            </ul>
+            <a href="#aplicar" class="btn btn--ghost btn--block" data-cta="plano-escala">Começar minha implantação</a>
+          </article>
+        </div>
+        <p class="fine center reveal" style="margin-top:24px">Custos variáveis (WhatsApp oficial, tráfego e afins) não estão incluídos e são cobrados conforme uso. Condições anuais sob consulta.</p>
+      </div>
+    </section>
+
+    <!-- ===================== DOBRA 16 — GARANTIA DE IMPLANTAÇÃO ===================== -->
+    <section class="section section--panel" id="garantia">
+      <div class="container grid-2">
+        <div class="reveal">
+          <span class="eyebrow">Implantação assistida</span>
+          <h2 class="h2" style="margin:16px 0 18px">Sua implantação só termina quando o fluxo principal estiver funcionando.</h2>
+          <p class="lead measure">A entrada do lead, o cadastro no CRM, a qualificação, o agendamento e o follow-up precisam estar configurados e validados conforme o escopo aprovado.</p>
+          <p class="fine" style="margin-top:18px">A garantia é sobre a implantação do fluxo acordado — não sobre faturamento. Resultados comerciais dependem de oferta, execução e mercado.</p>
+        </div>
+        <div class="card reveal" data-delay="1">
+          <span class="col-tag" style="color:var(--blue-electric)">O fluxo que entregamos validado</span>
+          <ul class="col-list" style="display:grid;gap:14px;margin-top:18px">
+            <li><span class="mk" style="background:rgba(37,94,235,.1);color:var(--blue-electric);width:26px;height:26px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="14"><path d="m5 12 5 5L20 7"/></svg></span> <strong>Entrada do lead</strong> capturada e centralizada</li>
+            <li><span class="mk" style="background:rgba(37,94,235,.1);color:var(--blue-electric);width:26px;height:26px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="14"><path d="m5 12 5 5L20 7"/></svg></span> <strong>Cadastro no CRM</strong> automático</li>
+            <li><span class="mk" style="background:rgba(37,94,235,.1);color:var(--blue-electric);width:26px;height:26px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="14"><path d="m5 12 5 5L20 7"/></svg></span> <strong>Qualificação</strong> rodando com IA</li>
+            <li><span class="mk" style="background:rgba(37,94,235,.1);color:var(--blue-electric);width:26px;height:26px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="14"><path d="m5 12 5 5L20 7"/></svg></span> <strong>Agendamento</strong> de reuniões ativo</li>
+            <li><span class="mk" style="background:rgba(37,94,235,.1);color:var(--blue-electric);width:26px;height:26px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="14"><path d="m5 12 5 5L20 7"/></svg></span> <strong>Follow-up</strong> automático configurado</li>
+          </ul>
+          <p class="fine" style="margin-top:18px">Cada item é testado com você antes da entrega. Só consideramos a implantação concluída quando o fluxo roda de ponta a ponta.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DOBRA 17 — URGÊNCIA LEGÍTIMA ===================== -->
+    <section class="section" id="vagas">
+      <div class="container">
+        <div class="center reveal" style="max-width:780px;margin-inline:auto">
+          <span class="eyebrow" style="justify-content:center">Vagas limitadas</span>
+          <h2 class="h2" style="margin:16px 0 18px">Não conseguimos implantar operações ilimitadas ao mesmo tempo.</h2>
+          <p class="lead">Cada cliente passa por diagnóstico, arquitetura, configuração, treinamento e ativação. Por isso, o número de novas implantações é limitado.</p>
+        </div>
+
+        <!-- URGÊNCIA: editar com números reais. Não usar contador falso. -->
+        <div class="card reveal" style="margin-top:44px;max-width:920px;margin-inline:auto">
+          <div class="urgency-grid">
+            <div class="ucard"><div class="big editable" data-edit="vagas-total">—</div><small>Vagas por turma</small></div>
+            <div class="ucard"><div class="big editable" data-edit="vagas-restantes">—</div><small>Vagas restantes</small></div>
+            <div class="ucard"><div class="big editable" data-edit="proxima-turma">—</div><small>Próxima turma</small></div>
+            <div class="ucard"><div class="big editable" data-edit="bonus-atual">—</div><small>Condição/bônus atual</small></div>
+          </div>
+          <div class="bar-track"><div class="bar-fill editable" data-edit="vagas-barra" style="width:0%"></div></div>
+          <div class="center" style="margin-top:28px">
+            <a href="#aplicar" class="btn btn--primary btn--lg" data-cta="vagas">Garantir minha vaga</a>
+          </div>
+          <p class="fine center" style="margin-top:14px">Prazo da oferta: <span class="editable" data-edit="prazo-oferta">a definir</span>. Sem contadores artificiais — apenas a disponibilidade real de implantação.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DOBRA 18 — FAQ ===================== -->
+    <section class="section section--panel" id="faq">
+      <div class="container">
+        <div class="center reveal" style="max-width:680px;margin-inline:auto">
+          <span class="eyebrow" style="justify-content:center">Perguntas frequentes</span>
+          <h2 class="h2" style="margin:16px 0 0">Respostas para as dúvidas mais comuns.</h2>
+        </div>
+
+        <div class="faq" style="margin-top:48px">
+          <div class="faq__item reveal"><button class="faq__q" aria-expanded="false">Já tenho CRM. Ainda preciso da PGC?<span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="faq__a"><p>A PGC não é só um CRM. Ela conecta atendimento, IA, automações, agenda e gestão na mesma jornada. Se hoje seu CRM vive isolado das conversas e dos follow-ups, é exatamente esse buraco que a PGC fecha.</p></div></div>
+          <div class="faq__item reveal"><button class="faq__q" aria-expanded="false">A inteligência artificial substitui minha equipe?<span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="faq__a"><p>Não. A IA assume o trabalho repetitivo — atendimento inicial, qualificação, lembretes e follow-up — para que sua equipe foque em relacionamento, negociação e decisões. Ela amplia a capacidade do time, não o elimina.</p></div></div>
+          <div class="faq__item reveal"><button class="faq__q" aria-expanded="false">Preciso saber programar?<span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="faq__a"><p>Não. Nossa equipe configura toda a estrutura para você e treina seu time. Você opera a plataforma no dia a dia sem precisar de conhecimento técnico.</p></div></div>
+          <div class="faq__item reveal"><button class="faq__q" aria-expanded="false">A PGC cria minha oferta?<span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="faq__a"><p>Não. A PGC é a estrutura que sustenta uma oferta já validada. Ela organiza e potencializa o que você já vende — não substitui a definição da sua oferta.</p></div></div>
+          <div class="faq__item reveal"><button class="faq__q" aria-expanded="false">A plataforma substitui meu gestor de tráfego?<span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="faq__a"><p>Não. A PGC recebe e organiza os leads que o tráfego gera, mostrando o que acontece depois do clique. Ela trabalha junto com o seu gestor de tráfego, dando visibilidade sobre o retorno real das campanhas.</p></div></div>
+          <div class="faq__item reveal"><button class="faq__q" aria-expanded="false">Os custos de WhatsApp e anúncios estão inclusos?<span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="faq__a"><p>Não. Custos variáveis como WhatsApp oficial e investimento em anúncios são pagos diretamente aos respectivos provedores, conforme o seu uso. Eles não fazem parte da mensalidade da PGC.</p></div></div>
+          <div class="faq__item reveal"><button class="faq__q" aria-expanded="false">Quanto tempo demora a implantação?<span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="faq__a"><p>Depende da complexidade da sua operação e da disponibilidade do seu time durante o processo. O prazo estimado é definido no diagnóstico, antes do início, com base no escopo acordado.</p></div></div>
+          <div class="faq__item reveal"><button class="faq__q" aria-expanded="false">A plataforma garante vendas?<span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="faq__a"><p>Não. Nenhuma ferramenta séria garante faturamento. A PGC garante a implantação do fluxo acordado e organiza sua operação para que você pare de perder oportunidades. As vendas dependem da sua oferta, do seu time e do mercado.</p></div></div>
+          <div class="faq__item reveal"><button class="faq__q" aria-expanded="false">Posso cancelar quando quiser?<span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="faq__a"><p>As condições de permanência e cancelamento são apresentadas de forma transparente no contrato, de acordo com o plano escolhido. Consulte a nossa Política de Cancelamento para os detalhes.</p></div></div>
+          <div class="faq__item reveal"><button class="faq__q" aria-expanded="false">Posso usar com toda a minha equipe?<span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14"><path d="M12 5v14M5 12h14"/></svg></span></button><div class="faq__a"><p>Sim. A PGC foi feita para operar em equipe, com diferentes perfis e permissões. O número de usuários incluído varia conforme o plano contratado.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DOBRA 19 — FECHAMENTO ===================== -->
+    <section class="section" id="aplicar">
+      <div class="container">
+        <div class="closer__panel reveal">
+          <span class="eyebrow" style="justify-content:center">Chegou a hora</span>
+          <h2 class="h2" style="margin:18px auto 20px;max-width:760px">Sua empresa não deveria funcionar <span class="grad-text">dentro da sua cabeça.</span></h2>
+          <p class="lead mx-auto" style="max-width:620px">Você construiu conhecimento, audiência e uma oferta. Agora é hora de construir a empresa que sustenta tudo isso.</p>
+          <p class="mx-auto muted" style="max-width:620px;margin-top:14px">Uma operação que acompanha cada oportunidade sozinha, uma equipe guiada por processos e você de volta ao lugar de quem lidera, decide e expande.</p>
+          <div style="margin-top:34px">
+            <button class="btn btn--primary btn--lg" data-cta="fechamento" data-open-form>Quero transformar minha mentoria em uma empresa</button>
+          </div>
+          <ul class="trust" style="justify-content:center;margin-top:30px">
+            <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6z"/></svg></span> Implantação personalizada</li>
+            <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11a9 9 0 0 1 18 0v5a3 3 0 0 1-3 3h-1v-6h4"/></svg></span> Suporte especializado</li>
+            <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></span> Operação construída para o seu momento</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== RODAPÉ ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <a href="#topo" class="brand" style="margin-bottom:16px">
+            <img src="assets/img/logo.svg" alt="" class="brand__logo" width="42" height="42" />
+            <span class="brand__name">PGC</span>
+          </a>
+          <p class="muted measure-sm" style="font-size:.9rem">Sistema Operacional do Mentor Empresário. A infraestrutura que transforma uma mentoria artesanal em uma empresa estruturada.</p>
+          <div class="socials" style="margin-top:20px">
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+            <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 17v-7"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h5>Navegação</h5>
+          <a href="#solucao">A solução</a><br>
+          <a href="#jornada">Jornada do cliente</a><br>
+          <a href="#recursos">Recursos</a><br>
+          <a href="#planos">Planos</a><br>
+          <a href="#faq">Dúvidas frequentes</a>
+        </div>
+        <div>
+          <h5>Legal &amp; Contato</h5>
+          <a href="#" data-edit="link-privacidade">Política de privacidade</a><br>
+          <a href="#" data-edit="link-termos">Termos de uso</a><br>
+          <a href="#" data-edit="link-cancelamento">Política de cancelamento</a><br>
+          <a href="#" data-edit="link-avisos">Avisos legais</a><br>
+          <a href="mailto:contato@pgc.com.br" data-edit="email-contato">contato@pgc.com.br</a><br>
+          <a href="https://wa.me/00000000000" data-edit="whatsapp" data-cta="footer-whatsapp">WhatsApp comercial</a>
+        </div>
+      </div>
+      <div class="footer__legal">
+        <p>
+          <span class="editable" data-edit="razao-social">Razão Social LTDA</span> ·
+          CNPJ <span class="editable" data-edit="cnpj">00.000.000/0001-00</span> ·
+          © <span id="year">2026</span> PGC. Todos os direitos reservados.
+        </p>
+        <p class="fine">As informações desta página são ilustrativas. Resultados variam conforme oferta, execução e mercado.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== CTA FIXO MOBILE ===================== -->
+  <div class="sticky-cta" id="stickyCta">
+    <button class="btn btn--primary btn--block" data-cta="sticky" data-open-form>Quero estruturar minha operação</button>
+  </div>
+
+  <!-- ===================== MODAL — TODAS AS FUNCIONALIDADES ===================== -->
+  <div class="modal" id="featuresModal" role="dialog" aria-modal="true" aria-labelledby="featuresTitle">
+    <div class="modal__overlay" data-close-modal></div>
+    <div class="modal__panel">
+      <button class="modal__close" data-close-modal aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+      <span class="eyebrow">Funcionalidades completas</span>
+      <h3 class="h3" id="featuresTitle" style="margin-top:12px">Tudo o que a PGC reúne em um só sistema</h3>
+      <div class="feature-grid">
+        <div><h4>Atrair</h4><ul><li>Criação e organização de conteúdo</li><li>Gestão de anúncios e campanhas</li><li>Landing pages e formulários</li><li>Prospecção e captação de leads</li><li>Captura via Instagram e WhatsApp</li></ul></div>
+        <div><h4>Atender</h4><ul><li>Caixa de entrada unificada</li><li>Instagram, WhatsApp e e-mail</li><li>Agentes de IA que qualificam 24h</li><li>Distribuição automática de leads</li><li>Histórico completo da conversa</li></ul></div>
+        <div><h4>Vender</h4><ul><li>CRM e funil de vendas visual</li><li>Qualificação e pontuação de leads</li><li>Agenda e agendamento de reuniões</li><li>Follow-up automático</li><li>Envio de propostas e contratos</li></ul></div>
+        <div><h4>Gerenciar</h4><ul><li>Tarefas e rotinas da equipe</li><li>Gestão e permissões de time</li><li>Relatórios e dashboards</li><li>Indicadores em tempo real</li><li>Reativação de contatos antigos</li></ul></div>
+      </div>
+      <div style="margin-top:28px"><button class="btn btn--primary" data-open-form data-cta="modal-features">Quero ver isso na minha operação</button></div>
+    </div>
+  </div>
+
+  <!-- ===================== MODAL — FORMULÁRIO MULTI-STEP ===================== -->
+  <div class="modal" id="applyModal" role="dialog" aria-modal="true" aria-labelledby="applyTitle">
+    <div class="modal__overlay" data-close-modal></div>
+    <div class="modal__panel form-modal__panel">
+      <button class="modal__close" data-close-modal aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+      <span class="eyebrow">Diagnóstico comercial</span>
+      <h3 class="h3" id="applyTitle" style="margin:12px 0 6px">Vamos entender sua operação</h3>
+      <p class="muted" style="font-size:.9rem;margin-bottom:22px">Leva menos de 1 minuto. Em seguida, nossa equipe entra em contato.</p>
+
+      <!-- IMPORTANTE: o action abaixo é placeholder. Integrar com checkout, CRM ou endpoint real. -->
+      <form id="applyForm" novalidate action="#SUBSTITUIR_ENDPOINT" method="post">
+        <div class="form-steps__bar"><i class="on"></i><i></i><i></i></div>
+
+        <div class="fstep active" data-step="1">
+          <div class="field"><label for="fNome">Nome completo</label><input id="fNome" name="nome" required placeholder="Seu nome" /><span class="field__err">Informe seu nome.</span></div>
+          <div class="field"><label for="fEmail">E-mail</label><input id="fEmail" name="email" type="email" required placeholder="voce@email.com" /><span class="field__err">Informe um e-mail válido.</span></div>
+          <div class="form-grid-2">
+            <div class="field"><label for="fWhats">WhatsApp</label><input id="fWhats" name="whatsapp" required placeholder="(00) 00000-0000" /><span class="field__err">Informe seu WhatsApp.</span></div>
+            <div class="field"><label for="fInsta">Instagram</label><input id="fInsta" name="instagram" placeholder="@seuperfil" /></div>
+          </div>
+          <div class="form-nav"><button type="button" class="btn btn--primary btn--block" data-next>Continuar</button></div>
+        </div>
+
+        <div class="fstep" data-step="2">
+          <div class="field"><label for="fArea">Área de atuação</label><input id="fArea" name="area" placeholder="Ex.: mentoria de marketing" /></div>
+          <div class="form-grid-2">
+            <div class="field"><label for="fFat">Faturamento mensal</label><select id="fFat" name="faturamento"><option value="">Selecione</option><option>Até R$ 50 mil</option><option>R$ 50 mil – R$ 100 mil</option><option>R$ 100 mil – R$ 300 mil</option><option>R$ 300 mil – R$ 500 mil</option><option>Acima de R$ 500 mil</option></select></div>
+            <div class="field"><label for="fTicket">Ticket médio</label><select id="fTicket" name="ticket"><option value="">Selecione</option><option>Até R$ 3 mil</option><option>R$ 3 mil – R$ 10 mil</option><option>R$ 10 mil – R$ 30 mil</option><option>Acima de R$ 30 mil</option></select></div>
+          </div>
+          <div class="form-grid-2">
+            <div class="field"><label for="fLeads">Leads por mês</label><select id="fLeads" name="leads"><option value="">Selecione</option><option>Até 100</option><option>100 – 500</option><option>500 – 1.000</option><option>Acima de 1.000</option></select></div>
+            <div class="field"><label for="fTime">Tamanho da equipe</label><select id="fTime" name="equipe"><option value="">Selecione</option><option>Só eu</option><option>2 – 5 pessoas</option><option>6 – 15 pessoas</option><option>Acima de 15</option></select></div>
+          </div>
+          <div class="form-nav"><button type="button" class="btn btn--ghost" data-prev>Voltar</button><button type="button" class="btn btn--primary btn--block" data-next>Continuar</button></div>
+        </div>
+
+        <div class="fstep" data-step="3">
+          <div class="field"><label for="fFerr">Ferramentas que usa hoje</label><input id="fFerr" name="ferramentas" placeholder="Ex.: WhatsApp, planilhas, CRM X" /></div>
+          <div class="field"><label for="fGargalo">Principal gargalo</label><select id="fGargalo" name="gargalo"><option value="">Selecione</option><option>Perco leads por falta de acompanhamento</option><option>Operação depende demais de mim</option><option>Equipe desorganizada / sem processos</option><option>Não tenho visão dos números</option><option>Follow-up e reativação falhos</option></select></div>
+          <div class="field"><label for="fPlano">Plano de interesse</label><select id="fPlano" name="plano"><option value="">Selecione</option><option>Estrutura</option><option>Crescimento</option><option>Escala</option><option>Ainda não sei</option></select></div>
+          <div class="form-nav"><button type="button" class="btn btn--ghost" data-prev>Voltar</button><button type="submit" class="btn btn--primary btn--block" data-cta="form-submit">Enviar e falar com a equipe</button></div>
+        </div>
+      </form>
+
+      <div class="form-success" id="formSuccess">
+        <div class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="30"><path d="m5 12 5 5L20 7"/></svg></div>
+        <h3 class="h3">Recebemos suas informações!</h3>
+        <p class="muted" style="margin-top:10px">Nossa equipe vai analisar sua operação e entrar em contato pelo WhatsApp informado.</p>
+        <a class="btn btn--ghost" style="margin-top:22px" href="https://wa.me/00000000000" data-edit="whatsapp" data-cta="success-whatsapp">Falar agora no WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
