@@ -758,42 +758,52 @@
     <div class="modal__overlay" data-close-modal></div>
     <div class="modal__panel form-modal__panel">
       <button class="modal__close" data-close-modal aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
-      <span class="eyebrow">Diagnóstico comercial</span>
-      <h3 class="h3" id="applyTitle" style="margin:12px 0 6px">Vamos entender sua operação</h3>
-      <p class="muted" style="font-size:.9rem;margin-bottom:22px">Leva menos de 1 minuto. Em seguida, nossa equipe entra em contato.</p>
+
+      <!-- CABEÇALHO FIXO -->
+      <div class="form-modal__head" id="applyHead">
+        <span class="eyebrow">Diagnóstico comercial</span>
+        <h3 class="h3" id="applyTitle" style="margin:12px 0 6px">Vamos entender sua operação</h3>
+        <p class="muted" style="font-size:.9rem;margin-bottom:18px">Leva menos de 1 minuto. Em seguida, nossa equipe entra em contato.</p>
+        <div class="form-steps__bar"><i class="on"></i><i></i><i></i></div>
+      </div>
 
       <!-- IMPORTANTE: o action abaixo é placeholder. Integrar com checkout, CRM ou endpoint real. -->
       <form id="applyForm" novalidate action="#SUBSTITUIR_ENDPOINT" method="post">
-        <div class="form-steps__bar"><i class="on"></i><i></i><i></i></div>
-
-        <div class="fstep active" data-step="1">
-          <div class="field"><label for="fNome">Nome completo</label><input id="fNome" name="nome" required placeholder="Seu nome" /><span class="field__err">Informe seu nome.</span></div>
-          <div class="field"><label for="fEmail">E-mail</label><input id="fEmail" name="email" type="email" required placeholder="voce@email.com" /><span class="field__err">Informe um e-mail válido.</span></div>
-          <div class="form-grid-2">
-            <div class="field"><label for="fWhats">WhatsApp</label><input id="fWhats" name="whatsapp" required placeholder="(00) 00000-0000" /><span class="field__err">Informe seu WhatsApp.</span></div>
-            <div class="field"><label for="fInsta">Instagram</label><input id="fInsta" name="instagram" placeholder="@seuperfil" /></div>
+        <!-- CORPO ROLÁVEL -->
+        <div class="form-modal__body">
+          <div class="fstep active" data-step="1">
+            <div class="field"><label for="fNome">Nome completo</label><input id="fNome" name="nome" required placeholder="Seu nome" /><span class="field__err">Informe seu nome.</span></div>
+            <div class="field"><label for="fEmail">E-mail</label><input id="fEmail" name="email" type="email" required placeholder="voce@email.com" /><span class="field__err">Informe um e-mail válido.</span></div>
+            <div class="form-grid-2">
+              <div class="field"><label for="fWhats">WhatsApp</label><input id="fWhats" name="whatsapp" required placeholder="(00) 00000-0000" /><span class="field__err">Informe seu WhatsApp.</span></div>
+              <div class="field"><label for="fInsta">Instagram</label><input id="fInsta" name="instagram" placeholder="@seuperfil" /></div>
+            </div>
           </div>
-          <div class="form-nav"><button type="button" class="btn btn--primary btn--block" data-next>Continuar</button></div>
+
+          <div class="fstep" data-step="2">
+            <div class="field"><label for="fArea">Área de atuação</label><input id="fArea" name="area" placeholder="Ex.: mentoria de marketing" /></div>
+            <div class="form-grid-2">
+              <div class="field"><label for="fFat">Faturamento mensal</label><select id="fFat" name="faturamento"><option value="">Selecione</option><option>Até R$ 50 mil</option><option>R$ 50 mil – R$ 100 mil</option><option>R$ 100 mil – R$ 300 mil</option><option>R$ 300 mil – R$ 500 mil</option><option>Acima de R$ 500 mil</option></select></div>
+              <div class="field"><label for="fTicket">Ticket médio</label><select id="fTicket" name="ticket"><option value="">Selecione</option><option>Até R$ 3 mil</option><option>R$ 3 mil – R$ 10 mil</option><option>R$ 10 mil – R$ 30 mil</option><option>Acima de R$ 30 mil</option></select></div>
+            </div>
+            <div class="form-grid-2">
+              <div class="field"><label for="fLeads">Leads por mês</label><select id="fLeads" name="leads"><option value="">Selecione</option><option>Até 100</option><option>100 – 500</option><option>500 – 1.000</option><option>Acima de 1.000</option></select></div>
+              <div class="field"><label for="fTime">Tamanho da equipe</label><select id="fTime" name="equipe"><option value="">Selecione</option><option>Só eu</option><option>2 – 5 pessoas</option><option>6 – 15 pessoas</option><option>Acima de 15</option></select></div>
+            </div>
+          </div>
+
+          <div class="fstep" data-step="3">
+            <div class="field"><label for="fFerr">Ferramentas que usa hoje</label><input id="fFerr" name="ferramentas" placeholder="Ex.: WhatsApp, planilhas, CRM X" /></div>
+            <div class="field"><label for="fGargalo">Principal gargalo</label><select id="fGargalo" name="gargalo"><option value="">Selecione</option><option>Perco leads por falta de acompanhamento</option><option>Operação depende demais de mim</option><option>Equipe desorganizada / sem processos</option><option>Não tenho visão dos números</option><option>Follow-up e reativação falhos</option></select></div>
+            <div class="field"><label for="fPlano">Plano de interesse</label><select id="fPlano" name="plano"><option value="">Selecione</option><option>Estrutura</option><option>Crescimento</option><option>Escala</option><option>Ainda não sei</option></select></div>
+          </div>
         </div>
 
-        <div class="fstep" data-step="2">
-          <div class="field"><label for="fArea">Área de atuação</label><input id="fArea" name="area" placeholder="Ex.: mentoria de marketing" /></div>
-          <div class="form-grid-2">
-            <div class="field"><label for="fFat">Faturamento mensal</label><select id="fFat" name="faturamento"><option value="">Selecione</option><option>Até R$ 50 mil</option><option>R$ 50 mil – R$ 100 mil</option><option>R$ 100 mil – R$ 300 mil</option><option>R$ 300 mil – R$ 500 mil</option><option>Acima de R$ 500 mil</option></select></div>
-            <div class="field"><label for="fTicket">Ticket médio</label><select id="fTicket" name="ticket"><option value="">Selecione</option><option>Até R$ 3 mil</option><option>R$ 3 mil – R$ 10 mil</option><option>R$ 10 mil – R$ 30 mil</option><option>Acima de R$ 30 mil</option></select></div>
-          </div>
-          <div class="form-grid-2">
-            <div class="field"><label for="fLeads">Leads por mês</label><select id="fLeads" name="leads"><option value="">Selecione</option><option>Até 100</option><option>100 – 500</option><option>500 – 1.000</option><option>Acima de 1.000</option></select></div>
-            <div class="field"><label for="fTime">Tamanho da equipe</label><select id="fTime" name="equipe"><option value="">Selecione</option><option>Só eu</option><option>2 – 5 pessoas</option><option>6 – 15 pessoas</option><option>Acima de 15</option></select></div>
-          </div>
-          <div class="form-nav"><button type="button" class="btn btn--ghost" data-prev>Voltar</button><button type="button" class="btn btn--primary btn--block" data-next>Continuar</button></div>
-        </div>
-
-        <div class="fstep" data-step="3">
-          <div class="field"><label for="fFerr">Ferramentas que usa hoje</label><input id="fFerr" name="ferramentas" placeholder="Ex.: WhatsApp, planilhas, CRM X" /></div>
-          <div class="field"><label for="fGargalo">Principal gargalo</label><select id="fGargalo" name="gargalo"><option value="">Selecione</option><option>Perco leads por falta de acompanhamento</option><option>Operação depende demais de mim</option><option>Equipe desorganizada / sem processos</option><option>Não tenho visão dos números</option><option>Follow-up e reativação falhos</option></select></div>
-          <div class="field"><label for="fPlano">Plano de interesse</label><select id="fPlano" name="plano"><option value="">Selecione</option><option>Estrutura</option><option>Crescimento</option><option>Escala</option><option>Ainda não sei</option></select></div>
-          <div class="form-nav"><button type="button" class="btn btn--ghost" data-prev>Voltar</button><button type="submit" class="btn btn--primary btn--block" data-cta="form-submit">Enviar e falar com a equipe</button></div>
+        <!-- RODAPÉ FIXO -->
+        <div class="form-modal__foot">
+          <button type="button" class="btn btn--ghost" id="formPrev" style="display:none">Voltar</button>
+          <button type="button" class="btn btn--primary btn--block" id="formNext">Continuar</button>
+          <button type="submit" class="btn btn--primary btn--block" id="formSubmit" style="display:none" data-cta="form-submit">Enviar e falar com a equipe</button>
         </div>
       </form>
 

@@ -432,8 +432,15 @@ input[type="range"]::-moz-range-thumb { width: 22px; height: 22px; border: none;
 @media (min-width: 980px){ .sticky-cta { display: none; } }
 
 /* ---------- 25. FORMULÁRIO MULTI-STEP ---------- */
-.form-modal__panel { width: min(560px, 94vw); }
-.form-steps__bar { display: flex; gap: 6px; margin-bottom: 24px; }
+/* Painel em coluna: cabeçalho e rodapé fixos, corpo rolável */
+.form-modal__panel { width: min(560px, 94vw); max-height: 88vh; padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+.form-modal__head { flex: none; padding: clamp(26px,4vw,40px) clamp(26px,4vw,40px) 18px; border-bottom: 1px solid var(--border); }
+.form-modal__panel #applyForm { display: flex; flex-direction: column; min-height: 0; flex: 1; }
+.form-modal__body { flex: 1; min-height: 0; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 22px clamp(26px,4vw,40px); }
+.form-modal__foot { flex: none; display: flex; gap: 12px; padding: 16px clamp(26px,4vw,40px) calc(18px + env(safe-area-inset-bottom)); border-top: 1px solid var(--border); background: #fff; }
+.form-modal__panel .form-success { padding: 8px clamp(26px,4vw,40px) clamp(28px,4vw,40px); }
+.form-steps__bar { display: flex; gap: 6px; }
+.form-modal__head .form-steps__bar { margin-bottom: 0; }
 .form-steps__bar i { flex: 1; height: 4px; border-radius: 4px; background: var(--petrol); transition: background .3s; }
 .form-steps__bar i.on { background: var(--blue-electric); }
 .fstep { display: none; }

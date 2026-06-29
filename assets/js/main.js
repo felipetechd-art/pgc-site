@@ -131,17 +131,25 @@
     });
   });
 
-  /* ---------- Formulário multi-step ---------- */
+  /* ---------- Formulário multi-step (cabeçalho/rodapé fixos) ---------- */
   var form = $('#applyForm');
   if (form) {
     var steps = $$('.fstep', form);
-    var bars = $$('.form-steps__bar i', form);
+    var bars = $$('#applyModal .form-steps__bar i');
+    var body = $('.form-modal__body', form);
+    var btnPrev = $('#formPrev'), btnNext = $('#formNext'), btnSubmit = $('#formSubmit');
+    var head = $('#applyHead');
     var current = 0;
 
     function showStep(i) {
       steps.forEach(function (s, idx) { s.classList.toggle('active', idx === i); });
       bars.forEach(function (b, idx) { b.classList.toggle('on', idx <= i); });
       current = i;
+      var last = i === steps.length - 1;
+      btnPrev.style.display = i > 0 ? '' : 'none';
+      btnNext.style.display = last ? 'none' : '';
+      btnSubmit.style.display = last ? '' : 'none';
+      if (body) body.scrollTop = 0;
     }
     function validateStep(i) {
       var ok = true;
@@ -156,16 +164,12 @@
       return ok;
     }
 
-    $$('[data-next]', form).forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        if (!validateStep(current)) return;
-        track('form_etapa', { etapa: current + 1 });
-        showStep(Math.min(current + 1, steps.length - 1));
-      });
+    btnNext.addEventListener('click', function () {
+      if (!validateStep(current)) return;
+      track('form_etapa', { etapa: current + 1 });
+      showStep(Math.min(current + 1, steps.length - 1));
     });
-    $$('[data-prev]', form).forEach(function (btn) {
-      btn.addEventListener('click', function () { showStep(Math.max(current - 1, 0)); });
-    });
+    btnPrev.addEventListener('click', function () { showStep(Math.max(current - 1, 0)); });
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -174,7 +178,10 @@
       // var data = Object.fromEntries(new FormData(form).entries());
       track('form_enviado');
       form.style.display = 'none';
+      if (head) head.style.display = 'none';
       $('#formSuccess').classList.add('show');
     });
+
+    showStep(0);
   }
 })();
