@@ -106,7 +106,7 @@ Mapeamento do ciclo de vida do cliente em 6 etapas estruturadas:
 
 ---
 
-## 3. Conteúdo da Apresentação Comercial (apresentacao-comercial.html)
+## 3. Conteúdo da Apresentação Comercial (apresentacao.html)
 
 Trata-se de um deck interativo de 12 slides desenvolvido para reuniões de vendas e fechamentos comerciais presenciais ou online:
 
@@ -141,6 +141,6 @@ O blog é um espaço de marketing de conteúdo focado em estruturação de opera
 ## 5. Estrutura do Código e Arquivos
 * **HTML Principal:** `index.html` (landing page principal, com menus atualizados contendo o link para o Blog).
 * **Blog Institucional:** `blog.html` (página de artigos totalmente responsiva e conectada visualmente ao design system principal).
-* **Slides Auxiliares:** `apresentacao-comercial.html` (visualizador interativo).
+* **Slides Auxiliares:** `apresentacao.html` (visualizador interativo).
 * **Estilos CSS:** `assets/css/styles.css` (uso de variáveis nativas CSS, grid, flexbox, e classes editáveis `.editable`).
 * **Comportamentos JS:** `assets/js/main.js` (scripts puros em Vanilla JS para o funcionamento de menus móveis, modais, calculadora e animações, compartilhado de forma compatível e segura entre a página inicial e a do blog).
