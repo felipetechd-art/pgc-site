@@ -98,6 +98,18 @@
       align-items: center;
       justify-content: center;
       border-bottom: 1px solid var(--border-color);
+      overflow: hidden;
+    }
+
+    .blog-card__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .blog-card:hover .blog-card__img {
+      transform: scale(1.06);
     }
 
     /* Cores alternativas para os cabeçalhos do card */
@@ -332,7 +344,7 @@
           <!-- Post 1 -->
           <article class="blog-card">
             <div class="blog-card__header">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="56" height="56"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <img src="assets/img/crm_dashboard.jpg" alt="Dashboard de CRM de vendas" class="blog-card__img" loading="lazy" />
             </div>
             <div class="blog-card__body">
               <span class="blog-card__tag">Processos &amp; Vendas</span>
@@ -350,7 +362,7 @@
           <!-- Post 2 -->
           <article class="blog-card">
             <div class="blog-card__header">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="56" height="56"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+              <img src="assets/img/ai_whatsapp.jpg" alt="Qualificação de leads no WhatsApp por IA" class="blog-card__img" loading="lazy" />
             </div>
             <div class="blog-card__body">
               <span class="blog-card__tag">Inteligência Artificial</span>
@@ -368,7 +380,7 @@
           <!-- Post 3 -->
           <article class="blog-card">
             <div class="blog-card__header">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="56" height="56"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <img src="assets/img/sales_warnings.jpg" alt="Painel de controle com alertas de perda de vendas" class="blog-card__img" loading="lazy" />
             </div>
             <div class="blog-card__body">
               <span class="blog-card__tag">Gestão Operacional</span>
