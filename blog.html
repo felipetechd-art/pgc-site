@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#050B18" />
+
+  <title>Blog PGC | Inteligência e Operação para Mentores</title>
+  <meta name="description" content="Conteúdos práticos sobre vendas, CRM, Inteligência Artificial, processos e estruturação de operações comerciais de mentoria de alto ticket." />
+  <link rel="canonical" href="https://pgc.ia.br/blog.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pgc.ia.br/blog.html" />
+  <meta property="og:title" content="Blog PGC | Inteligência e Operação para Mentores" />
+  <meta property="og:description" content="Aprenda a estruturar a operação da sua mentoria, automatizar a qualificação de leads com IA e alavancar a produtividade do seu time comercial." />
+  <meta property="og:image" content="https://pgc.ia.br/assets/img/og-cover.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <style>
+    /* Estilos customizados e premium para o Blog */
+    .blog-hero {
+      padding: 160px 0 60px;
+      text-align: center;
+      position: relative;
+    }
+    
+    .blog-hero__title {
+      font-family: var(--ff-title);
+      font-size: clamp(2.5rem, 5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    
+    .blog-hero__lead {
+      max-width: 600px;
+      margin-inline: auto;
+      color: var(--text-soft);
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .blog-section {
+      padding: 40px 0 100px;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    @media (min-width: 768px) {
+      .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .blog-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .blog-card {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .blog-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--blue-electric);
+      box-shadow: 0 12px 30px rgba(16, 203, 239, 0.08);
+    }
+
+    .blog-card__header {
+      height: 200px;
+      position: relative;
+      background: linear-gradient(135deg, rgba(16, 203, 239, 0.1) 0%, rgba(5, 11, 24, 0.8) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    /* Cores alternativas para os cabeçalhos do card */
+    .blog-card:nth-child(2) .blog-card__header {
+      background: linear-gradient(135deg, rgba(88, 86, 214, 0.15) 0%, rgba(5, 11, 24, 0.8) 100%);
+    }
+
+    .blog-card:nth-child(3) .blog-card__header {
+      background: linear-gradient(135deg, rgba(76, 217, 100, 0.12) 0%, rgba(5, 11, 24, 0.8) 100%);
+    }
+
+    .blog-card__header svg {
+      opacity: 0.65;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      color: var(--blue-electric);
+    }
+
+    .blog-card:nth-child(2) .blog-card__header svg {
+      color: #5856D6;
+    }
+
+    .blog-card:nth-child(3) .blog-card__header svg {
+      color: #4CD964;
+    }
+
+    .blog-card:hover .blog-card__header svg {
+      transform: scale(1.1) rotate(2deg);
+      opacity: 0.9;
+    }
+
+    .blog-card__body {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .blog-card__tag {
+      align-self: flex-start;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--blue-electric);
+      background: rgba(16, 203, 239, 0.1);
+      padding: 5px 12px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+
+    .blog-card:nth-child(2) .blog-card__tag {
+      color: #8A88FF;
+      background: rgba(88, 86, 214, 0.15);
+    }
+
+    .blog-card:nth-child(3) .blog-card__tag {
+      color: #6EFF87;
+      background: rgba(76, 217, 100, 0.12);
+    }
+
+    .blog-card__title {
+      font-family: var(--ff-title);
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--text-main);
+      margin-bottom: 12px;
+    }
+
+    .blog-card__excerpt {
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: var(--text-soft);
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+
+    .blog-card__footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      color: var(--text-soft);
+      border-top: 1px solid var(--border-color);
+      padding-top: 20px;
+      margin-top: auto;
+    }
+
+    .blog-card__readmore {
+      font-weight: 600;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s, transform 0.2s;
+    }
+
+    .blog-card__readmore svg {
+      transition: transform 0.2s;
+    }
+
+    .blog-card:hover .blog-card__readmore {
+      color: var(--blue-electric);
+    }
+
+    .blog-card:hover .blog-card__readmore svg {
+      transform: translateX(4px);
+    }
+
+    /* Newsletter Box */
+    .newsletter-box {
+      margin-top: 80px;
+      background: linear-gradient(135deg, var(--bg-panel) 0%, rgba(16, 203, 239, 0.03) 100%);
+      border: 1px solid var(--border-color);
+      border-radius: 28px;
+      padding: 50px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .newsletter-box__glow {
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      background: var(--blue-electric);
+      filter: blur(120px);
+      opacity: 0.12;
+      bottom: -100px;
+      right: -100px;
+      pointer-events: none;
+    }
+
+    .newsletter-box__form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 500px;
+      margin: 28px auto 0;
+    }
+
+    @media (min-width: 600px) {
+      .newsletter-box__form {
+        flex-direction: row;
+        align-items: stretch;
+      }
+      .newsletter-box__form input {
+        flex-grow: 1;
+      }
+      .newsletter-box__form button {
+        flex-shrink: 0;
+      }
+    }
+
+    .newsletter-box__form input {
+      background: rgba(5, 11, 24, 0.6);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 14px 20px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .newsletter-box__form input:focus {
+      border-color: var(--blue-electric);
+      box-shadow: 0 0 10px rgba(16, 203, 239, 0.15);
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-stage" aria-hidden="true"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <!-- ===================== HEADER / NAV ===================== -->
+  <header class="site-header" id="header">
+    <div class="container nav">
+      <a href="index.html#topo" class="brand" aria-label="PGC — página inicial">
+        <img src="assets/img/logo.svg" alt="" class="brand__logo" width="42" height="42" />
+        <span class="brand__name">PGC</span>
+        <span class="brand__tag">Sistema Operacional<br>do Mentor Empresário</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Principal">
+        <a href="index.html#solucao">A solução</a>
+        <a href="index.html#jornada">Jornada</a>
+        <a href="index.html#recursos">Recursos</a>
+        <a href="index.html#planos">Planos</a>
+        <a href="index.html#faq">Dúvidas</a>
+        <a href="blog.html" class="active" style="color: var(--blue-electric); font-weight: 600;">Blog</a>
+      </nav>
+
+      <a href="index.html#aplicar" class="btn btn--primary nav__cta" data-cta="nav">Quero estruturar minha operação</a>
+
+      <button class="nav__burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Menu Mobile -->
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Menu mobile">
+    <a href="index.html#solucao">A solução</a>
+    <a href="index.html#jornada">Jornada do cliente</a>
+    <a href="index.html#recursos">Recursos</a>
+    <a href="index.html#planos">Planos</a>
+    <a href="index.html#faq">Perguntas frequentes</a>
+    <a href="blog.html">Blog</a>
+    <a href="index.html#aplicar" class="btn btn--primary btn--block" data-cta="menu">Quero estruturar minha operação</a>
+  </nav>
+
+  <main id="topo">
+    
+    <!-- ===================== HERO DO BLOG ===================== -->
+    <section class="blog-hero">
+      <div class="container">
+        <span class="eyebrow eyebrow--chip reveal">Conteúdo &amp; Insights</span>
+        <h1 class="blog-hero__title reveal" data-delay="1">
+          Blog <span class="grad-text">PGC</span>
+        </h1>
+        <p class="blog-hero__lead reveal" data-delay="2">
+          Estratégias práticas, artigos técnicos e inteligência operacional para estruturar e escalar negócios de mentoria.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== GRID DE POSTS ===================== -->
+    <section class="blog-section">
+      <div class="container">
+        <div class="blog-grid reveal" data-delay="3">
+          
+          <!-- Post 1 -->
+          <article class="blog-card">
+            <div class="blog-card__header">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="56" height="56"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div class="blog-card__body">
+              <span class="blog-card__tag">Processos &amp; Vendas</span>
+              <h2 class="blog-card__title">Como estruturar o CRM da sua mentoria para vender High Ticket</h2>
+              <p class="blog-card__excerpt">
+                Descubra por que funis de vendas genéricos falham em vendas de alto valor e aprenda o passo a passo para desenhar um pipeline especializado em conversão consultiva.
+              </p>
+              <div class="blog-card__footer">
+                <span>5 min de leitura</span>
+                <span class="blog-card__readmore">Ler artigo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Post 2 -->
+          <article class="blog-card">
+            <div class="blog-card__header">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="56" height="56"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            </div>
+            <div class="blog-card__body">
+              <span class="blog-card__tag">Inteligência Artificial</span>
+              <h2 class="blog-card__title">Como a IA pode pré-qualificar seus leads no WhatsApp sem perder a pessoalidade</h2>
+              <p class="blog-card__excerpt">
+                Entenda o método exato de engenharia de prompt e fluxos de conversa para triar leads frios, coletar dados demográficos e passar apenas os ideais para seus assessores.
+              </p>
+              <div class="blog-card__footer">
+                <span>6 min de leitura</span>
+                <span class="blog-card__readmore">Ler artigo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Post 3 -->
+          <article class="blog-card">
+            <div class="blog-card__header">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="56" height="56"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <div class="blog-card__body">
+              <span class="blog-card__tag">Gestão Operacional</span>
+              <h2 class="blog-card__title">Os 3 maiores erros que fazem mentores perderem até 40% das vendas</h2>
+              <p class="blog-card__excerpt">
+                Mapeamos as operações de mais de 100 mentorias e identificamos os gargalos silenciosos de follow-up e organização que sabotam as taxas de fechamento de reuniões comerciais.
+              </p>
+              <div class="blog-card__footer">
+                <span>4 min de leitura</span>
+                <span class="blog-card__readmore">Ler artigo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- ===================== NEWSLETTER BOX ===================== -->
+        <div class="newsletter-box reveal" data-delay="1">
+          <div class="newsletter-box__glow" aria-hidden="true"></div>
+          <span class="eyebrow" style="justify-content:center">Fique atualizado</span>
+          <h3 class="h3" style="margin-top:14px">Receba nossa newsletter técnica</h3>
+          <p class="lead" style="font-size:0.95rem;max-width:440px;margin-inline:auto;margin-top:10px;color:var(--text-soft)">
+            Semanalmente enviamos insights, tutoriais de automação e hacks de operação comercial diretamente na sua caixa de entrada.
+          </p>
+          <form class="newsletter-box__form" onsubmit="event.preventDefault(); alert('Inscrição simulada com sucesso!'); this.reset();">
+            <input type="email" placeholder="Seu melhor e-mail comercial" required aria-label="E-mail para newsletter" />
+            <button type="submit" class="btn btn--primary">Inscrever-se</button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="brand">
+            <img src="assets/img/logo.svg" alt="" class="brand__logo" width="38" height="38" />
+            <span class="brand__name" style="color:var(--text-main)">PGC</span>
+          </div>
+          <p style="margin:16px 0 20px;max-width:280px">O sistema operacional que transforma mentorias em empresas estruturadas e de alta performance.</p>
+          <div class="socials">
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01" fill="currentColor"/></svg></a>
+            <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 17v-7"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h5>Navegação</h5>
+          <a href="index.html#solucao">A solução</a><br>
+          <a href="index.html#jornada">Jornada do cliente</a><br>
+          <a href="index.html#recursos">Recursos</a><br>
+          <a href="index.html#planos">Planos</a><br>
+          <a href="index.html#faq">Dúvidas frequentes</a><br>
+          <a href="blog.html">Blog</a>
+        </div>
+        <div>
+          <h5>Legal &amp; Contato</h5>
+          <a href="#" data-edit="link-privacidade">Política de privacidade</a><br>
+          <a href="#" data-edit="link-termos">Termos de uso</a><br>
+          <a href="#" data-edit="link-cancelamento">Política de cancelamento</a><br>
+          <a href="#" data-edit="link-avisos">Avisos legais</a><br>
+          <a href="mailto:contato@pgc.com.br" data-edit="email-contato">contato@pgc.com.br</a><br>
+          <a href="https://wa.me/00000000000" data-edit="whatsapp" data-cta="footer-whatsapp">WhatsApp comercial</a><br>
+          <a href="llms.txt" target="_blank">llms.txt</a>
+        </div>
+      </div>
+      <div class="footer__legal">
+        <p>
+          <span class="editable" data-edit="razao-social">Razão Social LTDA</span> ·
+          CNPJ <span class="editable" data-edit="cnpj">00.000.000/0001-00</span> ·
+          © <span id="year">2026</span> PGC. Todos os direitos reservados.
+        </p>
+        <p class="fine">As informações desta página são ilustrativas. Resultados variam conforme oferta, execução e mercado.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

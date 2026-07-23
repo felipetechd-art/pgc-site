@@ -129,8 +129,18 @@ Trata-se de um deck interativo de 12 slides desenvolvido para reuniões de venda
 
 ---
 
-## 4. Estrutura do Código e Arquivos
-* **HTML Principal:** `index.html` (estrutura sem compilação, 100% responsivo e com tags semânticas).
+## 4. Conteúdo do Blog (blog.html)
+O blog é um espaço de marketing de conteúdo focado em estruturação de operações comerciais, contendo:
+* **Artigo 1:** *Como estruturar o CRM da sua mentoria para vender High Ticket* – Explicação sobre pipelines especializados em vendas de alto ticket.
+* **Artigo 2:** *Como a IA pode pré-qualificar seus leads no WhatsApp sem perder a pessoalidade* – Metodologias de triagem automatizada com inteligência artificial.
+* **Artigo 3:** *Os 3 maiores erros que fazem mentores perderem até 40% das vendas* – Análise de gargalos de follow-up e organização em equipes de vendas.
+* **Newsletter:** Formulário integrado para captura de e-mails de leads interessados em receber atualizações semanais sobre processos.
+
+---
+
+## 5. Estrutura do Código e Arquivos
+* **HTML Principal:** `index.html` (landing page principal, com menus atualizados contendo o link para o Blog).
+* **Blog Institucional:** `blog.html` (página de artigos totalmente responsiva e conectada visualmente ao design system principal).
 * **Slides Auxiliares:** `apresentacao-comercial.html` (visualizador interativo).
 * **Estilos CSS:** `assets/css/styles.css` (uso de variáveis nativas CSS, grid, flexbox, e classes editáveis `.editable`).
-* **Comportamentos JS:** `assets/js/main.js` (scripts puros em Vanilla JS para o funcionamento da calculadora, menus móveis, modais, formulário multi-step e eventos de rastreamento).
+* **Comportamentos JS:** `assets/js/main.js` (scripts puros em Vanilla JS para o funcionamento de menus móveis, modais, calculadora e animações, compartilhado de forma compatível e segura entre a página inicial e a do blog).
