@@ -185,7 +185,7 @@ strong { color: var(--graphite); font-weight: 600; }
 .nav__links a:hover { color: var(--blue-dark); }
 .nav__cta { display: none; }
 .brand { display: flex; align-items: center; gap: 12px; }
-.brand__logo { width: auto; height: 38px; }
+.brand__logo { width: 42px; height: 42px; }
 .brand__name { font-family: var(--font-head); font-weight: 800; font-size: 1.5rem; letter-spacing: -.02em; color: var(--graphite); }
 .brand__tag { display: none; font-size: .62rem; letter-spacing: .12em; line-height: 1.25; color: var(--text-mute); text-transform: uppercase; border-left: 1px solid var(--border-strong); padding-left: 12px; }
 .nav__burger { display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; border: 1px solid var(--border-strong); background: #fff; }
