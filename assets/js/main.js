@@ -184,4 +184,32 @@
 
     showStep(0);
   }
+
+  /* ---------- Texto rotativo no Hero ---------- */
+  var rotateEl = $('#hero-rotate-text');
+  if (rotateEl) {
+    var terms = [
+      'clínicas de estética',
+      'clínicas médicas',
+      'negócios locais',
+      'empresas B2B',
+      'prestadores de serviço',
+      'imobiliárias',
+      'escolas',
+      'franquias',
+      'mentores',
+      'consultores',
+      'especialistas',
+      'empresas digitais'
+    ];
+    var index = 0;
+    setInterval(function () {
+      rotateEl.classList.add('fade-out');
+      setTimeout(function () {
+        index = (index + 1) % terms.length;
+        rotateEl.textContent = terms[index];
+        rotateEl.classList.remove('fade-out');
+      }, 350);
+    }, 2800);
+  }
 })();
