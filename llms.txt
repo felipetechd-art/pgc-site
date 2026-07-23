@@ -1,0 +1,136 @@
+# PGC — Sistema Operacional do Mentor Empresário
+
+Este documento serve como um guia estruturado sobre a PGC (Plataforma de Gestão Comercial / Sistema Operacional do Mentor Empresário) para Modelos de Linguagem (LLMs), detalhando todo o conteúdo, estrutura e propostas comerciais encontradas no site.
+
+---
+
+## 1. Visão Geral do Produto
+A PGC é uma plataforma integrada desenvolvida especificamente para mentores, especialistas e consultores de negócios. O sistema centraliza marketing, atendimento, vendas (CRM), inteligência artificial, automações e gestão operacional em um único ecossistema, eliminando a fragmentação de ferramentas (como planilhas isoladas, múltiplos WhatsApps, CRMs tradicionais e anotações avulsas).
+
+---
+
+## 2. Conteúdo da Landing Page (index.html)
+
+A página principal está dividida em 19 dobras (seções) comerciais e informativas:
+
+### Dobra 1: Hero (Apresentação Inicial)
+* **Mensagem Principal:** "Sua mentoria cresceu. Mas sua operação continua improvisada."
+* **Proposta:** Centralizar marketing, atendimento, IA, CRM, vendas, automações e gestão em um único sistema para evitar a perda de oportunidades no tráfego de Instagram, WhatsApp, planilhas e vendedores.
+* **Pilares de Confiança:** Implantação personalizada, suporte especializado e sistema configurado sob medida para o negócio.
+
+### Dobra 2: Espelho da Operação (O Caos Operacional)
+* **Problema:** A maioria das mentorias parece estruturada por fora (no Instagram), mas opera de forma improvisada nos bastidores.
+* **Pontos de Dispersão de Leads:** Instagram, WhatsApp, formulários, planilhas, CRM, agenda e anotações manuais desconectadas.
+
+### Dobra 3: Falso Diagnóstico
+* **Insight:** O mentor geralmente acha que precisa de mais tráfego e leads, quando na verdade precisa parar de perder os leads que já chegam por falta de processos e follow-up rápido.
+
+### Dobra 4: Custo da Perda (Calculadora Financeira)
+* **Objetivo:** Calcular o faturamento perdido mensalmente devido ao improviso.
+* **Variáveis de Cálculo:**
+  * Leads recebidos por mês.
+  * Ticket médio do produto/mentoria.
+  * Porcentagem de leads que se perdem no fluxo de atendimento (atraso ou esquecimento).
+  * Porcentagem desses leads perdidos que poderiam ser recuperados com um processo eficiente.
+* **Fórmula da Calculadora:** `Faturamento Recuperável = Leads Mensais * (% Perda / 100) * (% Conversão Recuperável / 100) * Ticket Médio`.
+
+### Dobra 5: A Transformação
+* **Conceito:** A PGC é o "Sistema Operacional" que estrutura o caos, tirando a empresa da cabeça do mentor e organizando os processos em fluxos rastreáveis.
+
+### Dobra 6: A Solução PGC
+* **Descrição:** Centralização de canais, inteligência de dados, automações robustas e visualização completa de ponta a ponta.
+
+### Dobra 7: A Jornada do Cliente PGC
+Mapeamento do ciclo de vida do cliente em 6 etapas estruturadas:
+1. **Atração:** Entrada de leads via Direct do Instagram, anúncios, orgânico ou indicação.
+2. **Qualificação:** Agente de IA pré-qualifica o lead em tempo real na própria conversa.
+3. **Reunião:** Agendamento automático com o especialista de vendas (closer) ideal.
+4. **Fechamento:** Proposta, acompanhamento de pendências (follow-up de vendas) e geração de contratos.
+5. **Entrega:** Integração do aluno (onboarding) com entrega automática de acessos e materiais.
+6. **Renovação:** Alerta ativo de renovação antes do encerramento do ciclo.
+
+### Dobra 8: Tecnologia & Integrações
+* **Ecossistema:** A PGC conecta-se aos principais serviços do mercado: Instagram, WhatsApp, Stripe, ActiveCampaign, Google Calendar, plataformas de membros e CRMs tradicionais.
+
+### Dobra 9: Recursos Detalhados
+* **Gestão de Leads:** Atendimento centralizado e histórico de interações.
+* **CRM para Mentores:** Funil de vendas especializado na venda de produtos de alto ticket (High Ticket).
+* **IA Integrada:** Triagem automatizada e inteligência conversacional.
+* **Automações:** Ações coordenadas por gatilhos operacionais.
+
+### Dobra 10: Comparativo Antes vs. Depois
+* **Antes:** Equipe sobrecarregada, leads frios sem resposta, falta de dados gerenciais, ferramentas descentralizadas.
+* **Depois (com PGC):** Funis fluindo automaticamente, atendimento em segundos com apoio de IA, métricas claras de vendas e conversão.
+
+### Dobra 11: Fim da Dependência
+* **Autonomia:** Operação blindada contra saídas de colaboradores chave ou dependência constante de programadores e agências caras para fazer integrações simples.
+
+### Dobra 12: Implantação e Customização
+* **Serviço de Setup:** A equipe PGC mapeia os processos do mentor, cria a infraestrutura, treina o time de vendas e entrega a solução pronta para rodar.
+
+### Dobra 13: Provas Sociais e Depoimentos
+* Seção destinada a cases de sucesso, depoimentos e estudos de caso de mentorias que escalaram a operação e reduziram custos operacionais com o sistema.
+
+### Dobra 14: Perfil de Cliente Ideal (Para quem é)
+* Mentores individuais que querem estruturar seu time de vendas.
+* Especialistas com co-produções buscando controle da operação.
+* Consultores e escolas de negócios que demandam processos corporativos sólidos.
+
+### Dobra 15: Planos e Preços
+* **Plano Estrutura:** Focado na organização do fluxo. Inclui central de atendimento, CRM de vendas e funis de onboarding básicos.
+* **Plano Crescimento:** Focado em escala. Adiciona agentes de IA integrados, automações complexas de qualificação e relatórios avançados de performance.
+* **Plano Escala:** Focado em grandes operações ou projetos sob demanda (consultoria de processos corporativos).
+
+### Dobra 16: Garantia e Segurança
+* **Garantia Risco Zero:** 30 dias de garantia para a implantação e funcionamento técnico dos fluxos acordados no escopo inicial.
+
+### Dobra 17: Vagas e Escassez Real
+* **Limitação:** Como a implantação é feita sob medida e assistida pela equipe de engenharia da PGC, as vagas para novas implantações de mentorias são restritas por turma/mês.
+
+### Dobra 18: FAQ (Dúvidas Frequentes)
+* **Já tenho CRM. Ainda preciso da PGC?** Sim. O CRM tradicional vive isolado das conversas e do time de vendas. A PGC une a conversa no WhatsApp/Instagram ao funil do CRM no mesmo ecossistema.
+* **A IA substitui a equipe?** Não. A IA faz a triagem inicial automática 24/7 e tarefas repetitivas, liberando os humanos para fechamento e relacionamento personalizado.
+* **Preciso programar?** Não. Toda a configuração e customização é feita pela PGC e entregue pronta para uso.
+* **A PGC cria a minha oferta?** Não. A plataforma organiza a operação de ofertas que já estão validadas no mercado.
+* **WhatsApp e anúncios estão inclusos?** Não. Custos de tráfego pago e custos oficiais do WhatsApp API (Meta) são pagos diretamente às plataformas e não estão na mensalidade.
+* **Tempo de implantação:** Definido no diagnóstico personalizado com base na complexidade.
+* **Garantia de vendas:** Não há promessa de faturamento. A garantia é da organização e eficiência operacional para evitar a perda de leads interessados.
+
+### Dobra 19: Formulário de Aplicação (Multi-step)
+* **Fluxo de Perguntas para Seleção:**
+  1. Nome, E-mail e WhatsApp comercial.
+  2. Tamanho da equipe atual (apenas o mentor, até 3 pessoas, de 4 a 10 pessoas, ou mais de 10).
+  3. Faturamento mensal médio da operação de mentoria.
+  4. Qual o maior gargalo atual da operação comercial (perda de leads, atendimento lento, falta de métricas, pós-venda confuso).
+  5. Status atual da mentoria (validada, escala de tráfego, ou estruturação de equipe).
+
+---
+
+## 3. Conteúdo da Apresentação Comercial (apresentacao-comercial.html)
+
+Trata-se de um deck interativo de 12 slides desenvolvido para reuniões de vendas e fechamentos comerciais presenciais ou online:
+
+* **Slide 1: Abertura** – PGC: Plataforma de Gestão Comercial. O sistema operacional definitivo do mentor.
+* **Slide 2: O Problema** – O abismo entre a atração de leads (tráfego) e o fechamento. Operações perdendo de 30% a 50% dos contatos no "limbo" do direct e WhatsApp não respondido.
+* **Slide 3: O Custo Invisível** – Simulação da perda financeira acumulada ao longo do ano por gargalos de atendimento rápido.
+* **Slide 4: Nova Lógica** – A transição de um ecossistema fragmentado para um funil linear centralizado.
+* **Slide 5: O que a PGC faz** – Visão geral técnica da centralização de multicanais, IA de triagem, CRM integrado e automações de entrega de produto.
+* **Slide 6: Jornada de Ponta a Ponta** – Detalhamento visual do caminho do lead desde o primeiro clique no anúncio até a renovação da assinatura/mentoria.
+* **Slide 7: Mapa de Funis** – Divisão das engrenagens operacionais:
+  * *Funil 1: Atração & Qualificação Automática* (Tráfego $\rightarrow$ IA $\rightarrow$ Triagem).
+  * *Funil 2: Agendamento & Fechamento* (Calendário $\rightarrow$ Closer $\rightarrow$ Link de pagamento).
+  * *Funil 3: Onboarding & Entrega* (Boas-vindas $\rightarrow$ Acessos $\rightarrow$ Área de membros).
+  * *Funil 4: LTV & Renovação* (Sucesso do Cliente $\rightarrow$ Alerta automático $\rightarrow$ Re-contratação).
+* **Slide 8: Inteligência Artificial** – Como os agentes de IA pré-qualificam e coletam informações básicas dos leads antes de passá-los aos vendedores humanos, poupando tempo da equipe.
+* **Slide 9: Economia e Produtividade** – Gráfico comparativo de custos e tempo. Menos gastos com micro-ferramentas soltas e eliminação de processos manuais.
+* **Slide 10: Visão Gerencial** – Painéis estatísticos e relatórios que dão clareza sobre o faturamento, taxas de conversão de cada vendedor e retorno de investimento em tráfego.
+* **Slide 11: Para quem é** – Mentorias ativas e validadas que precisam migrar do estágio de "trabalho manual" para "empresa estruturada".
+* **Slide 12: Oferta & Call to Action** – Chamada para agendar uma demonstração personalizada e iniciar a implantação assistida.
+
+---
+
+## 4. Estrutura do Código e Arquivos
+* **HTML Principal:** `index.html` (estrutura sem compilação, 100% responsivo e com tags semânticas).
+* **Slides Auxiliares:** `apresentacao-comercial.html` (visualizador interativo).
+* **Estilos CSS:** `assets/css/styles.css` (uso de variáveis nativas CSS, grid, flexbox, e classes editáveis `.editable`).
+* **Comportamentos JS:** `assets/js/main.js` (scripts puros em Vanilla JS para o funcionamento da calculadora, menus móveis, modais, formulário multi-step e eventos de rastreamento).

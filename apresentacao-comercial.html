@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PGC — Plataforma de Gestão Comercial | Apresentação</title>
+<meta name="description" content="Tudo que sua operação comercial precisa em um único lugar: atendimento, IA, CRM, automação, marketing e agenda conectados.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='6' y1='6' x2='58' y2='58'%3E%3Cstop stop-color='%235CFF3D'/%3E%3Cstop offset='1' stop-color='%2313C8FF'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M14 8h20a16 16 0 0 1 0 32H22v16h-8z' fill='url(%23g)'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg-1:#05080F;
+    --bg-2:#07111C;
+    --bg-3:#0B1624;
+    --green:#5CFF3D;
+    --green-2:#35D85A;
+    --blue:#1B7CFF;
+    --cyan-2:#13C8FF;
+    --cyan:#1DE5D5;
+    --white:#F8FAFC;
+    --gray:#9AA4B2;
+    --gold:#FFB800;
+    --purple:#8255FF;
+    --grad-brand:linear-gradient(135deg,var(--green),var(--cyan-2));
+    --grad-blue:linear-gradient(135deg,var(--blue),var(--cyan));
+    --grad-gold:linear-gradient(135deg,var(--gold),#FFD666);
+    --grad-purple:linear-gradient(135deg,var(--purple),#B79CFF);
+    --line:rgba(248,250,252,.09);
+    --panel:rgba(248,250,252,.035);
+    --radius-lg:22px;
+    --ff-title:'Space Grotesk',system-ui,sans-serif;
+    --ff-body:'Inter',system-ui,sans-serif;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html,body{height:100%;}
+  body{
+    background:var(--bg-1);
+    color:var(--white);
+    font-family:var(--ff-body);
+    overflow:hidden;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  ul{list-style:none;}
+  a{color:inherit;text-decoration:none;}
+  button{font:inherit;color:inherit;background:none;border:none;cursor:pointer;}
+  svg{display:block;}
+  .grad-text{background:var(--grad-brand);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .grad-text.gold{background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;color:transparent;}
+
+  /* ---------- background fx ---------- */
+  .bg-fx{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
+  .blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.28;animation:drift 20s ease-in-out infinite;}
+  .blob.b1{width:520px;height:520px;background:var(--green);top:-160px;left:-120px;}
+  .blob.b2{width:640px;height:640px;background:var(--blue);bottom:-220px;right:-160px;animation-delay:-6s;}
+  .blob.b3{width:420px;height:420px;background:var(--purple);top:40%;left:60%;opacity:.16;animation-delay:-11s;}
+  .grid-overlay{position:absolute;inset:0;background-image:linear-gradient(rgba(248,250,252,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(248,250,252,.025) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 80% 60% at 50% 40%,#000 40%,transparent 100%);}
+  @keyframes drift{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(4%,-3%) scale(1.06);}}
+
+  /* ---------- chrome ---------- */
+  .chrome{position:fixed;inset:0;z-index:30;pointer-events:none;}
+  .chrome > *{pointer-events:auto;}
+
+  .brand{position:absolute;top:26px;left:clamp(20px,4vw,56px);display:flex;align-items:center;gap:10px;}
+  .brand svg{width:26px;height:26px;}
+  .brand span{font-family:var(--ff-title);font-weight:700;font-size:15px;letter-spacing:.02em;color:var(--white);}
+  .brand small{display:block;font-size:9.5px;font-weight:500;letter-spacing:.14em;color:var(--gray);text-transform:uppercase;}
+
+  .progress-track{position:absolute;top:0;left:0;right:0;height:3px;background:rgba(248,250,252,.06);}
+  .progress-fill{height:100%;width:8.33%;background:var(--grad-brand);transition:width .5s cubic-bezier(.65,0,.35,1);}
+
+  .deck-footer{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px clamp(20px,4vw,56px);background:linear-gradient(0deg,rgba(5,8,15,.85),transparent);}
+  .counter{font-family:var(--ff-title);font-size:13px;color:var(--gray);letter-spacing:.03em;white-space:nowrap;}
+  .counter b{color:var(--white);font-weight:700;}
+
+  .dots{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;}
+  .dot{width:7px;height:7px;border-radius:50%;background:rgba(248,250,252,.18);transition:all .35s ease;}
+  .dot.active{width:22px;border-radius:5px;background:var(--grad-brand);}
+
+  .controls{display:flex;align-items:center;gap:8px;}
+  .ctrl-btn{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:rgba(248,250,252,.04);display:flex;align-items:center;justify-content:center;transition:background .2s ease,border-color .2s ease,transform .2s ease;}
+  .ctrl-btn:hover{background:rgba(248,250,252,.09);border-color:rgba(248,250,252,.2);}
+  .ctrl-btn:active{transform:scale(.94);}
+  .ctrl-btn svg{width:17px;height:17px;stroke:var(--white);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+  .ctrl-btn:disabled{opacity:.3;pointer-events:none;}
+
+  @media (max-width:720px){
+    .brand small{display:none;}
+    .deck-footer{flex-direction:column;gap:10px;padding:14px 18px;}
+    .dots{order:-1;}
+  }
+
+  /* ---------- deck / slides ---------- */
+  .deck{position:relative;z-index:10;width:100vw;height:100dvh;}
+  .slide{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    padding:clamp(78px,9vw,110px) clamp(22px,6vw,88px) clamp(70px,7vw,96px);
+    opacity:0;visibility:hidden;transform:translateY(26px) scale(.99);
+    transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1),visibility 0s linear .6s;
+    overflow-y:auto;
+  }
+  .slide.active{opacity:1;visibility:visible;transform:translateY(0) scale(1);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1);}
+  .slide.exit-up{transform:translateY(-26px) scale(.99);}
+  .slide-inner{width:100%;max-width:1320px;margin:0 auto;}
+
+  @keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+  .stagger > *{opacity:0;}
+  .slide.active .stagger > *{animation:fadeUp .7s cubic-bezier(.4,0,.2,1) both;}
+  .slide.active .stagger > *:nth-child(1){animation-delay:.05s;}
+  .slide.active .stagger > *:nth-child(2){animation-delay:.12s;}
+  .slide.active .stagger > *:nth-child(3){animation-delay:.19s;}
+  .slide.active .stagger > *:nth-child(4){animation-delay:.26s;}
+  .slide.active .stagger > *:nth-child(5){animation-delay:.33s;}
+  .slide.active .stagger > *:nth-child(6){animation-delay:.4s;}
+
+  .kicker{display:inline-flex;align-items:center;gap:8px;font-family:var(--ff-title);font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--green);margin-bottom:18px;}
+  .kicker::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--grad-brand);box-shadow:0 0 12px rgba(92,255,61,.7);}
+  .headline{font-family:var(--ff-title);font-weight:700;font-size:clamp(28px,4vw,52px);line-height:1.14;letter-spacing:-.01em;max-width:920px;margin-bottom:18px;}
+  .sub{font-size:clamp(15px,1.5vw,18.5px);color:var(--gray);max-width:640px;line-height:1.6;margin-bottom:8px;}
+  .closing-line{margin-top:28px;font-family:var(--ff-title);font-size:clamp(15px,1.6vw,19px);font-weight:500;color:var(--white);border-left:2px solid var(--cyan-2);padding-left:16px;max-width:680px;line-height:1.5;}
+  .center{text-align:center;margin-left:auto;margin-right:auto;}
+  .center .sub{margin-left:auto;margin-right:auto;}
+  .center .closing-line{margin-left:auto;margin-right:auto;border-left:none;padding-left:0;}
+
+  /* ---------- generic bits ---------- */
+  .badge{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--ff-title);font-weight:700;font-size:10.5px;flex-shrink:0;color:#04150C;background:var(--grad-brand);}
+  .badge.blue{background:var(--grad-blue);color:#04101F;}
+  .badge.purple{background:var(--grad-purple);color:#0F0821;}
+  .badge.gold{background:var(--grad-gold);color:#241900;}
+
+  .chip{display:inline-flex;align-items:center;gap:9px;padding:9px 15px;border-radius:999px;background:var(--panel);border:1px solid var(--line);font-size:13.5px;font-weight:500;color:var(--white);white-space:nowrap;backdrop-filter:blur(6px);}
+  .chip.dim{color:var(--gray);border-style:dashed;background:rgba(248,250,252,.02);}
+
+  .list-min{display:flex;flex-direction:column;gap:12px;}
+  .list-min li{display:flex;gap:12px;font-size:15px;color:var(--white);line-height:1.5;}
+  .list-min li .tick{flex-shrink:0;color:var(--cyan-2);font-weight:700;}
+  .list-min.neutral li .tick{color:var(--gray);}
+
+  /* ---------- orbit diagram ---------- */
+  .orbit-wrap{display:flex;justify-content:center;margin:8px 0;}
+  .orbit{position:relative;width:min(520px,86vw);height:min(520px,86vw);--radius:200px;}
+  .orbit.compact{width:min(400px,80vw);height:min(400px,80vw);--radius:150px;}
+  .orbit-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:104px;height:104px;border-radius:50%;background:var(--grad-brand);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--ff-title);font-weight:700;color:#04150C;box-shadow:0 0 70px rgba(92,255,61,.35);text-align:center;}
+  .orbit-center.purple{background:var(--grad-purple);color:#0F0821;box-shadow:0 0 70px rgba(130,85,255,.4);}
+  .orbit-center span{font-size:19px;}
+  .orbit-center small{font-size:8.5px;font-weight:600;letter-spacing:.08em;opacity:.75;margin-top:2px;}
+  .orbit-line{position:absolute;top:50%;left:50%;width:var(--radius);height:2px;background:linear-gradient(90deg,rgba(92,255,61,.55),rgba(92,255,61,0));transform-origin:0 50%;transform:rotate(var(--angle));opacity:.55;animation:linePulse 3.2s ease-in-out infinite;animation-delay:var(--delay,0s);}
+  .orbit-line.purple{background:linear-gradient(90deg,rgba(130,85,255,.55),rgba(130,85,255,0));}
+  @keyframes linePulse{0%,100%{opacity:.25;}50%{opacity:.75;}}
+  .orbit-node{position:absolute;top:50%;left:50%;transform:rotate(var(--angle)) translate(var(--radius)) rotate(calc(-1 * var(--angle)));}
+  .orbit-node .node-inner{transform:translate(-50%,-50%);display:flex;align-items:center;gap:8px;background:rgba(11,22,36,.75);border:1px solid var(--line);padding:8px 14px 8px 8px;border-radius:999px;white-space:nowrap;backdrop-filter:blur(8px);box-shadow:0 10px 24px rgba(0,0,0,.35);}
+  .orbit-node .node-inner span{font-size:12.5px;font-weight:600;}
+
+  @media (max-width:860px){
+    .orbit,.orbit.compact{width:100%;height:auto;--radius:0;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:14px 0 4px;}
+    .orbit-line{display:none;}
+    .orbit-center{position:static;transform:none;margin:0 auto 16px;}
+    .orbit-node{position:static;transform:none !important;}
+  }
+
+  /* ---------- scatter (problema) ---------- */
+  .scatter{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;padding:18px 6px;}
+  .scatter .chip{transform:rotate(var(--r,0deg));}
+
+  /* ---------- cost row / formula ---------- */
+  .cost-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:10px 0 30px;}
+  .formula{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;font-family:var(--ff-title);font-weight:600;font-size:clamp(14.5px,1.9vw,20px);text-align:center;}
+  .formula .op{color:var(--gray);font-weight:400;font-size:.85em;}
+  .formula .fchip{background:var(--panel);border:1px solid var(--line);padding:10px 16px;border-radius:14px;}
+  .formula .result{color:var(--gold);}
+
+  /* ---------- before/after ---------- */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;margin-top:8px;}
+  .split-col{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-lg);padding:26px 22px;}
+  .split-col h3{font-family:var(--ff-title);font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px;}
+  .split-col.before h3{color:var(--gray);}
+  .split-col.after h3{color:var(--green);}
+  @media (max-width:860px){.split{grid-template-columns:1fr;}}
+
+  /* ---------- block grid ---------- */
+  .block-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:6px;}
+  .block-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-lg);padding:26px;transition:border-color .25s ease,transform .25s ease;}
+  .block-card:hover{border-color:rgba(248,250,252,.22);transform:translateY(-3px);}
+  .block-card .badge{width:42px;height:42px;font-size:13px;margin-bottom:16px;}
+  .block-card h3{font-family:var(--ff-title);font-size:18.5px;font-weight:600;margin-bottom:9px;}
+  .block-card p{color:var(--gray);font-size:14.5px;line-height:1.6;}
+  @media (max-width:860px){.block-grid{grid-template-columns:1fr;}}
+
+  /* ---------- flow (jornada) ---------- */
+  .flow{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px;margin-top:10px;}
+  .flow-step{padding:11px 17px;border-radius:999px;background:var(--panel);border:1px solid var(--line);font-size:13.5px;font-weight:600;}
+  .flow-arrow{width:26px;height:1px;background:linear-gradient(90deg,var(--green),var(--cyan-2));position:relative;margin:0 2px;flex-shrink:0;}
+  .flow-arrow::after{content:'';position:absolute;right:-1px;top:50%;width:6px;height:6px;border-top:2px solid var(--cyan-2);border-right:2px solid var(--cyan-2);transform:translateY(-50%) rotate(45deg);}
+  @media (max-width:760px){
+    .flow{flex-direction:column;}
+    .flow-arrow{width:1px;height:20px;}
+    .flow-arrow::after{right:50%;top:-2px;transform:translateX(50%) rotate(135deg);}
+  }
+
+  /* ---------- funnel map ---------- */
+  .funnel-map{display:flex;flex-direction:column;margin-top:8px;}
+  .funnel-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:16px 0;border-bottom:1px solid var(--line);}
+  .funnel-row:last-child{border-bottom:none;}
+  .funnel-label{width:150px;flex-shrink:0;font-family:var(--ff-title);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--cyan-2);}
+  .funnel-chain{display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+  .funnel-chain .chip{font-size:12.5px;padding:7px 12px;}
+  .funnel-chain .arrow{color:var(--gray);font-size:13px;}
+  .funnel-chain .venda{background:var(--grad-gold);color:#241900;font-weight:700;border:none;}
+  @media (max-width:760px){.funnel-label{width:100%;}}
+
+  /* ---------- pillar grid ---------- */
+  .pillar-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px;}
+  .pillar{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px 20px;}
+  .pillar .badge{margin-bottom:14px;}
+  .pillar h3{font-family:var(--ff-title);font-size:15.5px;font-weight:600;line-height:1.35;}
+  @media (max-width:980px){.pillar-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:520px){.pillar-grid{grid-template-columns:1fr;}}
+
+  /* ---------- dashboard mock ---------- */
+  .dash{background:linear-gradient(180deg,var(--bg-3),var(--bg-2));border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.5);margin-top:6px;}
+  .dash-bar{display:flex;align-items:center;gap:7px;padding:13px 18px;border-bottom:1px solid var(--line);}
+  .dash-dot{width:9px;height:9px;border-radius:50%;background:rgba(248,250,252,.16);}
+  .dash-title{margin-left:10px;font-size:12px;color:var(--gray);font-weight:500;}
+  .dash-body{padding:22px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+  .kpi{background:rgba(248,250,252,.03);border:1px solid var(--line);border-radius:14px;padding:15px;}
+  .kpi .label{font-size:11px;color:var(--gray);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;}
+  .kpi .value{font-family:var(--ff-title);font-size:22px;font-weight:700;}
+  .kpi .delta{font-size:11.5px;margin-top:6px;color:var(--green-2);font-weight:600;}
+  .kpi .delta.flat{color:var(--gray);}
+  .dash-chart{grid-column:1/-1;display:flex;align-items:flex-end;gap:7px;height:88px;padding-top:6px;}
+  .dash-chart .bar{flex:1;background:linear-gradient(180deg,var(--cyan-2),var(--blue));border-radius:5px 5px 0 0;height:var(--h,30%);opacity:.9;transition:height .9s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0) * .05s);}
+  .slide:not(.active) .dash-chart .bar{height:0 !important;}
+  @media (max-width:860px){.dash-body{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:520px){.dash-body{grid-template-columns:1fr 1fr;}.kpi .value{font-size:19px;}}
+
+  /* ---------- audience grid ---------- */
+  .audience-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:8px;}
+  .audience-item{display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:13px 14px;}
+  .audience-item span{font-size:13.5px;font-weight:500;}
+  @media (max-width:980px){.audience-grid{grid-template-columns:repeat(3,1fr);}}
+  @media (max-width:620px){.audience-grid{grid-template-columns:repeat(2,1fr);}}
+
+  /* ---------- offer / CTA ---------- */
+  .offer{max-width:620px;margin:8px auto 0;background:linear-gradient(180deg,rgba(92,255,61,.06),rgba(19,200,255,.03));border:1px solid rgba(92,255,61,.25);border-radius:26px;padding:clamp(28px,4vw,44px);text-align:center;}
+  .offer .plan-name{font-family:var(--ff-title);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green);}
+  .offer .price{font-family:var(--ff-title);font-weight:700;font-size:clamp(30px,4vw,42px);margin:12px 0 6px;}
+  .offer .price-note{font-size:13px;color:var(--gray);margin-bottom:26px;}
+  .offer .list-min{text-align:left;max-width:360px;margin:0 auto 30px;}
+  .cta-btn{display:inline-flex;align-items:center;gap:12px;padding:16px 30px;border-radius:999px;background:var(--grad-brand);color:#04150C;font-family:var(--ff-title);font-weight:700;font-size:15.5px;letter-spacing:.01em;box-shadow:0 18px 40px rgba(92,255,61,.28);transition:transform .2s ease,box-shadow .2s ease;}
+  .cta-btn:hover{transform:translateY(-2px);box-shadow:0 22px 50px rgba(92,255,61,.38);}
+  .cta-btn .ring-icon{width:22px;height:22px;position:relative;flex-shrink:0;}
+  .cta-btn .ring-icon svg{width:100%;height:100%;}
+  .cta-btn .ring-icon circle:not(.dot){animation:ripple 2.2s ease-out infinite;transform-origin:center;}
+  .cta-btn .ring-icon circle.r2{animation-delay:.5s;}
+  @keyframes ripple{0%{opacity:.7;transform:scale(.6);}100%{opacity:0;transform:scale(1.5);}}
+  .offer-foot{margin-top:20px;font-size:12.5px;color:var(--gray);}
+
+  /* ---------- headline emphasis colors ---------- */
+  .em-cyan{color:var(--cyan-2);}
+  .em-purple{color:var(--purple);}
+  .em-gold{color:var(--gold);}
+
+  /* ---------- section eyebrow number ---------- */
+  .slide-num{position:absolute;top:24px;right:clamp(20px,4vw,56px);font-family:var(--ff-title);font-size:11px;color:var(--gray);letter-spacing:.08em;}
+
+  /* ---------- scrollbar polish ---------- */
+  .slide::-webkit-scrollbar{width:6px;}
+  .slide::-webkit-scrollbar-thumb{background:rgba(248,250,252,.14);border-radius:6px;}
+
+  @media (max-height:640px){
+    .slide{padding-top:64px;padding-bottom:60px;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="bg-fx">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <div class="chrome">
+    <div class="brand">
+      <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="pgcG" x1="6" y1="6" x2="58" y2="58" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#5CFF3D"/>
+            <stop offset="1" stop-color="#13C8FF"/>
+          </linearGradient>
+          <linearGradient id="pgcG2" x1="20" y1="10" x2="44" y2="54" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#13C8FF"/>
+            <stop offset="1" stop-color="#5CFF3D"/>
+          </linearGradient>
+        </defs>
+        <path d="M14 8h20a16 16 0 0 1 0 32H22v16h-8z" fill="url(#pgcG)"/>
+        <path d="M22 16h11a8 8 0 0 1 0 16H22z" fill="#05080F"/>
+        <path d="M40 24l14 8-14 8z" fill="url(#pgcG2)"/>
+      </svg>
+      <div>
+        <span>PGC</span>
+        <small>Plataforma de Gestão Comercial</small>
+      </div>
+    </div>
+
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+    <div class="deck-footer">
+      <div class="counter"><b id="counterCurrent">01</b> / <span id="counterTotal">12</span></div>
+      <div class="dots" id="dots" role="tablist" aria-label="Slides"></div>
+      <div class="controls">
+        <button class="ctrl-btn" id="btnFullscreen" aria-label="Tela cheia" title="Tela cheia (F)">
+          <svg viewBox="0 0 24 24"><path d="M9 4H4v5"/><path d="M15 4h5v5"/><path d="M9 20H4v-5"/><path d="M15 20h5v-5"/></svg>
+        </button>
+        <button class="ctrl-btn" id="btnPrev" aria-label="Slide anterior" title="Anterior (←)">
+          <svg viewBox="0 0 24 24"><polyline points="15 6 9 12 15 18"/></svg>
+        </button>
+        <button class="ctrl-btn" id="btnNext" aria-label="Próximo slide" title="Próximo (→)">
+          <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <main class="deck" id="deck">
+
+    <!-- 1 — ABERTURA -->
+    <section class="slide" data-title="Abertura">
+      <div class="slide-inner center stagger">
+        <p class="kicker" style="justify-content:center;">Plataforma de Gestão Comercial</p>
+        <h1 class="headline">Tudo que sua operação comercial precisa em <span class="grad-text">um único lugar</span>.</h1>
+        <p class="sub">Atenda, automatize, acompanhe e venda mais com uma plataforma que conecta toda a sua operação.</p>
+        <div class="orbit-wrap">
+          <div class="orbit">
+            <div class="orbit-center"><span>PGC</span><small>CENTRAL</small></div>
+            <div class="orbit-line" style="--angle:0deg;--delay:0s"></div>
+            <div class="orbit-line" style="--angle:45deg;--delay:.2s"></div>
+            <div class="orbit-line" style="--angle:90deg;--delay:.4s"></div>
+            <div class="orbit-line" style="--angle:135deg;--delay:.6s"></div>
+            <div class="orbit-line" style="--angle:180deg;--delay:.8s"></div>
+            <div class="orbit-line" style="--angle:225deg;--delay:1s"></div>
+            <div class="orbit-line" style="--angle:270deg;--delay:1.2s"></div>
+            <div class="orbit-line" style="--angle:315deg;--delay:1.4s"></div>
+
+            <div class="orbit-node" style="--angle:0deg"><div class="node-inner"><span class="badge">AT</span><span>Atendimento</span></div></div>
+            <div class="orbit-node" style="--angle:45deg"><div class="node-inner"><span class="badge blue">CR</span><span>CRM</span></div></div>
+            <div class="orbit-node" style="--angle:90deg"><div class="node-inner"><span class="badge purple">IA</span><span>Inteligência Artificial</span></div></div>
+            <div class="orbit-node" style="--angle:135deg"><div class="node-inner"><span class="badge">AG</span><span>Agenda</span></div></div>
+            <div class="orbit-node" style="--angle:180deg"><div class="node-inner"><span class="badge blue">AU</span><span>Automação</span></div></div>
+            <div class="orbit-node" style="--angle:225deg"><div class="node-inner"><span class="badge">CP</span><span>Campanhas</span></div></div>
+            <div class="orbit-node" style="--angle:270deg"><div class="node-inner"><span class="badge gold">VD</span><span>Vendas</span></div></div>
+            <div class="orbit-node" style="--angle:315deg"><div class="node-inner"><span class="badge blue">DB</span><span>Dashboard</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 — O PROBLEMA -->
+    <section class="slide" data-title="O problema">
+      <div class="slide-inner stagger">
+        <p class="kicker">O problema</p>
+        <h1 class="headline">O problema não é falta de ferramentas. É <span class="em-cyan">excesso de ferramentas que não se conversam</span>.</h1>
+        <div class="scatter">
+          <span class="chip dim" style="--r:-3deg">WhatsApp</span>
+          <span class="chip dim" style="--r:2deg">CRM</span>
+          <span class="chip dim" style="--r:-1deg">Agenda</span>
+          <span class="chip dim" style="--r:4deg">Drive</span>
+          <span class="chip dim" style="--r:-2deg">ManyChat</span>
+          <span class="chip dim" style="--r:3deg">Quiz</span>
+          <span class="chip dim" style="--r:-4deg">Posts</span>
+          <span class="chip dim" style="--r:1deg">IA</span>
+          <span class="chip dim" style="--r:-2deg">Planilhas</span>
+        </div>
+        <ul class="list-min" style="max-width:640px;margin:20px auto 0;">
+          <li><span class="tick">—</span> Leads que ficam sem follow-up</li>
+          <li><span class="tick">—</span> Equipe alternando entre telas o dia inteiro</li>
+          <li><span class="tick">—</span> Informações espalhadas em sistemas que não conversam</li>
+          <li><span class="tick">—</span> Retrabalho constante só para manter tudo atualizado</li>
+        </ul>
+        <p class="closing-line">"Você pode estar pagando por várias ferramentas e ainda não ter uma operação realmente conectada."</p>
+      </div>
+    </section>
+
+    <!-- 3 — O CUSTO INVISÍVEL -->
+    <section class="slide" data-title="O custo invisível">
+      <div class="slide-inner stagger">
+        <p class="kicker">O custo invisível</p>
+        <h1 class="headline">Você paga várias ferramentas. E ainda paga com <span class="em-gold">tempo perdido</span>.</h1>
+        <div class="cost-row">
+          <span class="chip"><span class="badge gold">$</span>CRM</span>
+          <span class="chip"><span class="badge gold">$</span>Disparador</span>
+          <span class="chip"><span class="badge gold">$</span>Automação</span>
+          <span class="chip"><span class="badge gold">$</span>Quiz</span>
+          <span class="chip"><span class="badge gold">$</span>Agenda</span>
+          <span class="chip"><span class="badge gold">$</span>Posts</span>
+          <span class="chip"><span class="badge gold">$</span>Drive</span>
+          <span class="chip"><span class="badge gold">$</span>IA</span>
+          <span class="chip"><span class="badge gold">$</span>Páginas</span>
+        </div>
+        <div class="formula">
+          <span class="fchip">Várias assinaturas</span>
+          <span class="op">+</span>
+          <span class="fchip">Retrabalho</span>
+          <span class="op">+</span>
+          <span class="fchip">Falta de integração</span>
+          <span class="op">=</span>
+          <span class="fchip result">Complexidade crescente</span>
+        </div>
+        <p class="closing-line">"O problema não é ter ferramentas. É nenhuma delas saber o que aconteceu com o cliente na outra."</p>
+      </div>
+    </section>
+
+    <!-- 4 — NOVA LÓGICA -->
+    <section class="slide" data-title="Nova lógica">
+      <div class="slide-inner stagger">
+        <p class="kicker">Uma nova lógica</p>
+        <h1 class="headline">De várias ferramentas soltas para <span class="grad-text">uma operação conectada</span>.</h1>
+        <div class="split">
+          <div class="split-col before">
+            <h3>Antes</h3>
+            <div class="scatter" style="justify-content:flex-start;padding:0;">
+              <span class="chip dim" style="--r:-3deg">WhatsApp</span>
+              <span class="chip dim" style="--r:2deg">Planilhas</span>
+              <span class="chip dim" style="--r:-2deg">CRM solto</span>
+              <span class="chip dim" style="--r:3deg">Quiz</span>
+              <span class="chip dim" style="--r:-1deg">Agenda</span>
+              <span class="chip dim" style="--r:4deg">Drive</span>
+              <span class="chip dim" style="--r:-3deg">Posts</span>
+            </div>
+          </div>
+          <div class="split-col after">
+            <h3>Depois</h3>
+            <div class="orbit-wrap">
+              <div class="orbit compact">
+                <div class="orbit-center"><span style="font-size:15px;">PGC</span></div>
+                <div class="orbit-node" style="--angle:0deg"><div class="node-inner"><span class="badge">CP</span><span>Captação</span></div></div>
+                <div class="orbit-node" style="--angle:51.43deg"><div class="node-inner"><span class="badge">AT</span><span>Atendimento</span></div></div>
+                <div class="orbit-node" style="--angle:102.86deg"><div class="node-inner"><span class="badge blue">CR</span><span>CRM</span></div></div>
+                <div class="orbit-node" style="--angle:154.29deg"><div class="node-inner"><span class="badge blue">AU</span><span>Automação</span></div></div>
+                <div class="orbit-node" style="--angle:205.71deg"><div class="node-inner"><span class="badge">AG</span><span>Agenda</span></div></div>
+                <div class="orbit-node" style="--angle:257.14deg"><div class="node-inner"><span class="badge gold">VD</span><span>Vendas</span></div></div>
+                <div class="orbit-node" style="--angle:308.57deg"><div class="node-inner"><span class="badge blue">GE</span><span>Gestão</span></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 — O QUE A PGC FAZ -->
+    <section class="slide" data-title="O que a PGC faz">
+      <div class="slide-inner stagger">
+        <p class="kicker">O que a PGC faz</p>
+        <h1 class="headline">Tudo o que sua operação precisa para <span class="em-cyan">captar, atender, vender e acompanhar</span>.</h1>
+        <div class="block-grid">
+          <div class="block-card">
+            <span class="badge">AT</span>
+            <h3>Atendimento &amp; IA</h3>
+            <p>Toda conversa — WhatsApp, Instagram, site e e-mail — em um único lugar, com uma assistente digital cuidando do que é repetitivo.</p>
+          </div>
+          <div class="block-card">
+            <span class="badge blue">CR</span>
+            <h3>CRM &amp; Automação</h3>
+            <p>Você sabe exatamente onde cada oportunidade está — e o processo continua rodando mesmo quando alguém esquece.</p>
+          </div>
+          <div class="block-card">
+            <span class="badge gold">MK</span>
+            <h3>Marketing &amp; Captação</h3>
+            <p>Anúncios, conteúdo e páginas de captação conectados direto com o comercial, sem depender de exportar e importar nada.</p>
+          </div>
+          <div class="block-card">
+            <span class="badge purple">GE</span>
+            <h3>Agenda &amp; Gestão</h3>
+            <p>Agendamentos, tarefas e indicadores da equipe em uma única visão, sem depender de planilha para saber o que está acontecendo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 — JORNADA DO CLIENTE -->
+    <section class="slide" data-title="Jornada do cliente">
+      <div class="slide-inner center stagger">
+        <p class="kicker" style="justify-content:center;">A jornada</p>
+        <h1 class="headline">Do primeiro contato à venda. <span class="grad-text">Tudo conectado</span>.</h1>
+        <div class="flow" style="margin-top:32px;">
+          <span class="flow-step">Atrair</span><span class="flow-arrow"></span>
+          <span class="flow-step">Captar</span><span class="flow-arrow"></span>
+          <span class="flow-step">Atender</span><span class="flow-arrow"></span>
+          <span class="flow-step">Qualificar</span><span class="flow-arrow"></span>
+          <span class="flow-step">Agendar</span><span class="flow-arrow"></span>
+          <span class="flow-step">Vender</span><span class="flow-arrow"></span>
+          <span class="flow-step">Acompanhar</span><span class="flow-arrow"></span>
+          <span class="flow-step" style="background:var(--grad-gold);color:#241900;border:none;">Reativar</span>
+        </div>
+        <p class="closing-line">Nenhuma etapa depende de alguém lembrar de abrir outro sistema.</p>
+      </div>
+    </section>
+
+    <!-- 7 — MAPA DE FUNIS -->
+    <section class="slide" data-title="Mapa de funis">
+      <div class="slide-inner stagger">
+        <p class="kicker">Mapa de funis</p>
+        <h1 class="headline">Você não fica preso a <span class="em-cyan">um único funil</span>.</h1>
+        <div class="funnel-map">
+          <div class="funnel-row">
+            <span class="funnel-label">Tráfego pago</span>
+            <div class="funnel-chain">
+              <span class="chip">Quiz / Aplicação</span><span class="arrow">→</span>
+              <span class="chip">Agendamento</span><span class="arrow">→</span>
+              <span class="chip">Call</span><span class="arrow">→</span>
+              <span class="chip venda">Venda</span>
+            </div>
+          </div>
+          <div class="funnel-row">
+            <span class="funnel-label">Conteúdo orgânico</span>
+            <div class="funnel-chain">
+              <span class="chip">Direct / Comentário</span><span class="arrow">→</span>
+              <span class="chip">Qualificação</span><span class="arrow">→</span>
+              <span class="chip">Agendamento</span><span class="arrow">→</span>
+              <span class="chip venda">Venda</span>
+            </div>
+          </div>
+          <div class="funnel-row">
+            <span class="funnel-label">Social selling</span>
+            <div class="funnel-chain">
+              <span class="chip">Lista de perfis</span><span class="arrow">→</span>
+              <span class="chip">Direct</span><span class="arrow">→</span>
+              <span class="chip">Aplicação</span><span class="arrow">→</span>
+              <span class="chip venda">Venda</span>
+            </div>
+          </div>
+          <div class="funnel-row">
+            <span class="funnel-label">Prospecção ativa</span>
+            <div class="funnel-chain">
+              <span class="chip">Prospecção web</span><span class="arrow">→</span>
+              <span class="chip">Ligação / Disparo</span><span class="arrow">→</span>
+              <span class="chip">Agendamento</span><span class="arrow">→</span>
+              <span class="chip venda">Venda</span>
+            </div>
+          </div>
+        </div>
+        <p class="closing-line">Não existe apenas um funil. A PGC permite ativar diferentes caminhos comerciais dentro da mesma operação.</p>
+      </div>
+    </section>
+
+    <!-- 8 — INTELIGÊNCIA ARTIFICIAL -->
+    <section class="slide" data-title="Inteligência artificial">
+      <div class="slide-inner center stagger">
+        <p class="kicker" style="justify-content:center;color:var(--purple);">Inteligência artificial</p>
+        <h1 class="headline">IA trabalhando <span class="em-purple">com</span> sua equipe, não no lugar dela.</h1>
+        <div class="orbit-wrap">
+          <div class="orbit compact">
+            <div class="orbit-center purple"><span>IA</span></div>
+            <div class="orbit-line purple" style="--angle:0deg;--delay:0s"></div>
+            <div class="orbit-line purple" style="--angle:60deg;--delay:.25s"></div>
+            <div class="orbit-line purple" style="--angle:120deg;--delay:.5s"></div>
+            <div class="orbit-line purple" style="--angle:180deg;--delay:.75s"></div>
+            <div class="orbit-line purple" style="--angle:240deg;--delay:1s"></div>
+            <div class="orbit-line purple" style="--angle:300deg;--delay:1.25s"></div>
+
+            <div class="orbit-node" style="--angle:0deg"><div class="node-inner"><span class="badge purple">AT</span><span>Atendimento</span></div></div>
+            <div class="orbit-node" style="--angle:60deg"><div class="node-inner"><span class="badge purple">SD</span><span>SDR</span></div></div>
+            <div class="orbit-node" style="--angle:120deg"><div class="node-inner"><span class="badge purple">QL</span><span>Qualificação</span></div></div>
+            <div class="orbit-node" style="--angle:180deg"><div class="node-inner"><span class="badge purple">FU</span><span>Follow-up</span></div></div>
+            <div class="orbit-node" style="--angle:240deg"><div class="node-inner"><span class="badge purple">SP</span><span>Suporte</span></div></div>
+            <div class="orbit-node" style="--angle:300deg"><div class="node-inner"><span class="badge purple">RC</span><span>Recuperação</span></div></div>
+          </div>
+        </div>
+        <p class="closing-line">A IA cuida do repetitivo. Sua equipe cuida do estratégico.</p>
+      </div>
+    </section>
+
+    <!-- 9 — ECONOMIA E PRODUTIVIDADE -->
+    <section class="slide" data-title="Economia e produtividade">
+      <div class="slide-inner stagger">
+        <p class="kicker">Economia e produtividade</p>
+        <h1 class="headline">Menos ferramentas. Menos retrabalho. <span class="grad-text">Mais foco em caixa</span>.</h1>
+        <div class="pillar-grid">
+          <div class="pillar"><span class="badge gold">$</span><h3>Menos custo com sistemas espalhados</h3></div>
+          <div class="pillar"><span class="badge">TP</span><h3>Mais tempo de equipe para vender</h3></div>
+          <div class="pillar"><span class="badge blue">CT</span><h3>Mais controle sobre a operação</h3></div>
+          <div class="pillar"><span class="badge purple">OP</span><h3>Mais oportunidades acompanhadas de perto</h3></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 — VISÃO GERENCIAL -->
+    <section class="slide" data-title="Visão gerencial">
+      <div class="slide-inner stagger">
+        <p class="kicker">Visão gerencial</p>
+        <h1 class="headline">Pare de operar <span class="em-cyan">no escuro</span>.</h1>
+        <div class="dash">
+          <div class="dash-bar">
+            <span class="dash-dot"></span><span class="dash-dot"></span><span class="dash-dot"></span>
+            <span class="dash-title">painel-comercial · pgc</span>
+          </div>
+          <div class="dash-body">
+            <div class="kpi"><div class="label">Leads</div><div class="value">312</div><div class="delta">+18%</div></div>
+            <div class="kpi"><div class="label">Atendimentos</div><div class="value">248</div><div class="delta">+9%</div></div>
+            <div class="kpi"><div class="label">Reuniões</div><div class="value">64</div><div class="delta">+12%</div></div>
+            <div class="kpi"><div class="label">Conversão</div><div class="value">31%</div><div class="delta flat">estável</div></div>
+            <div class="dash-chart">
+              <div class="bar" style="--h:38%;--i:1"></div>
+              <div class="bar" style="--h:52%;--i:2"></div>
+              <div class="bar" style="--h:44%;--i:3"></div>
+              <div class="bar" style="--h:68%;--i:4"></div>
+              <div class="bar" style="--h:58%;--i:5"></div>
+              <div class="bar" style="--h:76%;--i:6"></div>
+              <div class="bar" style="--h:71%;--i:7"></div>
+              <div class="bar" style="--h:84%;--i:8"></div>
+            </div>
+          </div>
+        </div>
+        <p class="closing-line">Uma visão geral da operação — leads, funil, agenda, vendas e equipe — para decisões melhores.</p>
+      </div>
+    </section>
+
+    <!-- 11 — PARA QUEM É -->
+    <section class="slide" data-title="Para quem é">
+      <div class="slide-inner stagger">
+        <p class="kicker">Para quem é</p>
+        <h1 class="headline">Uma plataforma para qualquer empresa que precisa <span class="grad-text">atender, vender e acompanhar</span> clientes.</h1>
+        <div class="audience-grid">
+          <div class="audience-item"><span class="badge">CE</span><span>Clínicas de estética</span></div>
+          <div class="audience-item"><span class="badge blue">CM</span><span>Clínicas médicas</span></div>
+          <div class="audience-item"><span class="badge">NL</span><span>Negócios locais</span></div>
+          <div class="audience-item"><span class="badge blue">B2</span><span>Empresas B2B</span></div>
+          <div class="audience-item"><span class="badge">PS</span><span>Prestadores de serviço</span></div>
+          <div class="audience-item"><span class="badge blue">IM</span><span>Imobiliárias</span></div>
+          <div class="audience-item"><span class="badge">ES</span><span>Escolas</span></div>
+          <div class="audience-item"><span class="badge blue">FR</span><span>Franquias</span></div>
+          <div class="audience-item"><span class="badge purple">MT</span><span>Mentores</span></div>
+          <div class="audience-item"><span class="badge purple">CS</span><span>Consultores</span></div>
+          <div class="audience-item"><span class="badge purple">EP</span><span>Especialistas</span></div>
+          <div class="audience-item"><span class="badge gold">ED</span><span>Empresas digitais</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12 — OFERTA / CTA -->
+    <section class="slide" data-title="Oferta">
+      <div class="slide-inner center stagger">
+        <p class="kicker" style="justify-content:center;">Próximo passo</p>
+        <h1 class="headline">Centralize sua <span class="grad-text">operação comercial</span>.</h1>
+        <div class="offer">
+          <p class="plan-name">PGC Full</p>
+          <p class="price grad-text gold">Sob consulta</p>
+          <p class="price-note">Proposta personalizada para a realidade da sua operação</p>
+          <ul class="list-min">
+            <li><span class="tick">✓</span> Plataforma completa</li>
+            <li><span class="tick">✓</span> Configuração da operação</li>
+            <li><span class="tick">✓</span> Implantação guiada</li>
+            <li><span class="tick">✓</span> Treinamento da equipe</li>
+            <li><span class="tick">✓</span> Suporte contínuo</li>
+          </ul>
+          <a class="cta-btn" href="https://wa.me/5511914034494?text=Ol%C3%A1%2C%20quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20da%20PGC" target="_blank" rel="noopener noreferrer">
+            <span class="ring-icon">
+              <svg viewBox="0 0 24 24">
+                <circle class="dot" cx="12" cy="12" r="3" fill="currentColor"/>
+                <circle class="r1" cx="12" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".5"/>
+                <circle class="r2" cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".3"/>
+              </svg>
+            </span>
+            Agendar demonstração
+          </a>
+        </div>
+        <p class="closing-line">Continuar como está provavelmente custa mais do que organizar tudo.</p>
+      </div>
+    </section>
+
+  </main>
+
+<script>
+(function(){
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var total = slides.length;
+  var current = 0;
+
+  var dotsWrap = document.getElementById('dots');
+  slides.forEach(function(s, i){
+    var d = document.createElement('button');
+    d.className = 'dot' + (i === 0 ? ' active' : '');
+    d.setAttribute('role','tab');
+    d.setAttribute('aria-label','Ir para slide ' + (i + 1) + ': ' + (s.getAttribute('data-title') || ''));
+    d.addEventListener('click', function(){ goTo(i); });
+    dotsWrap.appendChild(d);
+  });
+  var dots = Array.prototype.slice.call(dotsWrap.children);
+
+  var progressFill = document.getElementById('progressFill');
+  var counterCurrent = document.getElementById('counterCurrent');
+  document.getElementById('counterTotal').textContent = String(total).padStart(2,'0');
+  var btnPrev = document.getElementById('btnPrev');
+  var btnNext = document.getElementById('btnNext');
+  var btnFullscreen = document.getElementById('btnFullscreen');
+
+  function pad(n){ return String(n).padStart(2,'0'); }
+
+  function render(){
+    slides.forEach(function(s, i){
+      s.classList.toggle('active', i === current);
+      s.classList.toggle('exit-up', i < current);
+    });
+    dots.forEach(function(d, i){ d.classList.toggle('active', i === current); });
+    progressFill.style.width = ((current + 1) / total * 100) + '%';
+    counterCurrent.textContent = pad(current + 1);
+    btnPrev.disabled = current === 0;
+    btnNext.disabled = current === total - 1;
+    history.replaceState(null, '', '#' + (current + 1));
+  }
+
+  function goTo(index){
+    current = Math.max(0, Math.min(total - 1, index));
+    render();
+  }
+
+  function next(){ if (current < total - 1) goTo(current + 1); }
+  function prev(){ if (current > 0) goTo(current - 1); }
+
+  btnNext.addEventListener('click', next);
+  btnPrev.addEventListener('click', prev);
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' '){ e.preventDefault(); next(); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp'){ e.preventDefault(); prev(); }
+    else if (e.key === 'Home'){ e.preventDefault(); goTo(0); }
+    else if (e.key === 'End'){ e.preventDefault(); goTo(total - 1); }
+    else if (e.key === 'f' || e.key === 'F'){ toggleFullscreen(); }
+  });
+
+  var touchStartX = null, touchStartY = null;
+  document.addEventListener('touchstart', function(e){
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  }, {passive:true});
+  document.addEventListener('touchend', function(e){
+    if (touchStartX === null) return;
+    var dx = e.changedTouches[0].clientX - touchStartX;
+    var dy = e.changedTouches[0].clientY - touchStartY;
+    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy)){
+      if (dx < 0) next(); else prev();
+    }
+    touchStartX = null; touchStartY = null;
+  }, {passive:true});
+
+  function toggleFullscreen(){
+    if (!document.fullscreenElement){
+      document.documentElement.requestFullscreen().catch(function(){});
+    } else {
+      document.exitFullscreen().catch(function(){});
+    }
+  }
+  btnFullscreen.addEventListener('click', toggleFullscreen);
+
+  var hash = parseInt((location.hash || '').replace('#',''), 10);
+  if (!isNaN(hash) && hash >= 1 && hash <= total){ current = hash - 1; }
+
+  render();
+})();
+</script>
+</body>
+</html>
