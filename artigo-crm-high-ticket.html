@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#050B18" />
+
+  <title>Como estruturar o CRM da sua mentoria para vender High Ticket | PGC</title>
+  <meta name="description" content="Aprenda a estruturar o CRM comercial da sua mentoria focado em conversão de alto ticket, reduzindo perdas e aumentando a eficiência de conversão." />
+  <link rel="canonical" href="https://pgc.ia.br/artigo-crm-high-ticket.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://pgc.ia.br/artigo-crm-high-ticket.html" />
+  <meta property="og:title" content="Como estruturar o CRM da sua mentoria para vender High Ticket | PGC" />
+  <meta property="og:description" content="Aprenda a desenhar as etapas do funil consultivo ideal para produtos de alto valor." />
+  <meta property="og:image" content="https://pgc.ia.br/assets/img/crm_dashboard.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <style>
+    /* Estilos específicos para páginas de artigos */
+    .article-container {
+      padding: 160px 0 100px;
+      position: relative;
+    }
+    
+    .article-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 40px;
+    }
+    
+    .article-meta {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .article-meta span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    
+    .article-title {
+      font-family: var(--ff-title);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--text-main);
+      margin-bottom: 24px;
+    }
+    
+    .article-cover-wrapper {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto 50px;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      aspect-ratio: 16/9;
+    }
+
+    .article-cover {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .article-content {
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: 1.08rem;
+      line-height: 1.8;
+      color: var(--text-soft);
+    }
+    
+    .article-content h2 {
+      font-family: var(--ff-title);
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-top: 44px;
+      margin-bottom: 18px;
+    }
+    
+    .article-content h3 {
+      font-family: var(--ff-title);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+    
+    .article-content p {
+      margin-bottom: 24px;
+    }
+    
+    .article-content ul, .article-content ol {
+      margin-bottom: 24px;
+      padding-left: 20px;
+    }
+    
+    .article-content li {
+      margin-bottom: 10px;
+    }
+    
+    .article-content strong {
+      color: var(--text-main);
+    }
+    
+    .article-content blockquote {
+      border-left: 4px solid var(--blue-electric);
+      background: var(--bg-panel);
+      padding: 24px;
+      border-radius: 0 20px 20px 0;
+      margin: 36px 0;
+      font-style: italic;
+      color: var(--text-main);
+      font-size: 1.15rem;
+    }
+
+    .article-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      color: var(--blue-electric);
+      margin-bottom: 30px;
+      transition: transform 0.2s, color 0.2s;
+    }
+    
+    .article-back-link:hover {
+      color: var(--blue-dark);
+      transform: translateX(-4px);
+    }
+    
+    /* Box CTA */
+    .article-cta {
+      margin-top: 80px;
+      background: linear-gradient(135deg, var(--bg-panel) 0%, rgba(16, 203, 239, 0.04) 100%);
+      border: 1px solid var(--border-color);
+      border-radius: 28px;
+      padding: 50px 40px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-stage" aria-hidden="true"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <!-- ===================== HEADER / NAV ===================== -->
+  <header class="site-header" id="header">
+    <div class="container nav">
+      <a href="index.html#topo" class="brand" aria-label="PGC — página inicial">
+        <img src="assets/img/logo.svg" alt="" class="brand__logo" width="42" height="42" />
+        <span class="brand__name">PGC</span>
+        <span class="brand__tag">Sistema Operacional<br>do Mentor Empresário</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Principal">
+        <a href="index.html#solucao">A solução</a>
+        <a href="index.html#jornada">Jornada</a>
+        <a href="index.html#recursos">Recursos</a>
+        <a href="index.html#planos">Planos</a>
+        <a href="index.html#faq">Dúvidas</a>
+      </nav>
+
+      <a href="index.html#aplicar" class="btn btn--primary nav__cta" data-cta="nav">Quero estruturar minha operação</a>
+
+      <button class="nav__burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Menu Mobile -->
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Menu mobile">
+    <a href="index.html#solucao">A solução</a>
+    <a href="index.html#jornada">Jornada do cliente</a>
+    <a href="index.html#recursos">Recursos</a>
+    <a href="index.html#planos">Planos</a>
+    <a href="index.html#faq">Perguntas frequentes</a>
+    <a href="index.html#aplicar" class="btn btn--primary btn--block" data-cta="menu">Quero estruturar minha operação</a>
+  </nav>
+
+  <main>
+    
+    <!-- ===================== ARTIGO DETALHADO ===================== -->
+    <article class="article-container">
+      <div class="container">
+        
+        <a href="blog.html" class="article-back-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Voltar para o blog
+        </a>
+
+        <header class="article-header">
+          <div class="article-meta">
+            <span style="color:var(--blue-electric); font-weight:700; text-transform:uppercase; letter-spacing:0.05em">Processos &amp; Vendas</span>
+            <span>•</span>
+            <span>5 min de leitura</span>
+            <span>•</span>
+            <span>23 de julho de 2026</span>
+          </div>
+          <h1 class="article-title">Como estruturar o CRM da sua mentoria para vender High Ticket</h1>
+          <p class="blog-hero__lead" style="font-size:1.15rem">
+            Funis de vendas genéricos não servem para produtos de alto valor. Entenda o fluxo ideal para otimizar suas taxas de agendamento e conversão de vendas consultivas.
+          </p>
+        </header>
+
+        <div class="article-cover-wrapper">
+          <img src="assets/img/crm_dashboard.jpg" alt="Dashboard de CRM de vendas" class="article-cover" />
+        </div>
+
+        <div class="article-content">
+          <p>
+            Vender um produto de R$ 50,00 exige apenas uma boa página de vendas e uma oferta de impulso. No entanto, quando entramos no território das <strong>mentorias de alto ticket (R$ 5.000,00 a R$ 30.000,00+)</strong>, a decisão de compra deixa de ser por impulso e passa a ser por <strong>confiança e relacionamento</strong>.
+          </p>
+          <p>
+            É por isso que tentar gerenciar vendas High Ticket usando um CRM desconfigurado ou planilhas estáticas é uma receita rápida para perder milhares de reais em leads que simplesmente "esfriam" nas suas conversas. A seguir, detalhamos como estruturar o seu funil da maneira correta.
+          </p>
+
+          <h2>1. O Abismo dos Funis Tradicionais</h2>
+          <p>
+            Em um e-commerce tradicional ou venda de infoprodutos mais baratos, o funil é: clique $\rightarrow$ carrinho $\rightarrow$ checkout. Na venda de mentoria High Ticket, a barreira de entrada é o <strong>filtro de qualificação</strong>. 
+          </p>
+          <p>
+            Se o seu CRM trata todos os interessados da mesma maneira, a sua equipe de vendas (closers) ficará sobrecarregada conversando com curiosos que não têm o perfil ou o capital para contratar seu serviço. Isso desmotiva seu time comercial e reduz o tempo dedicado a leads altamente qualificados.
+          </p>
+
+          <h2>2. As Etapas do Funil High Ticket Ideal</h2>
+          <p>
+            Uma operação comercial eficiente de mentoria deve possuir um pipeline claro, dividido em etapas lineares e bem definidas:
+          </p>
+          <ul>
+            <li><strong>Aplicação Recebida:</strong> O lead acabou de preencher o formulário de diagnóstico. É a hora em que o lead está mais quente.</li>
+            <li><strong>Triagem Comercial:</strong> Um SDR (Sales Development Representative) ou assistente qualifica as respostas do lead para verificar se ele tem o Perfil de Cliente Ideal (ICP).</li>
+            <li><strong>Tentativa de Agendamento:</strong> Tentativas de contato ativo para agendar a reunião diagnóstica com o closer.</li>
+            <li><strong>Reunião Agendada:</strong> Link da reunião enviado e lembretes configurados para evitar faltas (no-shows).</li>
+            <li><strong>Reunião Realizada:</strong> O closer fez a sessão estratégica e apresentou a oferta personalizada.</li>
+            <li><strong>Em Follow-up:</strong> O lead precisa de alguns dias para fechar (liberação de cartão, alinhamento com sócios).</li>
+            <li><strong>Ganho (Onboarding):</strong> O pagamento foi aprovado e o cliente é encaminhado automaticamente para o pós-venda.</li>
+          </ul>
+
+          <blockquote>
+            "O erro número um das operações de mentoria é deixar o lead sem resposta por mais de 2 horas. A velocidade de resposta na triagem inicial define o fechamento."
+          </blockquote>
+
+          <h2>3. O Poder do Acompanhamento (Follow-up) Estruturado</h2>
+          <p>
+            Menos de 20% das vendas High Ticket acontecem na primeira chamada. A grande maioria dos contratos é assinada durante a etapa de <strong>follow-up</strong>, que dura em média de 3 a 10 dias. 
+          </p>
+          <p>
+            Sem um CRM organizado, seus vendedores se perdem em dezenas de conversas no WhatsApp e esquecem de retornar no dia e hora marcados. O sistema deve emitir alertas automáticos ou, melhor ainda, mandar mensagens automatizadas de acompanhamento baseadas no estágio do pipeline para manter o relacionamento vivo de forma escalável.
+          </p>
+
+          <h2>4. Indicadores Chave de Performance (KPIs)</h2>
+          <p>
+            Se você não mede, você não gerencia. O seu painel do CRM deve mostrar claramente:
+          </p>
+          <ol>
+            <li><strong>Taxa de Conversão de Aplicação para Agendamento:</strong> Quantos leads que aplicam de fato agendam uma reunião? (Meta: >60%).</li>
+            <li><strong>Taxa de Comparecimento (Show-up Rate):</strong> Quantos agendados realmente entram na reunião? (Meta: >75%).</li>
+            <li><strong>Taxa de Conversão da Reunião (Close Rate):</strong> Quantos diagnósticos viram vendas? (Meta: >20%).</li>
+          </ol>
+
+          <div class="article-cta">
+            <span class="eyebrow" style="justify-content:center">Sua Mentoria Estruturada</span>
+            <h3 class="h3" style="margin:10px 0 20px">Pare de perder leads no WhatsApp</h3>
+            <p class="muted" style="max-width:500px; margin-inline:auto; margin-bottom:24px">
+              Queremos te ajudar a estruturar esse pipeline comercial exato na sua empresa, integrando canais e configurando seu CRM de forma personalizada.
+            </p>
+            <a href="index.html#aplicar" class="btn btn--primary">Aplicar para Diagnóstico Gratuito</a>
+          </div>
+
+        </div>
+
+      </div>
+    </article>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="brand">
+            <img src="assets/img/logo.svg" alt="" class="brand__logo" width="38" height="38" />
+            <span class="brand__name" style="color:var(--text-main)">PGC</span>
+          </div>
+          <p style="margin:16px 0 20px;max-width:280px">O sistema operacional que transforma mentorias em empresas estruturadas e de alta performance.</p>
+          <div class="socials">
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01" fill="currentColor"/></svg></a>
+            <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 17v-7"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h5>Navegação</h5>
+          <a href="index.html#solucao">A solução</a><br>
+          <a href="index.html#jornada">Jornada do cliente</a><br>
+          <a href="index.html#recursos">Recursos</a><br>
+          <a href="index.html#planos">Planos</a><br>
+          <a href="index.html#faq">Dúvidas frequentes</a>
+        </div>
+        <div>
+          <h5>Legal &amp; Contato</h5>
+          <a href="#" data-edit="link-privacidade">Política de privacidade</a><br>
+          <a href="#" data-edit="link-termos">Termos de uso</a><br>
+          <a href="#" data-edit="link-cancelamento">Política de cancelamento</a><br>
+          <a href="#" data-edit="link-avisos">Avisos legais</a><br>
+          <a href="mailto:contato@pgc.com.br" data-edit="email-contato">contato@pgc.com.br</a><br>
+          <a href="https://wa.me/00000000000" data-edit="whatsapp" data-cta="footer-whatsapp">WhatsApp comercial</a><br>
+          <a href="llms.txt" target="_blank">llms.txt</a>
+        </div>
+      </div>
+      <div class="footer__legal">
+        <p>
+          <span class="editable" data-edit="razao-social">Razão Social LTDA</span> ·
+          CNPJ <span class="editable" data-edit="cnpj">00.000.000/0001-00</span> ·
+          © <span id="year">2026</span> PGC. Todos os direitos reservados.
+        </p>
+        <p class="fine">As informações desta página são ilustrativas. Resultados variam conforme oferta, execução e mercado.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
