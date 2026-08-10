@@ -271,8 +271,128 @@
   .slide::-webkit-scrollbar{width:6px;}
   .slide::-webkit-scrollbar-thumb{background:rgba(248,250,252,.14);border-radius:6px;}
 
-  @media (max-height:640px){
-    .slide{padding-top:64px;padding-bottom:60px;}
+  @media (max-height:820px) {
+    :root {
+      --radius-lg: 16px;
+    }
+    .slide {
+      padding: clamp(84px, 11vh, 110px) clamp(20px, 5vw, 60px) clamp(60px, 6vh, 80px);
+    }
+    .headline {
+      font-size: clamp(22px, 3vw, 36px) !important;
+      margin-bottom: 10px !important;
+      line-height: 1.15;
+    }
+    .kicker {
+      margin-bottom: 8px !important;
+      font-size: 11px !important;
+    }
+    .sub {
+      font-size: clamp(13.5px, 1.1vw, 15px) !important;
+      margin-bottom: 10px !important;
+    }
+    .closing-line {
+      margin-top: 14px !important;
+      font-size: 13.5px !important;
+    }
+    .orbit-wrap {
+      margin: 4px 0 !important;
+    }
+    .orbit {
+      width: min(320px, 66vw) !important;
+      height: min(320px, 66vw) !important;
+      --radius: 120px !important;
+    }
+    .orbit-center {
+      width: 70px !important;
+      height: 70px !important;
+    }
+    .orbit-center span {
+      font-size: 14px !important;
+    }
+    .orbit-node .node-inner {
+      padding: 4px 8px 4px 4px !important;
+    }
+    .orbit-node .node-inner span {
+      font-size: 10px !important;
+    }
+    .badge {
+      width: 20px !important;
+      height: 20px !important;
+      font-size: 8.5px !important;
+    }
+    .offer {
+      padding: 14px 18px !important;
+      margin-top: 4px !important;
+      border-radius: 18px !important;
+      max-width: 500px !important;
+    }
+    .offer .price {
+      font-size: clamp(22px, 2.8vw, 30px) !important;
+      margin: 4px 0 2px !important;
+    }
+    .offer .price-note {
+      margin-bottom: 10px !important;
+    }
+    .offer .list-min {
+      margin-bottom: 12px !important;
+      gap: 8px !important;
+    }
+    .offer .list-min li {
+      font-size: 13px !important;
+      gap: 8px !important;
+    }
+    .cta-btn {
+      padding: 8px 18px !important;
+      font-size: 13px !important;
+    }
+    .split {
+      gap: 14px !important;
+      margin-top: 4px !important;
+    }
+    .split-col {
+      padding: 14px 12px !important;
+    }
+    .split-col h3 {
+      margin-bottom: 8px !important;
+    }
+    .block-grid {
+      gap: 10px !important;
+      margin-top: 4px !important;
+    }
+    .block-card {
+      padding: 14px !important;
+    }
+    .block-card h3 {
+      font-size: 14px !important;
+      margin-bottom: 4px !important;
+    }
+    .block-card .badge {
+      width: 28px !important;
+      height: 28px !important;
+      margin-bottom: 8px !important;
+    }
+    .funnel-row {
+      padding: 6px 0 !important;
+      gap: 8px !important;
+    }
+    .pillar-grid {
+      gap: 8px !important;
+      margin-top: 4px !important;
+    }
+    .pillar {
+      padding: 12px 10px !important;
+    }
+    .dash-body {
+      padding: 12px !important;
+      gap: 6px !important;
+    }
+    .kpi {
+      padding: 8px !important;
+    }
+    .audience-item {
+      padding: 6px 8px !important;
+    }
   }
 </style>
 </head>
