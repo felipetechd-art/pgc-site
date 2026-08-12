@@ -182,19 +182,22 @@
         payload[key] = value;
       });
 
-      // Enviar para a nossa Cloudflare Pages Function local (que faz o proxy para o CRM contornando CORS)
-      fetch('/api/leads', {
+      // URL da Planilha Google
+      var googleUrl = "https://script.google.com/macros/s/AKfycbyFamaHxck4zAISU0qMrL-qc-8WAB5lBNVI4nxHTpaVkVHiiP5BoKDXXQB97h_Nxqg2/exec";
+
+      // Envia diretamente para a Planilha do Google usando text/plain para contornar CORS preflight do navegador
+      fetch(googleUrl, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'text/plain;charset=utf-8'
         },
         body: JSON.stringify(payload)
       })
-      .then(function (res) {
-        console.log('Lead enviado para o CRM via proxy local.');
+      .then(function () {
+        console.log('Lead enviado com sucesso para a planilha Google.');
       })
       .catch(function (err) {
-        console.error('Erro ao processar lead no proxy:', err);
+        console.error('Erro ao enviar lead para a planilha:', err);
       });
 
       track('form_enviado');
