@@ -183,7 +183,7 @@
       });
 
       // Enviar para o webhook do CRM do cliente
-      var webhookUrl = "https://api.osociohoteleiro.com.br/api/webhooks/automation/49yRJfc4iqayydvS8Kn2xw?token=4f38a6262c7f8be380503f5ff7d3638caea531a13ca69b06c879f83a46d347ff";
+      var webhookUrl = "https://api.osociohoteleiro.com.br/api/webhooks/automation/DvcHKhnDpAAn5xl_i6djPA?token=e7deae757125c78469b5da95c046d65f403ad733a776cbdd409fd6065a44cd28";
 
       fetch(webhookUrl, {
         method: 'POST',
