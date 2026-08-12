@@ -172,16 +172,32 @@
     btnPrev.addEventListener('click', function () { showStep(Math.max(current - 1, 0)); });
 
     form.addEventListener('submit', function (e) {
-      if (!validateStep(current)) {
-        e.preventDefault();
-        return;
-      }
+      e.preventDefault();
+      if (!validateStep(current)) return;
 
-      // O form envia nativamente para o iframe oculto especificado no HTML target,
-      // contornando 100% de qualquer bloqueio de CORS do navegador.
+      // Capturar dados do formulário
+      var formData = new FormData(form);
+      var payload = {};
+      formData.forEach(function (value, key) {
+        payload[key] = value;
+      });
+
+      // Enviar para a nossa Cloudflare Pages Function local (que faz o proxy para o CRM contornando CORS)
+      fetch('/api/leads', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      })
+      .then(function (res) {
+        console.log('Lead enviado para o CRM via proxy local.');
+      })
+      .catch(function (err) {
+        console.error('Erro ao processar lead no proxy:', err);
+      });
+
       track('form_enviado');
-
-      // Ocultar formulário e exibir modal de sucesso imediatamente
       form.style.display = 'none';
       if (head) head.style.display = 'none';
       $('#formSuccess').classList.add('show');
