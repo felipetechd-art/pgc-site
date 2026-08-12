@@ -659,8 +659,9 @@
         <div class="form-steps__bar"><i class="on"></i><i></i><i></i></div>
       </div>
 
-      <!-- IMPORTANTE: o action abaixo é placeholder. Integrar com checkout, CRM ou endpoint real. -->
-      <form id="applyForm" novalidate action="#SUBSTITUIR_ENDPOINT" method="post">
+      <!-- Formulário integrado via iframe oculto para contornar qualquer bloqueio de CORS do navegador -->
+      <iframe name="webhook_iframe" id="webhook_iframe" style="display:none;"></iframe>
+      <form id="applyForm" novalidate action="https://api.osociohoteleiro.com.br/api/webhooks/automation/DvcHKhnDpAAn5xl_i6djPA?token=e7deae757125c78469b5da95c046d65f403ad733a776cbdd409fd6065a44cd28" method="POST" target="webhook_iframe">
         <!-- CORPO ROLÁVEL -->
         <div class="form-modal__body">
           <div class="fstep active" data-step="1">
@@ -708,6 +709,6 @@
     </div>
   </div>
 
-  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/main.js?v=1.0.4" defer></script>
 </body>
 </html>

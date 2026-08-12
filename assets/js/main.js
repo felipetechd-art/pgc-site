@@ -172,36 +172,16 @@
     btnPrev.addEventListener('click', function () { showStep(Math.max(current - 1, 0)); });
 
     form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (!validateStep(current)) return;
+      if (!validateStep(current)) {
+        e.preventDefault();
+        return;
+      }
 
-      // Capturar dados do formulário
-      var formData = new FormData(form);
-      var payload = {};
-      formData.forEach(function (value, key) {
-        payload[key] = value;
-      });
-
-      // Enviar para o webhook do CRM do cliente
-      var webhookUrl = "https://api.osociohoteleiro.com.br/api/webhooks/automation/DvcHKhnDpAAn5xl_i6djPA?token=e7deae757125c78469b5da95c046d65f403ad733a776cbdd409fd6065a44cd28";
-
-      // Usando x-www-form-urlencoded + no-cors para contornar bloqueio de segurança CORS do navegador
-      fetch(webhookUrl, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: new URLSearchParams(payload).toString()
-      })
-      .then(function () {
-        console.log('Lead enviado para o CRM (modo no-cors bypass)');
-      })
-      .catch(function (err) {
-        console.error('Erro no envio do lead para o CRM:', err);
-      });
-
+      // O form envia nativamente para o iframe oculto especificado no HTML target,
+      // contornando 100% de qualquer bloqueio de CORS do navegador.
       track('form_enviado');
+
+      // Ocultar formulário e exibir modal de sucesso imediatamente
       form.style.display = 'none';
       if (head) head.style.display = 'none';
       $('#formSuccess').classList.add('show');
