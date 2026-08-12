@@ -174,8 +174,31 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!validateStep(current)) return;
-      // Integração real: enviar via fetch para o endpoint/CRM, ou redirecionar para checkout.
-      // var data = Object.fromEntries(new FormData(form).entries());
+
+      // Capturar dados do formulário
+      var formData = new FormData(form);
+      var payload = {};
+      formData.forEach(function (value, key) {
+        payload[key] = value;
+      });
+
+      // Enviar para o webhook do CRM do cliente
+      var webhookUrl = "https://api.osociohoteleiro.com.br/api/webhooks/automation/49yRJfc4iqayydvS8Kn2xw?token=4f38a6262c7f8be380503f5ff7d3638caea531a13ca69b06c879f83a46d347ff";
+
+      fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      })
+      .then(function (res) {
+        console.log('Lead enviado com sucesso para o CRM');
+      })
+      .catch(function (err) {
+        console.error('Erro ao enviar lead para o CRM:', err);
+      });
+
       track('form_enviado');
       form.style.display = 'none';
       if (head) head.style.display = 'none';
