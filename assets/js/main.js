@@ -185,18 +185,20 @@
       // Enviar para o webhook do CRM do cliente
       var webhookUrl = "https://api.osociohoteleiro.com.br/api/webhooks/automation/DvcHKhnDpAAn5xl_i6djPA?token=e7deae757125c78469b5da95c046d65f403ad733a776cbdd409fd6065a44cd28";
 
+      // Usando x-www-form-urlencoded + no-cors para contornar bloqueio de segurança CORS do navegador
       fetch(webhookUrl, {
         method: 'POST',
+        mode: 'no-cors',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/x-www-form-urlencoded'
         },
-        body: JSON.stringify(payload)
+        body: new URLSearchParams(payload).toString()
       })
-      .then(function (res) {
-        console.log('Lead enviado com sucesso para o CRM');
+      .then(function () {
+        console.log('Lead enviado para o CRM (modo no-cors bypass)');
       })
       .catch(function (err) {
-        console.error('Erro ao enviar lead para o CRM:', err);
+        console.error('Erro no envio do lead para o CRM:', err);
       });
 
       track('form_enviado');
