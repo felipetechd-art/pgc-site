@@ -1,105 +1,30 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#050B18" />
+---
+/**
+ * Home. As 17 dobras vieram inteiras do index.html escrito a mao — a migracao
+ * nao reescreveu conteudo comercial. O que saiu daqui foi o <head>, o cabecalho
+ * e o rodape, que agora sao do BaseLayout.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { SITE } from '../data/site.js'
 
-  <title>PGC | Plataforma de Gestão Comercial</title>
-  <meta name="description" content="Centralize marketing, atendimento, vendas, inteligência artificial, automações e gestão em um único sistema. Transforme seu negócio em uma empresa estruturada." />
-  <link rel="canonical" href="https://pgc.ia.br/" />
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'PGC — Plataforma de Gestão Comercial',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  description: SITE.descricao,
+  url: SITE.url,
+  offers: { '@type': 'AggregateOffer', priceCurrency: 'BRL', availability: 'https://schema.org/InStock' },
+}
+---
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://pgc.ia.br/" />
-  <meta property="og:title" content="PGC | Plataforma de Gestão Comercial" />
-  <meta property="og:description" content="Do primeiro comentário ao contrato assinado, acompanhe toda a jornada do cliente sem perder oportunidades entre Instagram, WhatsApp, planilhas e vendedores." />
-  <meta property="og:image" content="https://pgc.ia.br/assets/img/og-cover.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <link rel="icon" type="image/png" href="assets/img/logo.png" />
-
-  <!-- Fontes -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="assets/css/styles.css" />
-
-  <!--
-    RASTREAMENTO — inserir os snippets reais antes de publicar:
-    · Google Tag Manager (GTM-XXXXXXX)
-    · Meta Pixel  fbq('init','PIXEL_ID')
-    · Google Analytics 4  gtag('config','G-XXXXXXX')
-    · Google Ads (conversões)
-    Os eventos (cta_clique, form_aberto, form_etapa, form_enviado,
-    calculadora_usada, ver_funcionalidades) já são disparados em assets/js/main.js
-    via window.dataLayer / fbq / gtag.
-  -->
-</head>
-<body>
-  <div class="bg-stage" aria-hidden="true"></div>
-  <div class="bg-grid" aria-hidden="true"></div>
-
-  <!-- ===================== HEADER / NAV ===================== -->
-  <header class="site-header" id="header">
-    <div class="container nav">
-      <a href="#topo" class="brand" aria-label="PGC — página inicial">
-        <img src="assets/img/logo.png" alt="Logo PGC" class="brand__logo" />
-        <span class="brand__tag">Plataforma de<br>gestão comercial</span>
-      </a>
-
-      <nav class="nav__menu" aria-label="Principal">
-        <ul class="nav__links">
-          <li class="tem-menu">
-            <a href="#solucao">A solução <svg class="nav__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="11" height="11" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
-            <div class="nav__drop">
-              <ul>
-                <li><a href="#espelho">O caos da operação</a></li>
-                <li><a href="#diagnostico">O falso diagnóstico</a></li>
-                <li><a href="#custo">O custo da perda</a></li>
-                <li><a href="#transformacao">A virada</a></li>
-                <li><a href="#solucao">Como a PGC funciona</a></li>
-                <li><a href="#jornada">Jornada do cliente</a></li>
-                <li><a href="#tecnologia">Tecnologia e IA</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="tem-menu">
-            <a href="#recursos">Recursos <svg class="nav__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="11" height="11" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
-            <div class="nav__drop">
-              <ul>
-                <li><a href="#recursos">Todos os recursos</a></li>
-                <li><a href="#comparacao">Comparação</a></li>
-                <li><a href="#para-quem">Para quem é</a></li>
-                <li><a href="#implantacao">Implantação</a></li>
-                <li><a href="#garantia">Garantia</a></li>
-              </ul>
-            </div>
-          </li>
-          <li><a href="#planos">Planos</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="#faq">Dúvidas</a></li>
-        </ul>
-      </nav>
-
-      <a href="#planos" class="btn btn--primary nav__cta" data-cta="nav">
-        <span class="nav__cta-longo">Quero conhecer os planos</span>
-        <span class="nav__cta-curto">Ver planos</span>
-      </a>
-    </div>
-
-    <!-- No celular o menu nao fica escondido atras de hamburguer: os links
-         ficam nesta segunda linha, sempre a vista. Some no desktop, onde eles
-         voltam para a propria barra. -->
-    <nav class="container nav__linha" aria-label="Principal no celular">
-      <a href="#solucao">Solução</a>
-      <a href="#recursos">Recursos</a>
-      <a href="#planos">Planos</a>
-      <a href="blog.html">Blog</a>
-      <a href="#faq">Dúvidas</a>
-    </nav>
-  </header>
+<BaseLayout
+  titulo="PGC | Plataforma de Gestão Comercial"
+  descricao={SITE.descricao}
+  pagina="/"
+  schema={schema}
+>
   <main id="topo">
 
     <!-- ===================== DOBRA 1 — HERO ===================== -->
@@ -124,7 +49,7 @@
             <div class="hero-video__frame">
               <!--
                 TROQUE O BLOCO .hero-video__call PELO VIDEO (formato vertical 9:16):
-                <video src="assets/video/hero.mp4" poster="assets/img/hero-poster.jpg" autoplay muted loop playsinline></video>
+                <video src="/assets/video/hero.mp4" poster="assets/img/hero-poster.jpg" autoplay muted loop playsinline></video>
                 ou <iframe src="https://www.youtube.com/embed/ID" title="Apresentacao PGC" allowfullscreen></iframe>
               -->
               <div class="hero-video__call">
@@ -587,49 +512,6 @@
   </main>
 
   <!-- ===================== RODAPÉ ===================== -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__top">
-        <div>
-          <a href="#topo" class="brand" style="margin-bottom:16px">
-            <img src="assets/img/logo-light.png" alt="Logo PGC" class="brand__logo" />
-          </a>
-          <p class="muted measure-sm" style="font-size:.9rem">Plataforma de Gestão Comercial. A infraestrutura que transforma um negócio artesanal em uma empresa estruturada.</p>
-          <div class="socials" style="margin-top:20px">
-            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
-            <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></svg></a>
-            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 17v-7"/></svg></a>
-          </div>
-        </div>
-        <div>
-          <h5>Navegação</h5>
-          <a href="#solucao">A solução</a><br>
-          <a href="#jornada">Jornada do cliente</a><br>
-          <a href="#recursos">Recursos</a><br>
-          <a href="#planos">Planos</a><br>
-          <a href="#faq">Dúvidas frequentes</a>
-        </div>
-        <div>
-          <h5>Legal &amp; Contato</h5>
-          <a href="#" data-edit="link-privacidade">Política de privacidade</a><br>
-          <a href="#" data-edit="link-termos">Termos de uso</a><br>
-          <a href="#" data-edit="link-cancelamento">Política de cancelamento</a><br>
-          <a href="#" data-edit="link-avisos">Avisos legais</a><br>
-          <a href="mailto:contato@pgc.com.br" data-edit="email-contato">contato@pgc.com.br</a><br>
-          <a href="https://wa.me/5511912856095?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20PGC!" data-edit="whatsapp" data-cta="footer-whatsapp">WhatsApp comercial</a><br>
-          <a href="llms.txt" target="_blank">llms.txt</a>
-        </div>
-      </div>
-      <div class="footer__legal">
-        <p>
-          <span class="editable" data-edit="razao-social">Razão Social LTDA</span> ·
-          CNPJ <span class="editable" data-edit="cnpj">00.000.000/0001-00</span> ·
-          © <span id="year">2026</span> PGC. Todos os direitos reservados.
-        </p>
-        <p class="fine">As informações desta página são ilustrativas. Resultados variam conforme oferta, execução e mercado.</p>
-      </div>
-    </div>
-  </footer>
 
   <!-- ===================== CTA FIXO MOBILE ===================== -->
   <div class="sticky-cta" id="stickyCta">
@@ -715,8 +597,6 @@
     </div>
   </div>
 
-  <script src="https://vc.pgc.ia.br/vitrine.js" async></script>
-  <script src="assets/js/main.js?v=1.1.1" defer></script>
-  <script src="assets/js/widget-ia.js" defer></script>
-</body>
-</html>
+  <!-- Vitrine de planos, servida pelo painel (vc.pgc.ia.br). So a home usa. -->
+  <script src="https://vc.pgc.ia.br/vitrine.js" is:inline async></script>
+</BaseLayout>

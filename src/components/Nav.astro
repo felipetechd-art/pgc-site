@@ -1,0 +1,63 @@
+---
+/**
+ * Cabecalho. Estrutura no modelo do site da Inovaihotel: links em pilula,
+ * submenu no hover e, no celular, uma segunda linha de links sempre visivel no
+ * lugar do hamburguer.
+ */
+import { NAV } from '../data/site.js'
+
+const { pagina = '' } = Astro.props
+const ativo = (href) => href === pagina
+---
+
+<header class="site-header" id="header">
+  <div class="container nav">
+    <a href="/" class="brand" aria-label="PGC — página inicial">
+      <img src="/assets/img/logo.png" alt="Logo PGC" class="brand__logo" width="120" height="34" />
+      <span class="brand__tag">Plataforma de<br />gestão comercial</span>
+    </a>
+
+    <nav class="nav__menu" aria-label="Principal">
+      <ul class="nav__links">
+        {
+          NAV.map((item) => (
+            <li class={item.filhos ? 'tem-menu' : undefined}>
+              <a href={item.href} aria-current={ativo(item.href) ? 'page' : undefined}>
+                {item.label}
+                {item.filhos && (
+                  <svg class="nav__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="11" height="11" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+                )}
+              </a>
+              {item.filhos && (
+                <div class="nav__drop">
+                  <ul>
+                    {item.filhos.map((f) => (
+                      <li><a href={f.href}>{f.label}</a></li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <a href="/#planos" class="btn btn--primary nav__cta" data-cta="nav">
+      <span class="nav__cta-longo">Quero conhecer os planos</span>
+      <span class="nav__cta-curto">Ver planos</span>
+    </a>
+  </div>
+
+  <!-- No celular o menu nao fica escondido atras de hamburguer: os links ficam
+       nesta segunda linha, sempre a vista. Some no desktop. -->
+  <nav class="container nav__linha" aria-label="Principal no celular">
+    {
+      NAV.map((item) => (
+        <a href={item.href} aria-current={ativo(item.href) ? 'page' : undefined}>
+          {item.curto || item.label}
+        </a>
+      ))
+    }
+  </nav>
+</header>

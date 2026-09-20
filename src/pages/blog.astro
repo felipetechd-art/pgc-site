@@ -1,0 +1,112 @@
+---
+/**
+ * Listagem do blog. Os cards saem da colecao, ordenados pela data — com 100+
+ * artigos ninguem mais edita esta pagina para publicar um post.
+ */
+import { getCollection } from 'astro:content'
+import BaseLayout from '../layouts/BaseLayout.astro'
+import IconeArtigo from '../components/IconeArtigo.astro'
+import { SITE } from '../data/site.js'
+
+const artigos = (await getCollection('blog', ({ data }) => !data.rascunho)).sort(
+  (a, b) => b.data.data.valueOf() - a.data.data.valueOf()
+)
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  name: 'Blog PGC',
+  url: new URL('/blog', SITE.url).href,
+  description:
+    'Estratégias práticas, artigos técnicos e inteligência operacional para estruturar e escalar operações comerciais.',
+  blogPost: artigos.slice(0, 20).map((a) => ({
+    '@type': 'BlogPosting',
+    headline: a.data.titulo,
+    url: new URL(`/${a.id}`, SITE.url).href,
+    datePublished: a.data.data.toISOString().slice(0, 10),
+  })),
+}
+---
+
+<BaseLayout
+  titulo="Blog PGC | Estratégias e inteligência para operações comerciais"
+  descricao="Artigos práticos sobre atendimento, IA, CRM, follow-up e gestão comercial para clínicas, prestadores de serviço, mentorias, imobiliárias e empresas B2B."
+  pagina="/blog"
+  schema={schema}
+>
+  <main id="topo">
+    <section class="blog-hero">
+      <div class="container">
+        <span class="eyebrow eyebrow--chip reveal">Conteúdo &amp; Insights</span>
+        <h1 class="blog-hero__title reveal" data-delay="1">Blog <span class="grad-text">PGC</span></h1>
+        <p class="blog-hero__lead reveal" data-delay="2">
+          Estratégias práticas, artigos técnicos e inteligência operacional para estruturar e escalar operações
+          comerciais — de clínicas e prestadores de serviço a mentorias, imobiliárias e empresas B2B.
+        </p>
+      </div>
+    </section>
+
+    <section class="blog-section">
+      <div class="container">
+        <div class="blog-grid reveal" data-delay="3">
+          {
+            artigos.map((a) => (
+              <article class="blog-card">
+                <a href={`/${a.id}`} class="blog-card__header" aria-label={a.data.titulo}>
+                  {a.data.capa ? (
+                    <img src={a.data.capa} alt={a.data.capaAlt || a.data.titulo} class="blog-card__img" loading="lazy" width="420" height="200" />
+                  ) : (
+                    <IconeArtigo nome={a.data.icone} />
+                  )}
+                </a>
+                <div class="blog-card__body">
+                  <span class="blog-card__tag">{a.data.categoria}</span>
+                  <h2 class="blog-card__title"><a href={`/${a.id}`}>{a.data.titulo}</a></h2>
+                  <p class="blog-card__excerpt">{a.data.chamada || a.data.resumo}</p>
+                  <div class="blog-card__footer">
+                    <span>{a.data.leitura} min de leitura</span>
+                    <a href={`/${a.id}`} class="blog-card__readmore">
+                      Ler artigo
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+
+        <div class="newsletter-box reveal" data-delay="1">
+          <div class="newsletter-box__glow" aria-hidden="true"></div>
+          <span class="eyebrow" style="justify-content:center">Fique atualizado</span>
+          <h3 class="h3" style="margin-top:14px">Receba nossa newsletter técnica</h3>
+          <p class="lead" style="font-size:0.95rem;max-width:440px;margin-inline:auto;margin-top:10px;color:var(--text-soft)">
+            Semanalmente enviamos insights, tutoriais de automação e hacks de operação comercial diretamente na sua
+            caixa de entrada.
+          </p>
+          <!-- ATENCAO: este formulario NAO envia para lugar nenhum. Ele vem assim do
+               site anterior, onde mostrava um alert de "inscricao simulada". -->
+          <form class="newsletter-box__form" data-newsletter>
+            <input type="email" placeholder="Seu melhor e-mail comercial" required aria-label="E-mail para newsletter" />
+            <button type="submit" class="btn btn--primary">Inscrever-se</button>
+          </form>
+          <p class="fine" data-newsletter-aviso hidden style="margin-top:14px">
+            A newsletter ainda não está conectada. Fale com a gente pelo WhatsApp que a gente te avisa dos próximos artigos.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<script is:inline>
+  // Sem alert() e sem mentir que inscreveu: mostra o aviso que esta no HTML.
+  document.querySelectorAll('[data-newsletter]').forEach(function (f) {
+    f.addEventListener('submit', function (e) {
+      e.preventDefault()
+      var aviso = f.parentElement.querySelector('[data-newsletter-aviso]')
+      if (aviso) aviso.hidden = false
+      f.reset()
+    })
+  })
+</script>

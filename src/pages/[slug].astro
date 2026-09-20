@@ -1,0 +1,90 @@
+---
+/**
+ * Pagina de artigo.
+ *
+ * O nome do arquivo em src/content/blog E a URL: artigo-x.md -> /artigo-x.
+ * Foi assim que a migracao manteve as URLs que ja estavam no ar.
+ */
+import { getCollection, render } from 'astro:content'
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { SITE } from '../data/site.js'
+
+export async function getStaticPaths() {
+  const artigos = await getCollection('blog', ({ data }) => !data.rascunho)
+  return artigos.map((artigo) => ({ params: { slug: artigo.id }, props: { artigo } }))
+}
+
+const { artigo } = Astro.props
+const { Content } = await render(artigo)
+const a = artigo.data
+
+const dataBR = a.data.toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })
+const capaAbs = a.capa ? new URL(a.capa, SITE.url).href : undefined
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: a.titulo,
+  description: a.resumo,
+  datePublished: a.data.toISOString().slice(0, 10),
+  dateModified: (a.atualizado || a.data).toISOString().slice(0, 10),
+  author: { '@type': 'Organization', name: a.autor },
+  publisher: {
+    '@type': 'Organization',
+    name: SITE.nome,
+    logo: { '@type': 'ImageObject', url: new URL('/assets/img/logo.png', SITE.url).href },
+  },
+  mainEntityOfPage: new URL(`/${artigo.id}`, SITE.url).href,
+  articleSection: a.categoria,
+  image: capaAbs || new URL(SITE.ogImage, SITE.url).href,
+}
+---
+
+<BaseLayout
+  titulo={a.tituloSeo || `${a.titulo} | PGC`}
+  descricao={a.resumo}
+  ogTipo="article"
+  ogImagem={a.capa || SITE.ogImage}
+  pagina="/blog"
+  schema={schema}
+>
+  <main>
+    <article class="article-container">
+      <div class="container">
+        <a href="/blog" class="article-back-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
+          Voltar para o blog
+        </a>
+
+        <header class="article-header">
+          <div class="article-meta">
+            <span style="color:var(--blue-electric); font-weight:700; text-transform:uppercase; letter-spacing:0.05em">{a.categoria}</span>
+            <span>&bull;</span>
+            <span>{a.leitura} min de leitura</span>
+            <span>&bull;</span>
+            <span>{dataBR}</span>
+          </div>
+          <h1 class="article-title">{a.titulo}</h1>
+          <p class="blog-hero__lead" style="font-size:1.15rem">{a.subtitulo || a.resumo}</p>
+        </header>
+
+        {a.capa && (
+          <div class="article-cover-wrapper">
+            <img src={a.capa} alt={a.capaAlt || a.titulo} class="article-cover" width="900" height="506" />
+          </div>
+        )}
+
+        <div class="article-content">
+          <Content />
+
+          <div class="article-cta">
+            <span class="eyebrow" style="justify-content:center">{a.categoria}</span>
+            <h3 class="h3" style="margin:10px 0 20px">{a.ctaTitulo}</h3>
+            <p class="muted" style="max-width:500px; margin-inline:auto; margin-bottom:24px">{a.ctaTexto}</p>
+            <a href="/#aplicar" class="btn btn--primary">Falar com a PGC</a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+</BaseLayout>

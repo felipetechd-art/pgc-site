@@ -1,0 +1,19 @@
+{
+  "name": "pgc-site",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && node scripts/verificar-seo.mjs dist",
+    "preview": "astro preview",
+    "check": "astro check",
+    "verificar": "node scripts/verificar-seo.mjs dist"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.3.14",
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "^5.18.2"
+  }
+}

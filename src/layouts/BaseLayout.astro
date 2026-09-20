@@ -1,0 +1,107 @@
+---
+/**
+ * Layout de todas as paginas.
+ *
+ * Aqui vive o que antes estava copiado em 12 arquivos: <head>, fontes, folha de
+ * estilo, cabecalho, rodape e o carregamento do chat. Junto vieram as pecas de
+ * SEO que o site escrito a mao nao tinha em pagina nenhuma — canonical coerente,
+ * og:image que existe de verdade e JSON-LD.
+ */
+import { SITE } from '../data/site.js'
+import Nav from '../components/Nav.astro'
+import Footer from '../components/Footer.astro'
+import '../styles/site.css'
+
+const {
+  titulo,
+  descricao = SITE.descricao,
+  ogTipo = 'website',
+  ogImagem = SITE.ogImage,
+  /** Marca o item do menu correspondente a esta pagina. */
+  pagina = '',
+  /** JSON-LD extra da pagina (artigo, FAQ...). */
+  schema = null,
+  /** Paginas que nao devem ser indexadas. */
+  noindex = false,
+} = Astro.props
+
+// O canonical e SEM .html e sem barra final, que e a URL que o Cloudflare Pages
+// de fato serve: ele responde 308 de /blog.html para /blog. Apontar o canonical
+// para o endereco que redireciona era o que o site escrito a mao fazia.
+const rota = Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '/').replace(/(.+)\/$/, '$1')
+const canonical = new URL(rota, SITE.url).href
+const imagemAbs = new URL(ogImagem, SITE.url).href
+
+const organizacao = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: SITE.nome,
+  legalName: SITE.nomeCompleto,
+  url: SITE.url,
+  logo: new URL('/assets/img/logo.png', SITE.url).href,
+  description: SITE.descricao,
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'sales',
+    email: SITE.email,
+    availableLanguage: 'Portuguese',
+  },
+}
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#00B022" />
+
+    <title>{titulo}</title>
+    <meta name="description" content={descricao} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+
+    <meta property="og:type" content={ogTipo} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={titulo} />
+    <meta property="og:description" content={descricao} />
+    <meta property="og:image" content={imagemAbs} />
+    <meta property="og:site_name" content={SITE.nome} />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" type="image/png" href="/assets/img/logo.png" />
+    <link rel="alternate" type="application/rss+xml" title="Blog PGC" href="/rss.xml" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="application/ld+json" set:html={JSON.stringify(organizacao)} />
+    {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+
+    <!--
+      RASTREAMENTO — inserir os snippets reais antes de publicar:
+      · Google Tag Manager · Meta Pixel · GA4 · Google Ads (conversões)
+      Os eventos (cta_clique, form_aberto, form_etapa, form_enviado,
+      calculadora_usada, ver_funcionalidades) já são disparados em
+      public/assets/js/main.js via window.dataLayer / fbq / gtag.
+    -->
+  </head>
+  <body>
+    <div class="bg-stage" aria-hidden="true"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
+
+    <Nav pagina={pagina} />
+
+    <slot />
+
+    <Footer />
+
+    <script src="/assets/js/main.js" is:inline defer></script>
+    <script src="/assets/js/widget-ia.js" is:inline defer></script>
+  </body>
+</html>
