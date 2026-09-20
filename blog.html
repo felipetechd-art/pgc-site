@@ -294,32 +294,57 @@
         <span class="brand__tag">Plataforma de<br>gestão comercial</span>
       </a>
 
-      <nav class="nav__links" aria-label="Principal">
-        <a href="index.html#solucao">A solução</a>
-        <a href="index.html#jornada">Jornada</a>
-        <a href="index.html#recursos">Recursos</a>
-        <a href="index.html#planos">Planos</a>
-        <a href="index.html#faq">Dúvidas</a>
+      <nav class="nav__menu" aria-label="Principal">
+        <ul class="nav__links">
+          <li class="tem-menu">
+            <a href="index.html#solucao">A solução <svg class="nav__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="11" height="11" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
+            <div class="nav__drop">
+              <ul>
+                <li><a href="index.html#espelho">O caos da operação</a></li>
+                <li><a href="index.html#diagnostico">O falso diagnóstico</a></li>
+                <li><a href="index.html#custo">O custo da perda</a></li>
+                <li><a href="index.html#transformacao">A virada</a></li>
+                <li><a href="index.html#solucao">Como a PGC funciona</a></li>
+                <li><a href="index.html#jornada">Jornada do cliente</a></li>
+                <li><a href="index.html#tecnologia">Tecnologia e IA</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="tem-menu">
+            <a href="index.html#recursos">Recursos <svg class="nav__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="11" height="11" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
+            <div class="nav__drop">
+              <ul>
+                <li><a href="index.html#recursos">Todos os recursos</a></li>
+                <li><a href="index.html#comparacao">Comparação</a></li>
+                <li><a href="index.html#para-quem">Para quem é</a></li>
+                <li><a href="index.html#implantacao">Implantação</a></li>
+                <li><a href="index.html#garantia">Garantia</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="index.html#planos">Planos</a></li>
+          <li><a href="blog.html" aria-current="page">Blog</a></li>
+          <li><a href="index.html#faq">Dúvidas</a></li>
+        </ul>
       </nav>
 
-      <a href="index.html#aplicar" class="btn btn--primary nav__cta" data-cta="nav">Quero estruturar minha operação</a>
-
-      <button class="nav__burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
-        <span></span>
-      </button>
+      <a href="index.html#planos" class="btn btn--primary nav__cta" data-cta="nav">
+        <span class="nav__cta-longo">Quero conhecer os planos</span>
+        <span class="nav__cta-curto">Ver planos</span>
+      </a>
     </div>
+
+    <!-- No celular o menu nao fica escondido atras de hamburguer: os links
+         ficam nesta segunda linha, sempre a vista. Some no desktop, onde eles
+         voltam para a propria barra. -->
+    <nav class="container nav__linha" aria-label="Principal no celular">
+      <a href="index.html#solucao">Solução</a>
+      <a href="index.html#recursos">Recursos</a>
+      <a href="index.html#planos">Planos</a>
+      <a href="blog.html" aria-current="page">Blog</a>
+      <a href="index.html#faq">Dúvidas</a>
+    </nav>
   </header>
-
-  <!-- Menu Mobile -->
-  <nav class="mobile-menu" id="mobileMenu" aria-label="Menu mobile">
-    <a href="index.html#solucao">A solução</a>
-    <a href="index.html#jornada">Jornada do cliente</a>
-    <a href="index.html#recursos">Recursos</a>
-    <a href="index.html#planos">Planos</a>
-    <a href="index.html#faq">Perguntas frequentes</a>
-    <a href="index.html#aplicar" class="btn btn--primary btn--block" data-cta="menu">Quero estruturar minha operação</a>
-  </nav>
-
   <main id="topo">
     
     <!-- ===================== HERO DO BLOG ===================== -->

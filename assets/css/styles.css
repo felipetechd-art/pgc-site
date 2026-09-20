@@ -177,42 +177,83 @@ strong { color: var(--graphite); font-weight: 600; }
 .tile-ic { width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; background: rgba(0,176,34,.08); color: var(--blue-electric); border: 1px solid var(--border); }
 .tile-ic svg { width: 26px; height: 26px; }
 
-/* ---------- 8. HEADER / NAV ---------- */
+/* ---------- 8. HEADER / NAV ----------
+   Estrutura no modelo do site da Inovaihotel: links em pilula, submenu no hover
+   e, no celular, uma segunda linha de links sempre visivel no lugar do
+   hamburguer. As cores e as superficies continuam as da PGC. */
 .site-header { position: fixed; inset: 0 0 auto 0; z-index: 60; transition: background .3s, border-color .3s, backdrop-filter .3s; border-bottom: 1px solid transparent; }
-.site-header.is-stuck { background: rgba(255,255,255,.82); backdrop-filter: blur(14px); border-bottom-color: var(--border); }
-.nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-.nav__links { display: none; align-items: center; gap: 30px; }
-.nav__links a { font-size: .92rem; color: var(--text-soft); transition: color .2s; }
-.nav__links a:hover { color: var(--blue-dark); }
-.nav__cta { display: none; }
-.brand { display: flex; align-items: center; gap: 12px; }
-.brand__logo { width: auto; height: 34px; }
+.site-header.is-stuck { background: rgba(255,255,255,.92); backdrop-filter: blur(14px); border-bottom-color: var(--border); }
+.nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: 62px; }
+
+.brand { display: flex; align-items: center; gap: 12px; flex: none; }
+.brand__logo { width: auto; height: 32px; }
 .brand__name { font-family: var(--font-head); font-weight: 800; font-size: 1.5rem; letter-spacing: -.02em; color: var(--graphite); }
 .brand__tag { display: none; font-size: .62rem; letter-spacing: .12em; line-height: 1.25; color: var(--text-mute); text-transform: uppercase; border-left: 1px solid var(--border-strong); padding-left: 12px; }
-.nav__burger { display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; border: 1px solid var(--border-strong); background: #fff; }
-.nav__burger span, .nav__burger span::before, .nav__burger span::after { width: 20px; height: 2px; background: var(--graphite); display: block; transition: .3s; }
-.nav__burger span { position: relative; }
-.nav__burger span::before, .nav__burger span::after { content: ""; position: absolute; left: 0; }
-.nav__burger span::before { top: -6px; } .nav__burger span::after { top: 6px; }
-body.menu-open .nav__burger span { background: transparent; }
-body.menu-open .nav__burger span::before { top: 0; transform: rotate(45deg); }
-body.menu-open .nav__burger span::after { top: 0; transform: rotate(-45deg); }
+
+/* Barra de links (desktop) */
+.nav__menu { display: none; }
+.nav__links { display: flex; align-items: center; gap: 2px; list-style: none; margin: 0; padding: 0; }
+.nav__links > li { position: relative; }
+.nav__links > li > a {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 8px 14px; border-radius: 100px;
+  font-size: .92rem; color: var(--text-soft);
+  transition: color .2s, background .2s;
+}
+.nav__links > li > a:hover,
+.nav__links > li:focus-within > a,
+.nav__links > li > a[aria-current="page"] { color: var(--blue-dark); background: rgba(0,176,34,.08); }
+.nav__chevron { opacity: .55; transition: transform .22s var(--ease); }
+.nav__links > li:hover .nav__chevron,
+.nav__links > li:focus-within .nav__chevron { transform: rotate(180deg); }
+
+/* Submenu */
+.nav__drop {
+  position: absolute; top: 100%; left: 0; min-width: 264px;
+  margin-top: 10px; padding: 8px;
+  background: #fff; border: 1px solid var(--border); border-radius: 18px;
+  box-shadow: var(--shadow-pop);
+  opacity: 0; visibility: hidden; transform: translateY(-6px);
+  transition: opacity .22s var(--ease), transform .22s var(--ease), visibility .22s;
+}
+/* Ponte invisivel sobre o vao: sem ela o menu fecha quando o mouse atravessa. */
+.nav__drop::before { content: ""; position: absolute; top: -10px; left: 0; right: 0; height: 10px; }
+.nav__links > li:hover .nav__drop,
+.nav__links > li:focus-within .nav__drop { opacity: 1; visibility: visible; transform: none; }
+.nav__drop ul { list-style: none; margin: 0; padding: 0; }
+.nav__drop a { display: block; padding: 10px 12px; border-radius: 12px; font-size: .88rem; color: var(--text-soft); transition: color .2s, background .2s; }
+.nav__drop a:hover { background: rgba(0,176,34,.1); color: var(--blue-dark); }
+
+/* CTA: rotulo curto no celular, longo no desktop */
+.nav__cta { padding: 9px 16px; font-size: .84rem; flex: none; }
+.nav__cta-longo { display: none; }
+
+/* Linha de links do celular */
+.nav__linha { display: flex; gap: 4px; padding-bottom: 9px; overflow-x: auto; scrollbar-width: none; }
+.nav__linha::-webkit-scrollbar { display: none; }
+.nav__linha a {
+  flex: 1 0 auto; text-align: center; white-space: nowrap;
+  padding: 7px 12px; border-radius: 100px;
+  font-size: .86rem; font-weight: 500; color: var(--text-soft);
+  transition: color .2s, background .2s;
+}
+.nav__linha a:hover,
+.nav__linha a[aria-current="page"] { color: var(--blue-dark); background: rgba(0,176,34,.08); }
+/* Com duas linhas, a barra do celular precisa de fundo proprio desde o topo. */
+@media (max-width: 979px) {
+  .site-header { background: rgba(255,255,255,.94); backdrop-filter: blur(14px); border-bottom-color: var(--border); }
+}
 
 @media (min-width: 980px) {
-  .nav__links, .nav__cta { display: flex; }
-  .nav__burger { display: none; }
+  .nav { height: 72px; }
+  .nav__menu { display: block; }
+  .nav__linha { display: none; }
+  .brand__logo { height: 34px; }
   .brand__tag { display: block; }
+  .nav__cta { padding: 11px 20px; font-size: .88rem; }
+  .nav__cta-longo { display: inline; }
+  .nav__cta-curto { display: none; }
 }
-
-.mobile-menu {
-  position: fixed; inset: 72px 0 0 0; z-index: 55;
-  background: rgba(255,255,255,.98); backdrop-filter: blur(16px);
-  padding: 28px var(--gutter) 40px; display: flex; flex-direction: column; gap: 4px;
-  transform: translateY(-12px); opacity: 0; pointer-events: none; transition: .3s var(--ease);
-}
-body.menu-open .mobile-menu { transform: none; opacity: 1; pointer-events: auto; }
-.mobile-menu a { padding: 16px 4px; font-family: var(--font-head); font-size: 1.12rem; color: var(--graphite); border-bottom: 1px solid var(--border); }
-.mobile-menu .btn { margin-top: 20px; }
 
 /* ---------- 9. HERO (Dobra 1) ---------- */
 .hero { padding-top: 128px; padding-bottom: clamp(48px, 7vw, 92px); }

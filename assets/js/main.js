@@ -30,15 +30,6 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* ---------- Menu mobile ---------- */
-  var burger = $('#burger');
-  function setMenu(open) {
-    document.body.classList.toggle('menu-open', open);
-    if (burger) burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-  }
-  if (burger) burger.addEventListener('click', function () { setMenu(!document.body.classList.contains('menu-open')); });
-  $$('#mobileMenu a').forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
-
   /* ---------- Scroll reveal ---------- */
   var reveals = $$('.reveal');
   if (prefersReduced || !('IntersectionObserver' in window)) {
