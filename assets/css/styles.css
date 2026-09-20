@@ -43,7 +43,7 @@
   --grad-text:   linear-gradient(120deg, #00B022 0%, #047857 100%);
 
   /* Tipografia */
-  --font-head: 'Sora', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-head: 'Instrument Sans', 'Plus Jakarta Sans', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
 
   /* Layout */
@@ -122,12 +122,13 @@ ul { list-style: none; padding: 0; }
 }
 .eyebrow--chip::before { display: none; }
 
-h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 700; line-height: 1.1; letter-spacing: -.02em; color: var(--graphite); }
-.h1 { font-size: clamp(2.3rem, 6vw, 4rem); font-weight: 800; }
+h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 600; line-height: 1.1; letter-spacing: -.028em; color: var(--graphite); }
+.h1 { font-size: clamp(1.95rem, 7.4vw, 3.15rem); font-weight: 600; line-height: 1.06; letter-spacing: -.03em; text-wrap: balance; }
 .h2 { font-size: clamp(1.85rem, 4.2vw, 2.9rem); }
 .h3 { font-size: clamp(1.35rem, 2.4vw, 1.8rem); }
 .h4 { font-size: clamp(1.05rem, 1.6vw, 1.2rem); }
 .lead { font-size: clamp(1.02rem, 1.4vw, 1.18rem); color: var(--text-soft); }
+.lead--sub { font-family: var(--font-head); font-size: clamp(1.06rem, 4.4vw, 1.32rem); font-weight: 600; letter-spacing: -.012em; color: var(--graphite); line-height: 1.35; }
 .muted { color: var(--text-mute); }
 .fine { font-size: .82rem; color: var(--text-mute); }
 
@@ -216,13 +217,72 @@ body.menu-open .mobile-menu { transform: none; opacity: 1; pointer-events: auto;
 /* ---------- 9. HERO (Dobra 1) ---------- */
 .hero { padding-top: 128px; padding-bottom: clamp(48px, 7vw, 92px); }
 .hero__grid { display: grid; gap: clamp(40px, 5vw, 56px); align-items: center; }
-@media (min-width: 1040px) { .hero__grid { grid-template-columns: 1.02fr 1fr; } }
+@media (min-width: 1040px) { .hero__grid { grid-template-columns: 1.25fr .75fr; } }
 .hero h1 { margin-block: 18px 22px; }
 .hero .btns { display: flex; flex-wrap: wrap; gap: 14px; margin-block: 30px 26px; }
 @media (max-width: 520px){ .hero .btns .btn { width: 100%; } }
 
 .hero-visual { position: relative; }
 .hero-visual__glow { position: absolute; inset: 2% 0 0 2%; background: radial-gradient(60% 60% at 60% 40%, rgba(0,176,34,.1), transparent 70%); z-index: 0; border-radius: 40px; }
+/* ---------- Video do hero: card vertical 9:16 com moldura viva ----------
+   A borda e um gradiente que desliza (padding + background no container, nao
+   `border`), para a faixa colorida existir de verdade sob o quadro. */
+.hero-video {
+  --borda: 1.6px;
+  position: relative; z-index: 1;
+  max-width: 330px; margin: 0 auto;
+  padding: var(--borda);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-pop);
+  background: linear-gradient(115deg,
+    rgba(0,176,34,.18) 0%, rgba(16,185,129,.85) 18%, var(--blue-electric) 32%,
+    rgba(240,253,244,.95) 44%, var(--cyan) 56%, rgba(16,185,129,.8) 72%,
+    rgba(0,176,34,.18) 100%);
+  background-size: 260% 100%;
+  background-position: 0% 50%;
+  animation: hero-video-moldura 14s linear infinite;
+}
+@keyframes hero-video-moldura { to { background-position: 260% 50%; } }
+.hero-video__frame {
+  position: relative;
+  aspect-ratio: 9 / 16;
+  border-radius: calc(var(--radius-lg) - var(--borda));
+  overflow: hidden;
+  background: #08140E;
+}
+.hero-video__frame > video, .hero-video__frame > iframe {
+  display: block; width: 100%; height: 100%; border: 0; object-fit: cover;
+}
+/* Chamada sobre o quadro — vira o "Ver com som" quando o video entrar. */
+.hero-video__call {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+  gap: 14px; padding: 0 18px 26px;
+  color: #fff; text-align: center;
+  background: linear-gradient(180deg, rgba(8,20,14,0) 40%, rgba(8,20,14,.28) 66%, rgba(8,20,14,.82) 100%);
+}
+.hero-video__call b { display: block; font-family: var(--font-head); font-size: 1rem; font-weight: 600; }
+.hero-video__call span { font-size: .78rem; color: rgba(255,255,255,.76); }
+.hero-video__play {
+  position: relative;
+  display: grid; place-items: center;
+  width: 58px; height: 58px; border-radius: 50%;
+  background: var(--blue-electric); color: #fff;
+  box-shadow: 0 10px 26px rgba(0,176,34,.4);
+}
+/* Anel pulsante — para o olho encontrar o play. */
+.hero-video__play::after {
+  content: ''; position: absolute; width: 58px; height: 58px;
+  border-radius: 50%; border: 2px solid var(--blue-electric);
+  animation: hero-video-onda 2.8s ease-out infinite;
+}
+@keyframes hero-video-onda { 0% { transform: scale(1); opacity: .55; } 100% { transform: scale(1.75); opacity: 0; } }
+/* Movimento e decoracao: quem pediu menos animacao recebe tudo parado. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-video { animation: none; background-position: 32% 50%; }
+  .hero-video__play::after { animation: none; opacity: .4; }
+}
 .dash { position: relative; z-index: 1; background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-pop); overflow: hidden; }
 .dash__bar { display: flex; align-items: center; gap: 14px; padding: 14px 18px; border-bottom: 1px solid var(--border); }
 .dash__dots { display: flex; gap: 6px; }
@@ -496,14 +556,15 @@ input[type="range"]::-moz-range-thumb { width: 22px; height: 22px; border: none;
 .shift__arrow svg { width: 16px; height: 16px; }
 @media (max-width: 520px){ .shift__row { grid-template-columns: 1fr; gap: 8px; text-align: left; } .shift__arrow { transform: rotate(90deg); } }
 
-/* ---------- 28. TEXTO ROTATIVO (HERO) ---------- */
-#hero-rotate-text {
-  display: inline-block;
-  color: var(--blue-electric);
-  font-weight: 700;
-  transition: opacity 0.35s ease, transform 0.35s ease;
-}
-#hero-rotate-text.fade-out {
-  opacity: 0;
-  transform: translateY(-8px);
-}
+
+/* ---------- 29. TABELAS E LINKS DENTRO DOS ARTIGOS ----------
+   Os artigos do blog trazem tabelas de comparacao; o CSS proprio das paginas
+   de artigo nao as estilizava. Usa tokens que existem (--border/--surface-2),
+   e nao os herdados do tema escuro antigo. */
+.article-content table { width: 100%; border-collapse: collapse; margin: 28px 0; font-size: .95rem; }
+.article-content th, .article-content td { border: 1px solid var(--border); padding: 11px 14px; text-align: left; vertical-align: top; }
+.article-content thead th { background: var(--surface-2); font-family: var(--font-head); font-weight: 600; color: var(--graphite); }
+.article-content tbody tr:nth-child(even) { background: rgba(0,176,34,.03); }
+.article-content a { color: var(--blue-dark); text-decoration: underline; text-underline-offset: 3px; }
+.article-content a:hover { color: var(--blue-electric); }
+@media (max-width: 640px) { .article-content table { display: block; overflow-x: auto; } }
